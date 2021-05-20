@@ -5,6 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use Config\Services;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -41,9 +42,98 @@ class BaseController extends Controller
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
 
-		//--------------------------------------------------------------------
-		// Preload any models, libraries, etc, here.
-		//--------------------------------------------------------------------
-		// E.g.: $this->session = \Config\Services::session();
+		$this->session = Services::session();
+		$this->router  = Services::router();
+		$this->uri     = Services::uri();
+	}
+
+	/**
+	 * Carrega o template do sistema
+	 * 
+	 * @param string $escopo caminho da view
+	 * @param string|array $arquivos caminho da view
+	 * @param array  $dados  Informação para a tela
+	 * @param bool   $navBar Verifica se vai carregar a navbar
+	 */
+	public function template(string $pasta, $arquivos, array $dados = [], bool $navBar = true)
+	{
+		$dados['session']       = $this->session;
+		$dados['responseFlash'] = $this->session->getFlashdata('responseFlash');
+		$dados['base']          = $this;
+		//$menuModel = new MenuModel;
+		if (!empty($this->session->get('logado'))) {
+			/*
+			if ($this->session->getUser()['grupo_id'] == 1) {
+				//$dados['menus'] = $menuModel->get();
+			} else {
+				$dados['menus'] =  $this->session->getUser()['menus'];
+			}
+			*/
+		}
+		if (!$dados['responseFlash']) {
+			$dados['responseFlash']['tipo'] = null;
+			$dados['responseFlash']['mensagem'] = null;
+		}
+		echo view('template/header', $dados);
+		echo view('template/functions', $dados);
+		if ($navBar) {
+			echo view('template/navbar', $dados);
+			echo view('template/sidebar', $dados);
+			//echo view('template/dataGrid', $dados);
+		}
+		if (is_array($arquivos)) {
+			foreach ($arquivos as $arquivo) {
+				echo view('app/' . $pasta . '/' . $arquivo, $dados);
+			}
+		} else {
+			echo view('app/' . $pasta . '/' . $arquivos, $dados);
+		}
+		echo view('app/' . $pasta . '/functions', $dados);
+		echo view('template/footer', $dados);
+
+		echo  $dados['responseFlash']['mensagem'];// Fase de teste
+	}
+
+	/**
+	 * Cria os retornos flash do sistema
+	 * 
+	 * @param string $tipo  success, error, info
+	 * @param string $mensagem
+	 * @param string $variavel Nome da variavel
+	 * @param int    $tempo tempo da sessão flashdata
+	 * 
+	 */
+	public function setFlashdata(string $tipo = 'info', string $mensagem = '', string $variavel = 'responseFlash', int $tempo = 300)
+	{
+		$this->session->setFlashdata($variavel, ['tipo' => $tipo, 'mensagem' => $mensagem], $tempo);
+	}
+
+	/**
+	 * Retorna o nome do controlador
+	 * 
+	 * @return string nome do controlador
+	 */
+	public function controllerName(): string
+	{
+		return str_replace('\App\Controllers\\', '', $this->router->controllerName());
+	}
+
+	/**
+	 * Retorna o nome do método atual
+	 * 
+	 * @return string nome do metodo
+	 */
+	public function methodName(): string
+	{
+		return  $this->router->methodName();
+	}
+
+	/**
+	 * Retorna o nome da rota atual
+	 * 
+	 */
+	public function routeName(): string
+	{
+		return $this->uri->getPath();
 	}
 }
