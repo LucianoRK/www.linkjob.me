@@ -28,6 +28,42 @@ class LoginController extends BaseController
 		}
 	}
 
+	/**
+	 * Tela para digitar o e-mail de redefir senha
+	 */
+	public function recuperarSenha()
+	{
+		return $this->template('login', 'recuperarSenha', [], false);
+	}
+
+	/**
+	 * Tela para digitar as novas senhas
+	 * @param string $token token de recuperar senha
+	 */
+	public function redefinirSenha($token)
+	{
+
+		$usuarioModel = new UsuarioModel;
+
+		$colunas = [
+			'usuario_id',
+			'email',
+			'senha'
+		];
+
+		//Busca o usário
+		$dadosUsuario = $usuarioModel->get(['token_recuperar_senha' => $token], $colunas, true);
+
+		//Validação das rules
+		if (empty($dadosUsuario)) {
+			$this->setFlashdata('error', 'Link inválido');
+
+			return redirect()->to(base_url());
+		}
+
+		return $this->template('login', 'redefinirSenha', ['token' => $token], false);
+	}
+
 	/////////////////////////////
 	//                         //
 	//	        CRUD           //
@@ -52,7 +88,6 @@ class LoginController extends BaseController
 		$request = $this->request->getVar();
 		$usuarioModel = new UsuarioModel;
 
-		var_dump($request);
 		//Rules
 		$rules = [
 			'email' => 'required|valid_email',
@@ -82,8 +117,6 @@ class LoginController extends BaseController
 			return redirect()->to(base_url());
 		}
 
-
-
 		//Validação da senha
 		if (!password_verify($request['senha'],  $dadosUsuario['senha'])) {
 			$this->setFlashdata('error', 'Usuário ou senha incorreto !');
@@ -111,6 +144,112 @@ class LoginController extends BaseController
 		$this->session->set($sessionData);
 
 		return redirect()->to('home');
+	}
+
+	/**
+	 * Atualiza a senha do redefinir senha
+	 */
+	public function recuperaSenhaEnviarEmail()
+	{
+		//Requests
+		$request = $this->request->getVar();
+		$usuarioModel = new UsuarioModel;
+
+		//Rules
+		$rules = [
+			'email' => 'required|valid_email',
+		];
+
+		//Validação das rules
+		if (!$this->validate($rules)) {
+			$this->setFlashdata('error', 'E-mail não encontrado.');
+
+			return redirect()->to(base_url());
+		}
+
+		$colunas = [
+			'usuario_id',
+			'email',
+			'senha',
+			'token_recuperar_senha'
+		];
+
+		//Busca o usário
+		$dadosUsuario = $usuarioModel->get(['email' => $request['email']], $colunas, true);
+
+		//Validação das rules
+		if (empty($dadosUsuario)) {
+			$this->setFlashdata('error', 'E-mail não encontrado.');
+
+			return redirect()->to(base_url());
+		}
+
+		//gera o token
+		$token = sha1($dadosUsuario['usuario_id'] . date("H:i:s"));
+		//Atualiza o token de recuperar senha
+		$usuarioModel->update($dadosUsuario['usuario_id'], ['token_recuperar_senha' => $token]);
+
+		$dados = [
+			'link' => base_url() . '/login/redefinirSenha/' .$token
+		];
+
+		if ($this->enviarEmail($dadosUsuario['email'], 'Recuperação de conta', view('template/email/recuperarSenha', $dados))) {
+			$this->setFlashdata('success', 'E-mail enviado com sucesso');
+		} else {
+			$this->setFlashdata('error', 'Falha ao encaminhar o e-mail');
+		}
+
+		return redirect()->to('/');
+	}
+
+	/**
+	 * Atualiza a senha do redefinir senha
+	 * @param string $token token de recuperar senha
+	 */
+	public function redefinirSenhaUpdate($token)
+	{
+		$request = $this->request->getVar();
+		$usuarioModel = new UsuarioModel;
+
+		//Rules
+		$rules = [
+			'senha' => 'required|string|min_length[6]|regex_match[/[a-zA-Z]/]|regex_match[/[0-9]/]',
+			'senha2' => 'required|string|matches[senha]',
+		];
+
+		//Validação das rules
+		if (!$this->validate($rules)) {
+			$this->setFlashdata('error', 'As senhas devem conter no mínimo 6 com letras e números');
+
+			return $this->template('login', 'redefinirSenha', ['token' => $token], false);
+		}
+
+		$colunas = [
+			'usuario_id',
+			'email',
+			'senha'
+		];
+
+		//Busca o usário
+		$dadosUsuario = $usuarioModel->get(['token_recuperar_senha' => $token], $colunas, true);
+
+		//Validação das rules
+		if (empty($dadosUsuario)) {
+			$this->setFlashdata('error', 'Link inválido');
+
+			return redirect()->to(base_url());
+		}
+
+		$dadosUpdate = [
+			'senha' => password_hash($request['senha'], PASSWORD_BCRYPT),
+			'token_recuperar_senha' => null
+		];
+
+		$usuarioModel->update($dadosUsuario['usuario_id'], $dadosUpdate);
+
+		$this->setFlashdata('error', 'Senha alterada com sucesso');
+
+		return redirect()->to('/');
 	}
 
 	/**

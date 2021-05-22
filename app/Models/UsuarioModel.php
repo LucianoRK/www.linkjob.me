@@ -33,6 +33,7 @@ class UsuarioModel extends BaseModel
         'email',
         'senha',
         'avatar',
+        'token_recuperar_senha',
         'created_at',
         'updated_at',
         'deleted_at'

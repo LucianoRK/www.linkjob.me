@@ -34,6 +34,9 @@ $routes->setAutoRoute(true);
 
 // Rotas Publicas
 
+$routes->get('/', 'LoginController::index');
+$routes->get('/logout', 'LoginController::logout');
+
 /**
  * --------------------------------------------------------------------
  * Login
@@ -41,16 +44,12 @@ $routes->setAutoRoute(true);
  */
 $routes->group('login', function ($routes) {
 	$routes->post('', 'LoginController::login');
-	//$routes->get('recuperarSenha', 'LoginController::recuperarSenha');
-	//$routes->get('validarCodigo', 'LoginController::validarCodigo');
-	//$routes->get('redefinirSenha/(:alphanum)', 'LoginController::redefinirSenha/$1');
+	$routes->get('recuperarSenha', 'LoginController::recuperarSenha');
+	$routes->get('redefinirSenha/(:alphanum)', 'LoginController::redefinirSenha/$1');
 	//Funcionalidades
-	//$routes->post('recuperaSenhaEnviarEmail', 'LoginController::recuperaSenhaEnviarEmail');
-	//$routes->post('redefinirSenhaUpdate', 'LoginController::redefinirSenhaUpdate');
+	$routes->post('recuperaSenhaEnviarEmail', 'LoginController::recuperaSenhaEnviarEmail');
+	$routes->post('redefinirSenhaUpdate/(:alphanum)', 'LoginController::redefinirSenhaUpdate/$1');
 });
-
-$routes->get('/', 'LoginController::index');
-$routes->get('/logout', 'LoginController::logout');
 
 // rotas autenticadas
 $routes->group('', ['filter' => 'sessao'], function ($routes) {

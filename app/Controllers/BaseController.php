@@ -136,4 +136,32 @@ class BaseController extends Controller
 	{
 		return $this->uri->getPath();
 	}
+
+	 /**
+     * enviarEmail - Função Padrão para envio de emails
+     * @param string $destinatario Endereço de email
+     * @param string $assunto - Assunto do E-mail
+     * @param string $mensagem - Mensagem do E-mail
+     * @param array  $anexo - ['buffer','name', 'type']
+     */
+    public function enviarEmail($destinatario, $assunto = null, $mensagem = false, $anexos = [])
+    {
+		return true;
+
+        $email = Services::email();
+        $email->initialize(["SMTPHost" => env('aws_smtp_host'), "SMTPUser" => env('aws_smtp_key'), "SMTPPass" => env('aws_smtp_secret')]);
+        $email->setFrom(env('aws_smtp_email_resposta'));
+        $email->setTo($destinatario);
+        $email->setSubject($assunto);
+        $email->setMessage($mensagem);
+
+        if (!empty($anexos)) {
+            foreach ($anexos as $key => $valueAnexo) {
+                $type = !empty($valueAnexo['type']) ? $valueAnexo['type'] : 'application/pdf';
+                $email->attach($valueAnexo['arquivo'], 'attachment', $valueAnexo['nome'], $type);
+            }
+        }
+
+        return $email->send();
+    }
 }

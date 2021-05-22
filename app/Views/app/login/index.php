@@ -3,3 +3,5 @@
     <input type="password" name="senha" autocomplete="false" required>
     <button type="submit">Entrar</button>
 </form>
+<br>
+<a href="<?= base_url('login/recuperarSenha') ?>">Esqueceu sua senha?</a>
