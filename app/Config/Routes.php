@@ -51,6 +51,16 @@ $routes->group('login', function ($routes) {
 	$routes->post('redefinirSenhaUpdate/(:alphanum)', 'LoginController::redefinirSenhaUpdate/$1');
 });
 
+/**
+ * --------------------------------------------------------------------
+ * Login
+ * --------------------------------------------------------------------
+ */
+$routes->group('registro', function ($routes) {
+	$routes->get('', 'RegistroController::create');
+	$routes->post('', 'RegistroController::store');
+});
+
 // rotas autenticadas
 $routes->group('', ['filter' => 'sessao'], function ($routes) {
 

@@ -94,12 +94,13 @@ class LoginController extends BaseController
 			'senha' => 'required|min_length[6]'
 		];
 
-		//Validação das rules
-		if (!$this->validate($rules)) {
-			$this->setFlashdata('error', 'Usuário ou senha incorreto !');
+		$erros = $this->validar($this->request, $rules);
 
-			return redirect()->to(base_url());
-		}
+        if ($erros) {
+            $this->setFlashdata('error', json_encode($erros));
+            
+            return redirect()->to(base_url());
+        }
 
 		$colunas = [
 			'usuario_id',
@@ -160,12 +161,13 @@ class LoginController extends BaseController
 			'email' => 'required|valid_email',
 		];
 
-		//Validação das rules
-		if (!$this->validate($rules)) {
-			$this->setFlashdata('error', 'E-mail não encontrado.');
+		$erros = $this->validar($this->request, $rules);
 
-			return redirect()->to(base_url());
-		}
+        if ($erros) {
+            $this->setFlashdata('error', json_encode($erros));
+            
+            return redirect()->to(base_url());
+        }
 
 		$colunas = [
 			'usuario_id',
@@ -217,12 +219,14 @@ class LoginController extends BaseController
 			'senha2' => 'required|string|matches[senha]',
 		];
 
-		//Validação das rules
-		if (!$this->validate($rules)) {
-			$this->setFlashdata('error', 'As senhas devem conter no mínimo 6 com letras e números');
+		$erros = $this->validar($this->request, $rules);
 
-			return $this->template('login', 'redefinirSenha', ['token' => $token], false);
-		}
+        if ($erros) {
+			$erro['mensagem'] = 'As senhas devem conter no mínimo 6 com letras e números';
+            $this->setFlashdata('error', json_encode($erros));
+            
+            return $this->template('login', 'redefinirSenha', ['token' => $token], false);
+        }
 
 		$colunas = [
 			'usuario_id',

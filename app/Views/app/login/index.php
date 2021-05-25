@@ -5,3 +5,4 @@
 </form>
 <br>
 <a href="<?= base_url('login/recuperarSenha') ?>">Esqueceu sua senha?</a>
+<a href="<?= base_url('/registro') ?>">registrar</a>

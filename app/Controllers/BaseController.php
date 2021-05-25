@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
+use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Config\Services;
@@ -91,7 +92,7 @@ class BaseController extends Controller
 		echo view('app/' . $pasta . '/functions', $dados);
 		echo view('template/footer', $dados);
 
-		echo  $dados['responseFlash']['mensagem'];// Fase de teste
+		echo  $dados['responseFlash']['mensagem']; // Fase de teste
 	}
 
 	/**
@@ -137,31 +138,46 @@ class BaseController extends Controller
 		return $this->uri->getPath();
 	}
 
-	 /**
-     * enviarEmail - Função Padrão para envio de emails
-     * @param string $destinatario Endereço de email
-     * @param string $assunto - Assunto do E-mail
-     * @param string $mensagem - Mensagem do E-mail
-     * @param array  $anexo - ['buffer','name', 'type']
-     */
-    public function enviarEmail($destinatario, $assunto = null, $mensagem = false, $anexos = [])
-    {
+	/**
+	 * Validar dados das requisições.
+	 *
+	 * @param  \CodeIgniter\HTTP\IncomingRequest  $request
+	 * @param  array $rules - Regras a serem validadas
+	 * @return array Array com os erros obtidos
+	 */
+	protected function validar(IncomingRequest $request, array $rules): array
+	{
+		$validacoes = Services::validation();
+		$validacoes->withRequest($request)->setRules($rules)->run();
+		
+		return $validacoes->getErrors();
+	}
+
+	/**
+	 * enviarEmail - Função Padrão para envio de emails
+	 * @param string $destinatario Endereço de email
+	 * @param string $assunto - Assunto do E-mail
+	 * @param string $mensagem - Mensagem do E-mail
+	 * @param array  $anexo - ['buffer','name', 'type']
+	 */
+	public function enviarEmail($destinatario, $assunto = null, $mensagem = false, $anexos = [])
+	{
 		return true;
 
-        $email = Services::email();
-        $email->initialize(["SMTPHost" => env('aws_smtp_host'), "SMTPUser" => env('aws_smtp_key'), "SMTPPass" => env('aws_smtp_secret')]);
-        $email->setFrom(env('aws_smtp_email_resposta'));
-        $email->setTo($destinatario);
-        $email->setSubject($assunto);
-        $email->setMessage($mensagem);
+		$email = Services::email();
+		$email->initialize(["SMTPHost" => env('aws_smtp_host'), "SMTPUser" => env('aws_smtp_key'), "SMTPPass" => env('aws_smtp_secret')]);
+		$email->setFrom(env('aws_smtp_email_resposta'));
+		$email->setTo($destinatario);
+		$email->setSubject($assunto);
+		$email->setMessage($mensagem);
 
-        if (!empty($anexos)) {
-            foreach ($anexos as $key => $valueAnexo) {
-                $type = !empty($valueAnexo['type']) ? $valueAnexo['type'] : 'application/pdf';
-                $email->attach($valueAnexo['arquivo'], 'attachment', $valueAnexo['nome'], $type);
-            }
-        }
+		if (!empty($anexos)) {
+			foreach ($anexos as $key => $valueAnexo) {
+				$type = !empty($valueAnexo['type']) ? $valueAnexo['type'] : 'application/pdf';
+				$email->attach($valueAnexo['arquivo'], 'attachment', $valueAnexo['nome'], $type);
+			}
+		}
 
-        return $email->send();
-    }
+		return $email->send();
+	}
 }

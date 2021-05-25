@@ -9,7 +9,5 @@
         }
     }
 
-    $(document).ready(function() {
-        templateFunctions.init()
-    });
+    templateFunctions.init()
 </script>

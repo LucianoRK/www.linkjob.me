@@ -9,7 +9,5 @@
         }
     }
 
-    $(document).ready(function() {
-        homeFunctions.init()
-    });
+    homeFunctions.init()
 </script>
