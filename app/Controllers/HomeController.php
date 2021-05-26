@@ -18,7 +18,6 @@ class HomeController extends BaseController
 	 */
 	public function index()
 	{
-		
-		return $this->template('home', 'index', [], false);	
+		return $this->template('home', 'index', []);	
 	}
 }

@@ -14,12 +14,11 @@ date_default_timezone_set('America/Sao_Paulo');
     <link rel="icon" href="<?= base_url('public/favicon.ico'); ?>" type="image/x-icon" />
     <title>LinkJob</title>
 
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="public/js/bootstrap-3.4.1-dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-    <!-- Exemplo Exportacao -->
-    <script src=""></script>
-    <script src="" type="text/javascript"></script>
+    <link href="public/js/template/css/plugins.css" media="all" rel="stylesheet" type="text/css">
+    <link href="public/js/template/css/style.css" media="all" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600%7CMontserrat:400,500,600,700,800" media="all" rel="stylesheet" type="text/css">
+    <script src="public/js/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
  
     <script>
         // Globais JS
