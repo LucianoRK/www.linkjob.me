@@ -1,5 +1,6 @@
 <form action="<?= base_url('registro') ?>" method="POST">
     <input type="text" name="email" autocomplete="false" placeholder="Digite seu Email" required autofocus>
+    <input type="text" name="nome" autocomplete="false" placeholder="Digite seu Nome" required autofocus>
     <select name="usuario_tipo">
         <?php if (!empty($tipos)) : ?>
             <?php foreach ($tipos as $key => $tipo) : ?>
@@ -8,7 +9,7 @@
         <?php endif ?>
     </select>
     <input type="password" name="senha" autocomplete="false" placeholder="Digite sua senha" required>
-    <input type="password" name="senh2" autocomplete="false" placeholder="Repita sua senha" required>
+    <input type="password" name="senha2" autocomplete="false" placeholder="Repita sua senha" required>
     <button type="submit">Cadastrar</button>
 </form>
 <br>
