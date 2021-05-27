@@ -23,7 +23,7 @@ class LoginController extends BaseController
 	public function index()
 	{
 		if ($this->session->get('logado')) {
-			return redirect()->to('/logar');
+			return redirect()->to('/home');
 		} else {
 			return $this->template('login', 'index', []);
 		}
@@ -100,7 +100,7 @@ class LoginController extends BaseController
         if ($erros) {
             $this->setFlashdata('error', json_encode($erros));
             
-            return redirect()->to(base_url());
+            return redirect()->to('/logar');
         }
 
 		$colunas = [
@@ -116,14 +116,14 @@ class LoginController extends BaseController
 		if (empty($dadosUsuario)) {
 			$this->setFlashdata('error', 'Usuário ou senha incorreto !');
 
-			return redirect()->to(base_url());
+			return redirect()->to('/logar');
 		}
 
 		//Validação da senha
 		if (!password_verify($request['senha'],  $dadosUsuario['senha'])) {
 			$this->setFlashdata('error', 'Usuário ou senha incorreto !');
 
-			return redirect()->to(base_url());
+			return redirect()->to('/logar');
 		}
 
 		if (password_needs_rehash($dadosUsuario['senha'], PASSWORD_BCRYPT)) {
@@ -145,7 +145,7 @@ class LoginController extends BaseController
 		//Grava na sessão as informações
 		$this->session->set($sessionData);
 
-		return redirect()->to('home');
+		return redirect()->to('/home');
 	}
 
 	/**
