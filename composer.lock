@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "07ec474bd54c5be9955d196702c1ee00",
+=======
+    "content-hash": "a807ea51da7c58aa67522769644dde3e",
+>>>>>>> 0bc9064da7a374747bbdc280f051a4b9cafa9422
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2300,6 +2304,7 @@
             "time": "2021-02-19T12:13:01+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "symfony/service-contracts",
             "version": "v2.4.0",
             "source": {
@@ -2311,6 +2316,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/service-contracts/zipball/f040a30e04b57fbcc9c6cbcf4dbaa96bd318b9bb",
                 "reference": "f040a30e04b57fbcc9c6cbcf4dbaa96bd318b9bb",
+=======
+            "name": "psr/log",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
+>>>>>>> 0bc9064da7a374747bbdc280f051a4b9cafa9422
                 "shasum": ""
             },
             "require": {
@@ -2341,12 +2359,17 @@
             ],
             "authors": [
                 {
+<<<<<<< HEAD
                     "name": "Nicolas Grekas",
                     "email": "p@tchwork.com"
                 },
                 {
                     "name": "Symfony Community",
                     "homepage": "https://symfony.com/contributors"
+=======
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+>>>>>>> 0bc9064da7a374747bbdc280f051a4b9cafa9422
                 }
             ],
             "description": "Generic abstractions related to writing services",
@@ -2360,6 +2383,7 @@
                 "standards"
             ],
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/service-contracts/tree/v2.4.0"
             },
             "funding": [
@@ -2377,6 +2401,11 @@
                 }
             ],
             "time": "2021-04-01T10:43:52+00:00"
+=======
+                "source": "https://github.com/php-fig/log/tree/1.1.4"
+            },
+            "time": "2021-05-03T11:20:27+00:00"
+>>>>>>> 0bc9064da7a374747bbdc280f051a4b9cafa9422
         }
     ],
     "packages-dev": [
@@ -4594,7 +4623,11 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
+<<<<<<< HEAD
         "php": "^8.0"
+=======
+        "php": "^7.3"
+>>>>>>> 0bc9064da7a374747bbdc280f051a4b9cafa9422
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

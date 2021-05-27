@@ -1,9 +1,9 @@
 <div class="row">
-    <div class="col-sm text-left d-none d-md-block">
+    <div class="col-md text-left d-none d-md-block">
         <span class="h4 align-center">Usuários</span>
     </div>
     <?php if ($base->permissao('UsuarioController/create')) : ?>
-        <div class="col-sm text-md-center text-lg-right">
+        <div class="col-md text-md-center text-lg-right">
             <a href="<?= base_url('usuario/create') ?>">
                 <button class="btn btn-danger btn-md">Novo Usuário</button>
             </a>
