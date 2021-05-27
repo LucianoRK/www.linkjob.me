@@ -14,10 +14,6 @@
             <div class="navigation-menu-img overlay overlay-dark-40">
                 <div class="menu-img active" data-bg="public/js/template/img/menu/menu-1.jpg" data-ref="menu-1"></div>
                 <div class="menu-img" data-bg="public/js/template/img/menu/menu-2.jpg" data-ref="menu-2"></div>
-                <div class="menu-img" data-bg="public/js/template/img/menu/menu-3.jpg" data-ref="menu-3"></div>
-                <div class="menu-img" data-bg="public/js/template/img/menu/menu-4.jpg" data-ref="menu-4"></div>
-                <div class="menu-img" data-bg="public/js/template/img/menu/menu-5.jpg" data-ref="menu-5"></div>
-                <div class="menu-img" data-bg="public/js/template/img/menu/menu-6.jpg" data-ref="menu-6"></div>
             </div>
         </div>
     </div>
@@ -33,16 +29,19 @@
                             <a class="menu-state navscroll" data-id="page-news" data-ref="menu-2" href="logar">Logar</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-3">Trabalhe</a>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2">Trabalhe</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-services" data-ref="menu-4">Contratar</a>
+                            <a class="menu-state navscroll" data-id="page-services" data-ref="menu-2">Contratar</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-contact" data-ref="menu-5">Contato</a>
+                            <a class="menu-state navscroll" data-id="page-contact" data-ref="menu-2">Contato</a>
+                        </li>
+                        <li>
+                            <a class="menu-state navscroll" data-id="page-about" data-ref="menu-2">Sobre</a>
                         </li>
                         <li class="last">
-                            <a class="menu-state navscroll" data-id="page-about" data-ref="menu-6">Sobre</a>
+                            <a class="menu-state navscroll" data-id="page-about" data-ref="menu-2" href="logout">Sair</a>
                         </li>
                     </ul>
                 </div>

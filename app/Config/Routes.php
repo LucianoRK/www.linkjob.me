@@ -33,8 +33,9 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 // Rotas Publicas
-
-$routes->get('/', 'LoginController::index');
+$routes->get('/', 'HomeController::index');
+$routes->get('/home', 'HomeController::index');
+$routes->get('/logar', 'LoginController::index');
 $routes->get('/logout', 'LoginController::logout');
 
 /**
