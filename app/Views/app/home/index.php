@@ -26,7 +26,7 @@
     <div class="center-container">
         <div class="center-block">
             <h2 class="hero-heading fadeIn-element">
-                Creative <span>Ex</span>perience.
+                Link<span>Job</span>
             </h2>
         </div>
     </div>
@@ -50,8 +50,234 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h2 class="section-heading-all">
-                            Serviços
+                            <span>01. </span>Modelo
                         </h2>
+                        <div class="inner-divider"></div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 nopadding">
+                                <div class="owl-carousel" id="team-carousel">
+                                    <div class="team-item">
+                                        <div class="team-item-inner">
+                                            <div class="team-box">
+                                                <div class="team-photo image-works">
+                                                    <div class="hover-effect hover-effect-light"></div>
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-01.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>
+                                                    <span class="awesome">Ex Nihilo</span> &middot; Creative Director
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="team-item">
+                                        <div class="team-item-inner">
+                                            <div class="team-box">
+                                                <div class="team-photo image-works">
+                                                    <div class="hover-effect hover-effect-light"></div>
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-02.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>
+                                                    <span class="awesome">Ex Nihilo</span> &middot; Art Director
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="team-item">
+                                        <div class="team-item-inner">
+                                            <div class="team-box">
+                                                <div class="team-photo image-works">
+                                                    <div class="hover-effect hover-effect-light"></div>
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-03.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>
+                                                    <span class="awesome">Ex Nihilo</span> &middot; Lead Designer
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                    <div class="inner-divider"></div>
+                        <h2 class="section-heading-all">
+                            <span>02. </span>Fotógrafo
+                        </h2>
+                        <div class="inner-divider"></div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 nopadding">
+                                <div class="owl-carousel" id="team-carousel">
+                                    <div class="team-item">
+                                        <div class="team-item-inner">
+                                            <div class="team-box">
+                                                <div class="team-photo image-works">
+                                                    <div class="hover-effect hover-effect-light"></div>
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-01.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>
+                                                    <span class="awesome">Ex Nihilo</span> &middot; Creative Director
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="team-item">
+                                        <div class="team-item-inner">
+                                            <div class="team-box">
+                                                <div class="team-photo image-works">
+                                                    <div class="hover-effect hover-effect-light"></div>
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-02.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>
+                                                    <span class="awesome">Ex Nihilo</span> &middot; Art Director
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="team-item">
+                                        <div class="team-item-inner">
+                                            <div class="team-box">
+                                                <div class="team-photo image-works">
+                                                    <div class="hover-effect hover-effect-light"></div>
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-03.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>
+                                                    <span class="awesome">Ex Nihilo</span> &middot; Lead Designer
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="inner-divider"></div>
+                        <h2 class="section-heading-all">
+                            <span>03. </span>Maquiador
+                        </h2>
+                        <div class="inner-divider"></div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 nopadding">
+                                <div class="owl-carousel" id="team-carousel">
+                                    <div class="team-item">
+                                        <div class="team-item-inner">
+                                            <div class="team-box">
+                                                <div class="team-photo image-works">
+                                                    <div class="hover-effect hover-effect-light"></div>
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-01.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>
+                                                    <span class="awesome">Ex Nihilo</span> &middot; Creative Director
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="team-item">
+                                        <div class="team-item-inner">
+                                            <div class="team-box">
+                                                <div class="team-photo image-works">
+                                                    <div class="hover-effect hover-effect-light"></div>
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-02.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>
+                                                    <span class="awesome">Ex Nihilo</span> &middot; Art Director
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="team-item">
+                                        <div class="team-item-inner">
+                                            <div class="team-box">
+                                                <div class="team-photo image-works">
+                                                    <div class="hover-effect hover-effect-light"></div>
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-03.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>
+                                                    <span class="awesome">Ex Nihilo</span> &middot; Lead Designer
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="inner-divider"></div>
+                        <h2 class="section-heading-all">
+                            <span>04. </span>Cabeleireiro
+                        </h2>
+                        <div class="inner-divider"></div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 nopadding">
+                                <div class="owl-carousel" id="team-carousel">
+                                    <div class="team-item">
+                                        <div class="team-item-inner">
+                                            <div class="team-box">
+                                                <div class="team-photo image-works">
+                                                    <div class="hover-effect hover-effect-light"></div>
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-01.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>
+                                                    <span class="awesome">Ex Nihilo</span> &middot; Creative Director
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="team-item">
+                                        <div class="team-item-inner">
+                                            <div class="team-box">
+                                                <div class="team-photo image-works">
+                                                    <div class="hover-effect hover-effect-light"></div>
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-02.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>
+                                                    <span class="awesome">Ex Nihilo</span> &middot; Art Director
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="team-item">
+                                        <div class="team-item-inner">
+                                            <div class="team-box">
+                                                <div class="team-photo image-works">
+                                                    <div class="hover-effect hover-effect-light"></div>
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-03.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="team-info">
+                                                <h3>
+                                                    <span class="awesome">Ex Nihilo</span> &middot; Lead Designer
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="inner-divider"></div>
