@@ -10,15 +10,81 @@
                             <span></span>Trabalhe Conosco
                         </h2>
                         <div class="inner-divider"></div>
-
-                        <div class="col-md-3"></div>
                         <form action="" method="POST">
                             <div class="form-group row">
-                                <label for="nome" class="col-md-1 col-form-label"><span class="text-danger">*</span>Nome:</label>
-                                <div class="col-md-5">
+                                <div class="col-md-2"></div>
+                                <label for="nome" class="col-md-2 col-form-label"><span class="text-danger">*</span>Nome:</label>
+                                <div class="col-md-6">
                                     <input name="nome" value="" type="text" id="nome" class="form-control" placeholder="Nome completo">
                                 </div>
                             </div> 
+                            <div class="form-group row">
+                                <div class="col-md-2"></div>
+                                <label for="nome" class="col-md-2 col-form-label"><span class="text-danger">*</span>Data de Nascimento:</label>
+                                <div class="col-md-6">
+                                    <input name="nome" value="" type="text" id="nome" class="form-control">
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <div class="col-md-2"></div>
+                                <label for="nome" class="col-md-2 col-form-label"><span class="text-danger">*</span>RG:</label>
+                                <div class="col-md-6">
+                                    <input name="nome" value="" type="text" id="nome" class="form-control">
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <div class="col-md-2"></div>
+                                <label for="genero" class="col-md-2 col-form-label"><span class="text-danger">*</span>Gênero:</label>
+                                <div class="col-md-6">
+                                    <select name="genero" id="genero" value="" class="form-control">
+                                        <option selected value=""> Selecione uma opção </option>
+                                        <option value="Masculino"> Masculino </option>
+                                        <option value="Femenino"> Femenino </option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <div class="col-md-2"></div>
+                                <label for="nome" class="col-md-2 col-form-label"><span class="text-danger">*</span>Endereço:</label>
+                                <div class="col-md-6">
+                                    <input name="nome" value="" type="text" id="nome" class="form-control">
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <div class="col-md-2"></div>
+                                <label for="nome" class="col-md-2 col-form-label"><span class="text-danger">*</span>CEP:</label>
+                                <div class="col-md-6">
+                                    <input name="nome" value="" type="text" id="nome" class="form-control">
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <div class="col-md-2"></div>
+                                <label for="genero" class="col-md-2 col-form-label"><span class="text-danger">*</span>Estado:</label>
+                                <div class="col-md-6">
+                                    <select name="genero" id="genero" value="" class="form-control">
+                                        <option selected value=""> Selecione uma opção </option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <div class="col-md-2"></div>
+                                <label for="genero" class="col-md-2 col-form-label"><span class="text-danger">*</span>Cidade:</label>
+                                <div class="col-md-6">
+                                    <select name="genero" id="genero" value="" class="form-control">
+                                        <option selected value=""> Selecione uma opção </option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <div class="col-md-2"></div>
+                                <label for="nome" class="col-md-2 col-form-label"><span class="text-danger">*</span>Celular:</label>
+                                <div class="col-md-6">
+                                    <input name="nome" value="" type="text" id="nome" class="form-control">
+                                </div>
+                            </div> 
+                            
+                           
+                            
                         </form>
                     </div>
                 </div>
