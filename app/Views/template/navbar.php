@@ -1,5 +1,5 @@
 <body>
-    <a class="logo logo-dark top-position">
+    <a class="logo logo-light top-position">
         <div class="logo-img"></div>
     </a>
     <div class="navigation-fire navigation-icon-wrapper top-position">

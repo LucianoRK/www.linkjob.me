@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-sm text-left">
+    <div class="col-md text-left">
         <span class="page-title h4">Usuários</span>
     </div>
 </div>
