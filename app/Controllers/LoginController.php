@@ -24,7 +24,7 @@ class LoginController extends BaseController
 		if ($this->session->get('logado')) {
 			return redirect()->to('/home');
 		} else {
-			return $this->template('login', 'index', [], false);
+			return $this->template('login', 'index', []);
 		}
 	}
 

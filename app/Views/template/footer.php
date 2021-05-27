@@ -31,6 +31,7 @@
 <script src="public/js/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
 <script src="public/js/template/js/plugins.js"></script>
 <script src="public/js/template/js/nihilex.js"></script>
+<script src="public/js/sweetalert2.all.min.js"></script>
 </body>
 
 </html>

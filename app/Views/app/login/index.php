@@ -10,9 +10,12 @@
             </div>
             <div class="form-group">
                 <input name="senha" required type="password" class="form-control" id="senha" placeholder="Senha">
+                <div class="text-right">
+                    <a href="recuperarSenha" target="blank"> <span style="font-size: 13px">EsquecI minha senha</span></a>
+                </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-block btn-danger">Logar</button>
+                <button type="submit" class="btn btn-block btn-danger" style="background-color: #A94442">Logar</button>
             </div>
         </form>
     </div>

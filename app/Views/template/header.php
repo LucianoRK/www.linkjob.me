@@ -18,8 +18,9 @@ date_default_timezone_set('America/Sao_Paulo');
     <link href="public/js/template/css/plugins.css" media="all" rel="stylesheet" type="text/css">
     <link href="public/js/template/css/style.css" media="all" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600%7CMontserrat:400,500,600,700,800" media="all" rel="stylesheet" type="text/css">
-    <script src="public/js/bootstrap-3.4.1-dist/js/jquery-1.12.4.min.js"></script>
     <link href="public/js/fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet">
+
+    <script src="public/js/jquery-1.12.4.min.js"></script>
     <script>
         // Globais JS
         const BASEURL = "<?= base_url(); ?>"; // URL do Sistema

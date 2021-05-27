@@ -23,22 +23,16 @@
                 <div class="center-block-menu">
                     <ul class="menu brackets">
                         <li>
-                            <a class="menu-state navscroll active" data-id="page-home" data-ref="menu-1">Home</a>
+                            <a class="menu-state navscroll active" data-id="page-home" data-ref="menu-1" href="home">Home</a>
                         </li>
                         <li>
                             <a class="menu-state navscroll" data-id="page-news" data-ref="menu-2" href="logar">Logar</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2">Trabalhe</a>
+                            <a class="menu-state navscroll" data-id="page-services" data-ref="menu-2" href="contratar">Contratar</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-services" data-ref="menu-2">Contratar</a>
-                        </li>
-                        <li>
-                            <a class="menu-state navscroll" data-id="page-contact" data-ref="menu-2">Contato</a>
-                        </li>
-                        <li>
-                            <a class="menu-state navscroll" data-id="page-about" data-ref="menu-2">Sobre</a>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="trabalhe-conosco">Trabalhe Conosco</a>
                         </li>
                         <li class="last">
                             <a class="menu-state navscroll" data-id="page-about" data-ref="menu-2" href="logout">Sair</a>
