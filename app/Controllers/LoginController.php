@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Libraries\Aws;
 use App\Models\UsuarioModel;
 
 class LoginController extends BaseController
