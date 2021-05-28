@@ -40,6 +40,8 @@ $routes->get('/logout', 'LoginController::logout');
 $routes->get('/trabalhe-conosco', 'TrabalheConoscoController::index');
 $routes->get('/contratar', 'LoginController::logout');
 
+$routes->post('/combo-cidades', 'CidadeController::index');
+
 /**
  * --------------------------------------------------------------------
  * Login

@@ -33,6 +33,7 @@
 <script src="public/js/template/js/plugins.js"></script>
 <script src="public/js/template/js/nihilex.js"></script>
 <script src="public/js/sweetalert2.all.min.js"></script>
+<script src="public/js/select2/js/select2.full.min.js"></script>
 </body>
 
 </html>

@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\EstadoModel;
+use App\Models\UsuarioTipo;
+
 class TrabalheConoscoController extends BaseController
 {
 	public function __construct()
@@ -18,6 +21,17 @@ class TrabalheConoscoController extends BaseController
 	 */
 	public function index()
 	{
-		return $this->template('trabalheConosco', 'index', [], true);	
+		$estados	      = new EstadoModel();
+		$dados['estados'] = $estados->get();
+
+		$colunas = [
+			'tipo_id',
+			'nome'
+		];
+
+		$categorias          = new UsuarioTipo();
+		$dados['categorias'] = $categorias->get();
+
+		return $this->template('trabalheConosco', 'index', $dados, true);	
 	}
 }
