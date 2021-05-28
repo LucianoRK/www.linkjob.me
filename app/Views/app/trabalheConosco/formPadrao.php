@@ -198,8 +198,9 @@
                 <input type="radio" name="tipo_conta" id="conta_poupanca" value="conta_poupanca">
                 Conta Poupança
             </label>
+            <br>
+            <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
-        <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
 <div class="form-group row">
@@ -290,6 +291,9 @@
         $('#salvar').on('click', function () {
             let erro = false;
 
+            $('*').removeClass('has-error');
+            $('.msg').html('');
+
             if (!$('#nome').val()) {
                 erro = true;
 
@@ -342,15 +346,89 @@
             if (!$('#estado').val()) {
                 erro = true;
 
-                $('#estado').parent().addClass('has-error')
                 $('#estado').parent().find('.msg').html('Campo obrigatório.');
             }
 
             if (!$('#cidade').val()) {
                 erro = true;
 
-                $('#cidade').parent().addClass('has-error')
                 $('#cidade').parent().find('.msg').html('Campo obrigatório.');
+            }
+
+            if (!$('#cep').val()) {
+                erro = true;
+
+                $('#cep').parent().addClass('has-error')
+                $('#cep').parent().find('.msg').html('Campo obrigatório.');
+            }
+
+            if (!$('#celular').val()) {
+                erro = true;
+
+                $('#celular').parent().addClass('has-error')
+                $('#celular').parent().find('.msg').html('Campo obrigatório.');
+            }
+
+            if (!$('#instagram').val()) {
+                erro = true;
+
+                $('#instagram').parent().addClass('has-error')
+                $('#instagram').parent().find('.msg').html('Campo obrigatório.');
+            }
+
+            if (!$('#banco').val()) {
+                erro = true;
+
+                $('#banco').parent().addClass('has-error')
+                $('#banco').parent().find('.msg').html('Campo obrigatório.');
+            }
+
+            if (!$('#agencia').val()) {
+                erro = true;
+
+                $('#agencia').parent().addClass('has-error')
+                $('#agencia').parent().find('.msg').html('Campo obrigatório.');
+            }
+
+            if (!$('#conta').val()) {
+                erro = true;
+
+                $('#conta').parent().addClass('has-error')
+                $('#conta').parent().find('.msg').html('Campo obrigatório.');
+            }
+
+            if (!$('#conta_corrente').prop('checked') && !$('#conta_poupanca').prop('checked')) {
+                erro = true;
+
+                $('#conta_corrente').parent().parent().find('.msg').html('Campo obrigatório.');
+            }
+
+            if (!$('#email').val()) {
+                erro = true;
+
+                $('#email').parent().addClass('has-error')
+                $('#email').parent().find('.msg').html('Campo obrigatório.');
+            }
+
+            if (!$('#senha').val()) {
+                erro = true;
+
+                $('#senha').parent().addClass('has-error')
+                $('#senha').parent().find('.msg').html('Campo obrigatório.');
+            }
+
+            if (!$('#repita_senha').val()) {
+                erro = true;
+
+                $('#repita_senha').parent().addClass('has-error')
+                $('#repita_senha').parent().find('.msg').html('Campo obrigatório.');
+            }
+
+            if (!$('#categoria').val()) {
+                erro = true;
+
+                $('#categoria').parent().addClass('has-error')
+                $('#categoria').parent().find('.msg').html('Campo obrigatório.');
             }
 
             if (!erro) {
