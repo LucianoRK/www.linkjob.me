@@ -29,8 +29,8 @@ class TrabalheConoscoController extends BaseController
 			'nome'
 		];
 
-		$dados['estados'] = $estadoModel->get([], $colunas);
-		$dados['categorias'] = $categorias->get();
+		$dados['estados'] = $estadoModel->get();
+		$dados['categorias'] = $categorias->get('tipo_id NOT IN (1, 11)', $colunas);
 
 		return $this->template('trabalheConosco', 'index', $dados);
 	}

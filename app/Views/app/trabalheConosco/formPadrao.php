@@ -320,6 +320,11 @@
 
                 $('#cpf').parent().addClass('has-error')
                 $('#cpf').parent().find('.msg').html('Campo obrigatório.');
+            } else if ($('#cpf').val().length != 14) {
+                erro = true;
+
+                $('#cpf').parent().addClass('has-error')
+                $('#cpf').parent().find('.msg').html('Preencha o campo corretamente');
             }
 
             if (!$('#rg').val()) {
