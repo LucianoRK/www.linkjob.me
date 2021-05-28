@@ -6,7 +6,7 @@ use App\Models\BaseModel;
 
 class CidadeModel extends BaseModel
 {
-    protected $table = 'cidades';
+    protected $table = 'cidade';
     protected $primaryKey = 'cidade_id';
     //protected $uuidColumn = 'usuario_uuid';
 

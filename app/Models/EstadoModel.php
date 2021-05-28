@@ -6,7 +6,7 @@ use App\Models\BaseModel;
 
 class EstadoModel extends BaseModel
 {
-    protected $table = 'estados';
+    protected $table = 'estado';
     protected $primaryKey = 'estado_id';
     //protected $uuidColumn = 'usuario_uuid';
 

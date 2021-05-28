@@ -3,7 +3,7 @@
     <div class="center-container">
         <div class="center-block">
             <div class="container sections">
-            <div class="inner-divider"></div>
+                <div class="inner-divider"></div>
                 <div class="inner-divider"></div>
                 <div class="row">
                     <div class="col-md-12">
@@ -15,9 +15,8 @@
                             <?php echo view('app/trabalheConosco/formPadrao'); ?>
 
                             <div class="form-group row text-right">
-                                    <div class="col-sm-10">
-                                        <button type="button" id="salvar" class="btn btn-primary">Salvar</button>
-                                    </div>
+                                <div class="col-sm-10">
+                                    <button type="button" id="salvar" class="btn btn-primary">Salvar</button>
                                 </div>
                             </div>
                         </form>

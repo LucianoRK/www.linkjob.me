@@ -52,9 +52,15 @@
 </div>
 <div class="form-group row">
     <div class="col-md-2"></div>
-    <label for="cnpj_mei" class="col-md-2 col-form-label">CNPJ/MEI:</label>
+    <label for="cnpj_mei" class="col-md-2 col-form-label"><span class="text-danger">*</span>CNPJ/MEI:</label>
     <div class="col-md-6">
-        <input name="cnpj_mei" value="" type="text" id="cnpj_mei" class="form-control">
+        <select name="cnpj_mei" id="cnpj_mei" value="" class="form-control">
+            <option selected value=""> Selecione uma opção </option>
+            <option value="nao_tenho"> Não tenho </option>
+            <option value="tenho_mei"> Tenho CNPJ como MEI </option>
+            <option value="tenho_cnpj_simples"> Tenho CNPJ pelo simples </option>
+        </select>
+        <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
 <hr>
@@ -239,22 +245,6 @@
     <label for="repita_senha" class="col-md-2 col-form-label"><span class="text-danger">*</span>Repita Senha:</label>
     <div class="col-md-6">
         <input name="repita_senha" value="" type="password" id="repita_senha" class="form-control">
-        <span class="text-danger msg" style="font-size: 13px;"></span>
-    </div>
-</div>
-<hr>
-<div class="form-group row">
-    <div class="col-md-2"></div>
-    <label for="categoria" class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label>
-    <div class="col-md-6">
-        <select name="categoria" id="categoria" value="" class="form-control selectSearching">
-            <option selected value=""> Selecione uma opção </option>
-            <?php if ($categorias) { ?>
-                <?php foreach ($categorias as $categoria) { ?>
-                    <option value="<?php echo $categoria['tipo_id']; ?>"> <?php echo $categoria['nome']; ?> </option>
-                <?php } ?>
-            <?php } ?>
-        </select>
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
