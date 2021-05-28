@@ -145,6 +145,8 @@ class LoginController extends BaseController
 		//Grava na sessão as informações
 		$this->session->set($sessionData);
 
+		$this->setFlashdata('success', 'Logado com sucesso!');
+
 		return redirect()->to('/home');
 	}
 

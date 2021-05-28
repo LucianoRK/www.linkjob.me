@@ -14,6 +14,7 @@ date_default_timezone_set('America/Sao_Paulo');
     <link rel="icon" href="<?= base_url('public/js/template/img/logo-light.png'); ?>" type="image/x-icon" />
     <title>LinkJob</title>
 
+    <link rel="stylesheet" href="public/js/toastr/toastr.min.css">
     <link rel="stylesheet" href="public/js/bootstrap-3.4.1-dist/css/bootstrap.min.css">
     <link href="public/js/template/css/plugins.css" media="all" rel="stylesheet" type="text/css">
     <link href="public/js/template/css/style.css" media="all" rel="stylesheet" type="text/css">

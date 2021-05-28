@@ -28,6 +28,7 @@
 </a>
 <div class="lightbox"></div>
 
+<script src="public/js/toastr/toastr.min.js"></script>
 <script src="public/js/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
 <script src="public/js/template/js/plugins.js"></script>
 <script src="public/js/template/js/nihilex.js"></script>
