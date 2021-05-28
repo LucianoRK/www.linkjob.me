@@ -11,9 +11,26 @@
 
                 <?php if ( session()->getFlashdata('responseFlash') ) { ?>
                     <?php if ('error' === session()->getFlashdata('responseFlash')['tipo']) { ?>
-                        toastr.error('<?php echo session()->getFlashdata('responseFlash')['mensagem']; ?>')
+                        let mensagem = '<?php echo session()->getFlashdata('responseFlash')['mensagem'] ?? null; ?>';
+
+                        if (mensagem) {
+                            try {
+                                let objeto = JSON.parse(mensagem);
+
+                                Object.keys(objeto).forEach(function(item) {
+                                    toastr.error(objeto[item]);
+                                });
+                            } catch (e) {
+                                toastr.error(mensagem);
+                            }
+                        }
+                       
                     <?php } else if ('success' === session()->getFlashdata('responseFlash')['tipo']) { ?>
-                        toastr.success('<?php echo session()->getFlashdata('responseFlash')['mensagem']; ?>')
+                        let mensagem = '<?php echo session()->getFlashdata('responseFlash')['mensagem'] ?? null; ?>';
+
+                        if (mensagem) {
+                            toastr.success(mensagem)
+                        }
                     <?php } ?>
                 <?php } ?>
             });

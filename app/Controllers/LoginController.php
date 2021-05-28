@@ -114,14 +114,14 @@ class LoginController extends BaseController
 
 		//Validação das rules
 		if (empty($dadosUsuario)) {
-			$this->setFlashdata('error', 'Usuário ou senha incorreto !');
+			$this->setFlashdata('error', 'Usuário ou senha incorreto!');
 
 			return redirect()->to('/logar');
 		}
 
 		//Validação da senha
 		if (!password_verify($request['senha'],  $dadosUsuario['senha'])) {
-			$this->setFlashdata('error', 'Usuário ou senha incorreto !');
+			$this->setFlashdata('error', 'Usuário ou senha incorreto!');
 
 			return redirect()->to('/logar');
 		}
@@ -145,8 +145,8 @@ class LoginController extends BaseController
 		//Grava na sessão as informações
 		$this->session->set($sessionData);
 
-		$this->setFlashdata('success', 'Logado com sucesso!');
-
+		$this->setFlashdata('success', 'Usuário logado com sucesso!');
+		
 		return redirect()->to('/home');
 	}
 

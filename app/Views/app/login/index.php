@@ -18,7 +18,9 @@
                                     <div class="form-group">
                                         <input name="senha" required type="password" class="form-control" id="senha" placeholder="Senha">
                                         <div class="text-right">
-                                            <a href="recuperarSenha" target="blank"> <span style="font-size: 13px">EsquecI minha senha</span></a>
+                                            <a href="recuperarSenha" target="blank">
+                                                <span style="font-size: 13px; color: grey;">Esqueci minha senha</span>
+                                                </a>
                                         </div>
                                     </div>
                                     <div class="form-group">
