@@ -21,17 +21,17 @@ class TrabalheConoscoController extends BaseController
 	 */
 	public function index()
 	{
-		$estados	      = new EstadoModel();
-		$dados['estados'] = $estados->get();
+		$estadoModel = new EstadoModel();
+		$categorias = new UsuarioTipo();
 
 		$colunas = [
 			'tipo_id',
 			'nome'
 		];
 
-		$categorias          = new UsuarioTipo();
+		$dados['estados'] = $estadoModel->get([], $colunas);
 		$dados['categorias'] = $categorias->get();
 
-		return $this->template('trabalheConosco', 'index', $dados, true);	
+		return $this->template('trabalheConosco', 'index', $dados);
 	}
 }

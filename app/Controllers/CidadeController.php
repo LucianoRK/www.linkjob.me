@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Models\CidadeModel;
-use App\Models\EstadoModel;
 
 class CidadeController extends BaseController
 {
@@ -21,8 +20,8 @@ class CidadeController extends BaseController
 	 */
 	public function index()
 	{
-        $request        = $this->request->getVar();
-		$cidades_banco  = new CidadeModel();
+        $request      = $this->request->getVar();
+		$cidadeModel  = new CidadeModel;
 
         $colunas = [
 			'cidade_id',
@@ -30,12 +29,12 @@ class CidadeController extends BaseController
 			'nome'
 		];
 
-		$cidades = $cidades_banco->get(['estado_id' => $request['estado_id']], $colunas, false);
+		$cidades = $cidadeModel->get(['estado_id' => $request['estado_id']], $colunas, false);
 
-       if ($cidades) {
-            return json_encode($cidades);
-       } else {
-            return false;
-       }
+       if (empty($cidades)) {
+           return false;
+       } 
+
+	   return $this->response->setJson($cidades);
 	}
 }

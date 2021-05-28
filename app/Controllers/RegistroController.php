@@ -108,11 +108,6 @@ class RegistroController extends BaseController
             }
         }
 
-
-
-
-        return false;
-
         if ($usuarioModel->save($dadosUsuario)) {
             $this->setFlashdata('success', 'Cadastro realizado com sucesso');
 
