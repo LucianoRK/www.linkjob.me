@@ -55,7 +55,7 @@ class UsuarioModel extends BaseModel
         'conta',
         'tipo_conta',
         'pix',
-        'picPay',
+        'pic_pay',
         'created_at',
         'updated_at',
         'deleted_at'

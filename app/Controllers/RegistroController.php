@@ -40,7 +40,6 @@ class RegistroController extends BaseController
     public function store()
     {
         $usuarioModel = new UsuarioModel;
-        $awsLib = new Aws(['s3']);
         $request = $this->request->getVar();
 
         $rules = [
@@ -97,7 +96,7 @@ class RegistroController extends BaseController
             'conta' => $request['conta'],
             'tipo_conta' => $request['tipo_conta'],
             'pix' => $request['pix'],
-            'picPay' => $request['picpay']
+            'pic_pay' => $request['picpay']
         ];
 
         if ($usuarioModel->save($dadosUsuario)) {

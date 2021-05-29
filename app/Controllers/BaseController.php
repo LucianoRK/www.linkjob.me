@@ -59,7 +59,7 @@ class BaseController extends Controller
 	 */
 	public function template(string $pasta, $arquivos, array $dados = [], bool $navBar = true)
 	{
-		$dados['session']       = $this->session;
+		$dados['session']       = $this->session->get('usuario');
 		$dados['responseFlash'] = $this->session->getFlashdata('responseFlash');
 		$dados['base']          = $this;
 		//$menuModel = new MenuModel;
