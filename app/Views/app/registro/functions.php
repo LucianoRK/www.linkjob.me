@@ -76,6 +76,13 @@
                     $('#rg').parent().find('.msg').html('Campo obrigatório.');
                 }
 
+                if (!$('#cnpj_mei').val()) {
+                    erro = true;
+
+                    $('#cnpj_mei').parent().addClass('has-error')
+                    $('#cnpj_mei').parent().find('.msg').html('Campo obrigatório.');
+                }
+
                 if (!$('#escolaridade').val()) {
                     erro = true;
 
