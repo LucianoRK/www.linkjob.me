@@ -90,4 +90,13 @@ class UsuarioModel extends BaseModel
         return $first ? $this->first() : $this->find();
     }
     */
+
+    public function usuarioCidadeEstado($usuario_id)
+    {
+        $this->select('estado_id');
+        $this->join('cidade', 'use_usuario.cidade_id = cidade.cidade_id');
+        $this->where('use_usuario.usuario_id', $usuario_id);
+
+        return $this->first();
+    }
 }
