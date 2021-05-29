@@ -32,7 +32,7 @@
                             <a class="menu-state navscroll" data-id="page-services" data-ref="menu-2" href="contratar">Contratar</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="trabalhe-conosco">Cadastrar</a>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="cadastre-se">Cadastre-se</a>
                         </li>
                         <li class="last">
                             <a class="menu-state navscroll" data-id="page-about" data-ref="menu-2" href="logout">Sair</a>

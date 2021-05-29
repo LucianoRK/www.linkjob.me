@@ -3,9 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\EstadoModel;
-use App\Models\UsuarioTipo;
 
-class TrabalheConoscoController extends BaseController
+class CadastreseController extends BaseController
 {
 	public function __construct()
 	{
@@ -24,6 +23,6 @@ class TrabalheConoscoController extends BaseController
 		$estadoModel      = new EstadoModel();
 		$dados['estados'] = $estadoModel->get();
 
-		return $this->template('trabalheConosco', 'index', $dados);
+		return $this->template('cadastrese', 'index', $dados);
 	}
 }

@@ -37,7 +37,7 @@ $routes->get('/', 'HomeController::index');
 $routes->get('/home', 'HomeController::index');
 $routes->get('/logar', 'LoginController::index');
 $routes->get('/logout', 'LoginController::logout');
-$routes->get('/trabalhe-conosco', 'TrabalheConoscoController::index');
+$routes->get('/cadastre-se', 'CadastreseController::index');
 $routes->get('/contratar', 'LoginController::logout');
 
 $routes->post('/combo-cidades', 'CidadeController::index');
