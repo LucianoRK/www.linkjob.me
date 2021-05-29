@@ -34,7 +34,7 @@ class LoginController extends BaseController
 	 */
 	public function recuperarSenha()
 	{
-		return $this->template('login', 'recuperarSenha', [], false);
+		return $this->template('login', 'recuperarSenha', []);
 	}
 
 	/**
