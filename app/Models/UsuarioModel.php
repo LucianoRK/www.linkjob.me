@@ -29,11 +29,33 @@ class UsuarioModel extends BaseModel
         'usuario_id',
         //'usuario_uuid',
         'tipo_id',
+        'cidade_id',
         'nome',
         'email',
         'senha',
         'avatar',
         'token_recuperar_senha',
+        'nome_artistico',
+        'genero',
+        'data_nascimento',
+        'cpf',
+        'rg',
+        'cnpj',
+        'escolaridade',
+        'area',
+        'instituicao',
+        'idiomas',
+        'endereco',
+        'complemento',
+        'cep',
+        'celular',
+        'instagram',
+        'banco',
+        'agencia',
+        'conta',
+        'tipo_conta',
+        'pix',
+        'picPay',
         'created_at',
         'updated_at',
         'deleted_at'
@@ -68,5 +90,4 @@ class UsuarioModel extends BaseModel
         return $first ? $this->first() : $this->find();
     }
     */
-    
 }
