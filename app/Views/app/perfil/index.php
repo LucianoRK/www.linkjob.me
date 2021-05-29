@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="section-heading-all">
-                            <span></span>Meu Perfil
+                            <span></span>Meus Perfis
                         </h2>
                         <div class="text-right">
                             <button type="button" class="btn btn-danger float-right" id="btn-meus-perfis">Meus Perfis</button>
