@@ -96,7 +96,7 @@ class RegistroController extends BaseController
             'conta' => $request['conta'],
             'tipo_conta' => $request['tipo_conta'],
             'pix' => $request['pix'],
-            'picPay' => $request['picpay']
+            'pic_pay' => $request['picpay']
         ];
 
         if ($usuarioModel->save($dadosUsuario)) {
