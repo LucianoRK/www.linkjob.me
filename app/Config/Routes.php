@@ -56,7 +56,7 @@ $routes->group('login', function ($routes) {
 
 /**
  * --------------------------------------------------------------------
- * Login
+ * Criar cadastro
  * --------------------------------------------------------------------
  */
 $routes->group('registro', function ($routes) {
@@ -73,9 +73,7 @@ $routes->group('', ['filter' => 'sessao'], function ($routes) {
 	 * --------------------------------------------------------------------
 	 */
 
-	$routes->get('/home', 'HomeController::index');
-
-	$routes->get('/meu-perfil', 'PerfilController::index');
+	$routes->get('/meus-perfis', 'PerfilController::index');
 
 	/**
 	 * --------------------------------------------------------------------
