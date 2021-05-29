@@ -77,6 +77,8 @@ $routes->group('', ['filter' => 'sessao'], function ($routes) {
 
 	$routes->get('/home', 'HomeController::index');
 
+	$routes->get('/meu-perfil', 'PerfilController::index');
+
 	/**
 	 * --------------------------------------------------------------------
 	 * Usuário

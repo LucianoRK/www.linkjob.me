@@ -34,6 +34,9 @@
                         <li>
                             <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="cadastre-se">Cadastre-se</a>
                         </li>
+                        <li>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="meu-perfil">Perfil</a>
+                        </li>
                         <li class="last">
                             <a class="menu-state navscroll" data-id="page-about" data-ref="menu-2" href="logout">Sair</a>
                         </li>
