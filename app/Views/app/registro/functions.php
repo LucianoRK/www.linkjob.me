@@ -171,11 +171,13 @@
                     $('#repita_senha').parent().find('.msg').html('Campo obrigatório.');
                 }
 
-                if (!$('#categoria').val()) {
+                if ($('#senha').val() != $('#repita_senha').val()) {
                     erro = true;
 
-                    $('#categoria').parent().addClass('has-error')
-                    $('#categoria').parent().find('.msg').html('Campo obrigatório.');
+                    $('#senha').parent().addClass('has-error')
+                    $('#senha').parent().find('.msg').html('As senhas digitadas não correspondem');
+                    $('#repita_senha').parent().addClass('has-error')
+                    $('#repita_senha').parent().find('.msg').html('As senhas digitadas não correspondem');
                 }
 
                 if (!erro) {
