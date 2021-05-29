@@ -27,7 +27,7 @@
                     <!-- Inicio dados cadastrais -->
                     <form action="" method="POST" id="form-cadastrese" hidden>
                         <div class="inner-divider"></div>
-                        <?php echo view('app/cadastrese/dadosCadastrais'); ?>
+                        <?php echo view('template/usuario/dadosCadastrais'); ?>
 
                         <div class="form-group row text-right">
                             <div class="col-sm-10">
@@ -44,7 +44,7 @@
 
                         <div class="form-group row text-right">
                             <div class="col-sm-10">
-                                <button type="button" id="salvar" class="btn btn-primary">Salvar</button>
+                                <button type="button" id="salvar-novo-perfil" class="btn btn-primary">Salvar</button>
                             </div>
                         </div>
                     </form>

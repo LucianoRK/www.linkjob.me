@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Libraries\Aws;
+use App\Models\EstadoModel;
 use App\Models\UsuarioModel;
 use App\Models\UsuarioTipo;
 use CodeIgniter\HTTP\Response;
@@ -26,10 +27,10 @@ class RegistroController extends BaseController
      */
     public function create()
     {
-        $usuarioTipoModel = new UsuarioTipo;
-        $dados['tipos'] = $usuarioTipoModel->get('tipo_id != 1', ['nome', 'tipo_id']);
+        $estadoModel      = new EstadoModel();
+		$dados['estados'] = $estadoModel->get();
 
-        return $this->template('registro', 'create', $dados, false);
+		return $this->template('registro', 'create', $dados);
     }
 
     /**

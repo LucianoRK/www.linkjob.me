@@ -1,8 +1,23 @@
 <div class="form-group row">
     <div class="col-md-2"></div>
-    <label for="nome" class="col-md-2 col-form-label"><span class="text-danger">*</span>Nome:</label>
+    <label class="col-md-2 col-form-label"><span class="text-danger">*</span>Perfil:</label>
     <div class="col-md-6">
-        <input name="nome" value="" type="text" id="nome" class="form-control" placeholder="Nome completo">
-        <span class="text-danger msg" style="font-size: 13px;"></span>
+        <div class="checkbox">
+            <?php if ($perfis) { ?>
+                <?php foreach ($perfis as $perfil) { ?>
+                    <label>
+                        <input type="checkbox" name="perfil" value="<?php echo $perfil['perfil_id']; ?>">
+                        <?php echo $perfil['nome']; ?>
+                    </label>
+                    <br>
+                <?php } ?>
+            <?php } ?>
+            <span class="text-danger msg" style="font-size: 13px;"></span>
+        </div>
     </div>
+</div>
+
+<!-- Campos ao selecionar Modelo/Promoto/Influencer -->
+<div id="campos-modelos">
+
 </div>

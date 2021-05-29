@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\CidadeModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
@@ -89,8 +90,8 @@ class BaseController extends Controller
 		} else {
 			echo view('app/' . $pasta . '/' . $arquivos, $dados);
 		}
-		echo view('app/' . $pasta . '/functions', $dados);
 		echo view('template/footer', $dados);
+		echo view('app/' . $pasta . '/functions', $dados);
 
 		echo  $dados['responseFlash']['mensagem']; // Fase de teste
 	}
@@ -179,5 +180,25 @@ class BaseController extends Controller
 		}
 
 		return $email->send();
+	}
+
+	public function getCidades() 
+	{
+		$request      = $this->request->getVar();
+		$cidadeModel  = new CidadeModel();
+
+        $colunas = [
+			'cidade_id',
+			'estado_id',
+			'nome'
+		];
+
+		$cidades = $cidadeModel->get(['estado_id' => $request['estado_id']], $colunas, false);
+
+       if (empty($cidades)) {
+           return false;
+       } 
+
+	   return $this->response->setJson($cidades);
 	}
 }

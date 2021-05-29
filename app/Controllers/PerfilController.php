@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\EstadoModel;
+use App\Models\PerfilModel;
 
 class PerfilController extends BaseController
 {
@@ -22,6 +23,9 @@ class PerfilController extends BaseController
 	{
         $estadoModel      = new EstadoModel();
 		$dados['estados'] = $estadoModel->get();
+
+		$perfil      	 = new PerfilModel();
+		$dados['perfis'] = $perfil->get();
 
 		return $this->template('perfil', 'index', $dados, true);
 	}
