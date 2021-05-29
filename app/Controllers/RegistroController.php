@@ -40,7 +40,6 @@ class RegistroController extends BaseController
     public function store()
     {
         $usuarioModel = new UsuarioModel;
-        $awsLib = new Aws(['s3']);
         $request = $this->request->getVar();
 
         $rules = [
