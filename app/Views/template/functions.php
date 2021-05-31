@@ -45,6 +45,7 @@
             $('.celularMask').mask('(00) 0 0000-0000');
             $('.telefoneMask').mask('(00) 0000-0000');
             $('.dataMask').mask('00/00/0000');
+            $('.alturaMask').mask('0,00');
             $('.inputMoneyBr').maskMoney({
                 decimal: ',',
                 thousands: '.'

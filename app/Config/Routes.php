@@ -32,7 +32,11 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-// Rotas Publicas
+/**
+ * --------------------------------------------------------------------
+ * Rotas Publicas
+ * --------------------------------------------------------------------
+ */
 $routes->get('/', 'HomeController::index');
 $routes->get('/home', 'HomeController::index');
 $routes->get('/logar', 'LoginController::index');
@@ -69,11 +73,19 @@ $routes->group('', ['filter' => 'sessao'], function ($routes) {
 
 	/**
 	 * --------------------------------------------------------------------
-	 * Tela inicial
+	 * Perfis
 	 * --------------------------------------------------------------------
 	 */
+	$routes->get('/perfis', 'PerfilController::index');
+	$routes->get('/adicionar-perfil', 'PerfilController::create');
+	
 
-	$routes->get('/meus-perfis', 'PerfilController::index');
+	/**
+	 * --------------------------------------------------------------------
+	 * Editar dados cadastrais
+	 * --------------------------------------------------------------------
+	 */
+	$routes->get('/meus-dados', 'RegistroController::edit');
 
 	/**
 	 * --------------------------------------------------------------------

@@ -109,4 +109,16 @@ class RegistroController extends BaseController
 
         return redirect()->to(base_url('registro'));
     }
+
+    public function edit() 
+    {
+        $estadoModel      = new EstadoModel();
+		$dados['estados'] = $estadoModel->get();
+
+        $registro                    = new UsuarioModel();
+		$dados['registro']           = $registro->get(['usuario_id' => $this->session->get('usuario')['usuario_id']], [], true);
+		$dados['registro']['estado'] = $registro->usuarioCidadeEstado($this->session->get('usuario')['usuario_id']);
+
+        return $this->template('registro', 'edit', $dados, true);
+    }
 }

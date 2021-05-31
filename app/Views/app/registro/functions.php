@@ -2,7 +2,8 @@
     const registroFunctions = {
         init: () => {
             registroFunctions.comboCidades(),
-            registroFunctions.validacao()
+            registroFunctions.validacao(),
+            registroFunctions.setarDadosCadastrais()
         },
         comboCidades: () => {
             $("#estado").on('change', function() {
@@ -164,29 +165,6 @@
                     $('#email').parent().find('.msg').html('Campo obrigatório.');
                 }
 
-                if (!$('#senha').val()) {
-                    erro = true;
-
-                    $('#senha').parent().addClass('has-error')
-                    $('#senha').parent().find('.msg').html('Campo obrigatório.');
-                }
-
-                if (!$('#repita_senha').val()) {
-                    erro = true;
-
-                    $('#repita_senha').parent().addClass('has-error')
-                    $('#repita_senha').parent().find('.msg').html('Campo obrigatório.');
-                }
-
-                if ($('#senha').val() != $('#repita_senha').val()) {
-                    erro = true;
-
-                    $('#senha').parent().addClass('has-error')
-                    $('#senha').parent().find('.msg').html('As senhas digitadas não correspondem');
-                    $('#repita_senha').parent().addClass('has-error')
-                    $('#repita_senha').parent().find('.msg').html('As senhas digitadas não correspondem');
-                }
-
                 if (!erro) {
                     $("#form-cadastrese").submit();
                 } else {
@@ -197,7 +175,43 @@
                     })
                 }
             })
-        }
+        },
+
+        setarDadosCadastrais: () => {
+            $(document).ready(function() {
+                let genero = '<?php echo $registro['genero'] ?? false; ?>';
+                let cnpj_mei = '<?php echo $registro['cnpj'] ?? false; ?>';
+                let escolaridade = '<?php echo $registro['escolaridade'] ?? false; ?>';
+                let estado = '<?php echo $registro['estado']['estado_id'] ?? false; ?>';
+                let cidade = '<?php echo $registro['cidade_id'] ?? false; ?>';
+                let tipo_conta = '<?php echo $registro['tipo_conta'] ?? false; ?>';
+
+                if (genero) {
+                    $('#genero').val(genero).trigger('change');
+                }
+                if (cnpj_mei) {
+                    $('#cnpj_mei').val(cnpj_mei).trigger('change');
+                }
+                if (escolaridade) {
+                    $('#escolaridade').val(escolaridade).trigger('change');
+                }
+                if (estado) {
+                    $('#estado').val(estado).trigger('change');
+                }
+                if (cidade) {
+                    setTimeout(function(){
+                        $('#cidade').val(cidade).trigger('change');
+                    },2000);
+                }
+                if (tipo_conta) {
+                    if (tipo_conta == 'conta_corrente') {
+                        $('#conta_corrente').attr('checked', true);
+                    } else {
+                        $('#conta_poupanca').attr('checked', true);
+                    }
+                }
+            });
+        },
     }
 
     $(document).ready(function() {
