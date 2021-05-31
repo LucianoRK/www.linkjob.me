@@ -32,7 +32,7 @@ class PerfilController extends BaseController
 		$dados['registro'] = $registro->get(['usuario_id' => $this->session->get('usuario')['usuario_id']], [], true);
 
 		$perfil      	 = new PerfilModel();
-		$dados['perfis'] = $perfil->get([], [], false, ['nome' => 'ASC']);
+		$dados['perfis'] = $perfil->get([], [], false, ['perfil_id' => 'ASC']);
 
 		$grupo_modelo_promotor_influencer          = new GrupoFotoModel();
 		$dados['grupo_modelo_promotor_influencer'] = $grupo_modelo_promotor_influencer->get(['perfil_id' => 1], [], false, ['nome' => 'ASC']);

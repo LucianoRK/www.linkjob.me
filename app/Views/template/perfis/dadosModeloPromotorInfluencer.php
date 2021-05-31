@@ -83,15 +83,29 @@
     <div class="col-md-2"></div>
     <label for="cor_pele" class="col-md-2 col-form-label"><span class="text-danger">*</span>Cor da Pele:</label>
     <div class="col-md-6">
-        <input name="cor_pele" value="" type="text" id="cor_pele" class="form-control input-modelo-promotor-influencer">
+        <select name="cor_pele" id="cor_pele" value="" class="form-control">
+            <option selected value=""> Selecione uma opção </option>
+            <option value="amarela"> Amarela </option>
+            <option value="branca"> Branca </option>
+            <option value="indigina"> Indígina </option>
+            <option value="parda"> Parda </option>
+            <option value="preata"> Preta </option>
+        </select>
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
 <div class="form-group row">
     <div class="col-md-2"></div>
-    <label for="cor_cabelo" class="col-md-2 col-form-label"><span class="text-danger">*</span>Cor do Cabelo:</label>
+    <label for="cor_cabelo" class="col-md-2 col-form-label"><span class="text-danger">*</span>Cor de Cabelo:</label>
     <div class="col-md-6">
-        <input name="cor_cabelo" value="" type="text" id="cor_cabelo" class="form-control input-modelo-promotor-influencer">
+        <select name="cor_cabelo" id="cor_cabelo" value="" class="form-control">
+            <option selected value=""> Selecione uma opção </option>
+            <option value="loiro"> Loiro </option>
+            <option value="castanho"> Castanho </option>
+            <option value="ruivo"> Ruivo </option>
+            <option value="preto"> Preto </option>
+            <option value="outro"> Outro </option>
+        </select>
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
@@ -99,7 +113,16 @@
     <div class="col-md-2"></div>
     <label for="cor_olhos" class="col-md-2 col-form-label"><span class="text-danger">*</span>Cor dos Olhos:</label>
     <div class="col-md-6">
-        <input name="cor_olhos" value="" type="text" id="cor_olhos" class="form-control input-modelo-promotor-influencer">
+        <select name="cor_olhos" id="cor_olhos" value="" class="form-control">
+            <option selected value=""> Selecione uma opção </option>
+            <option value="ambar"> Âmbar </option>
+            <option value="azul"> Azul </option>
+            <option value="avela"> Avelã  </option>
+            <option value="castanho"> Castanho </option>
+            <option value="cinza"> Cinza </option>
+            <option value="verde"> Verde </option>
+            <option value="heterocromia"> Heterocromia </option>
+        </select>
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
@@ -133,7 +156,7 @@
         <div class="checkbox">
             <label>
                 <input type="checkbox" name="experiencia" id="perfil" value="1">
-                Apresentador(a)
+                Apresentador (a)
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
@@ -168,7 +191,7 @@
         <div class="checkbox">
             <label>
                 <input type="checkbox" name="experiencia" id="perfil" value="1">
-                Dançarino(a)
+                Dançarino (a)
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
