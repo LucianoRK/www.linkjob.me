@@ -46,6 +46,9 @@
             $('.telefoneMask').mask('(00) 0000-0000');
             $('.dataMask').mask('00/00/0000');
             $('.alturaMask').mask('0,00');
+            $('.pesoMask').mask('000');
+            $('.bustoMask').mask('000-000');
+            $('.calcadoMask').mask('00-00');
             $('.inputMoneyBr').maskMoney({
                 decimal: ',',
                 thousands: '.'

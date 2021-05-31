@@ -10,7 +10,7 @@
     <div class="col-md-2"></div>
     <label for="peso" class="col-md-2 col-form-label"><span class="text-danger">*</span>Peso:</label>
     <div class="col-md-6">
-        <input name="peso" value="" type="text" id="peso" class="form-control input-modelo-promotor-influencer">
+        <input name="peso" value="" type="text" id="peso" class="form-control input-modelo-promotor-influencer pesoMask">
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
@@ -19,7 +19,7 @@
         <div class="col-md-2"></div>
         <label for="busto" class="col-md-2 col-form-label"><span class="text-danger">*</span>Busto:</label>
         <div class="col-md-6">
-            <input name="busto" value="" type="text" id="busto" class="form-control input-modelo-promotor-influencer">
+            <input name="busto" value="" type="text" id="busto" class="form-control input-modelo-promotor-influencer bustoMask">
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
     </div>
@@ -28,7 +28,7 @@
     <div class="col-md-2"></div>
     <label for="cintura" class="col-md-2 col-form-label"><span class="text-danger">*</span>Cintura:</label>
     <div class="col-md-6">
-        <input name="cintura" value="" type="text" id="cintura" class="form-control input-modelo-promotor-influencer">
+        <input name="cintura" value="" type="text" id="cintura" class="form-control input-modelo-promotor-influencer bustoMask">
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
@@ -36,7 +36,7 @@
     <div class="col-md-2"></div>
     <label for="quadril" class="col-md-2 col-form-label"><span class="text-danger">*</span>Quadril:</label>
     <div class="col-md-6">
-        <input name="quadril" value="" type="text" id="quadril" class="form-control input-modelo-promotor-influencer">
+        <input name="quadril" value="" type="text" id="quadril" class="form-control input-modelo-promotor-influencer bustoMask">
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
@@ -44,7 +44,7 @@
     <div class="col-md-2"></div>
     <label for="manequim" class="col-md-2 col-form-label"><span class="text-danger">*</span>Manequim:</label>
     <div class="col-md-6">
-        <input name="manequim" value="" type="text" id="manequim" class="form-control input-modelo-promotor-influencer">
+        <input name="manequim" value="" type="text" id="manequim" class="form-control input-modelo-promotor-influencer bustoMask">
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
@@ -52,7 +52,7 @@
     <div class="col-md-2"></div>
     <label for="calcado" class="col-md-2 col-form-label"><span class="text-danger">*</span>Calçado:</label>
     <div class="col-md-6">
-        <input name="calcado" value="" type="text" id="calcado" class="form-control input-modelo-promotor-influencer">
+        <input name="calcado" value="" type="text" id="calcado" class="form-control input-modelo-promotor-influencer calcadoMask">
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
@@ -62,19 +62,19 @@
     <div class="col-md-6">
         <div class="radio">
             <label>
-                <input type="radio" name="possui_tatuagem" id="tatuagem_sim" value="sim">
+                <input type="radio" name="possui_tatuagem" class="possui_tatuagem" id="tatuagem_sim" value="sim">
                 Sim
             </label>
             &emsp;
             <label>
-                <input type="radio" name="possui_tatuagem" id="tatuagem_nao" value="nao">
+                <input type="radio" name="possui_tatuagem" class="possui_tatuagem" id="tatuagem_nao" value="nao">
                 Não
             </label>
             <br>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
-        <div>
-            <input name="locais_tatuagem" value="" type="text" id="locais_tatuagem" class="form-control input-modelo-promotor-influencer" placeholder="Se sim em quais locais?">
+        <div id="div-possui-tatuagem" hidden>
+            <input name="locais_tatuagem" value="" type="text" id="locais_tatuagem" class="form-control input-modelo-promotor-influencer" placeholder="Em quais locais?">
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
     </div>
@@ -107,6 +107,10 @@
             <option value="outro"> Outro </option>
         </select>
         <span class="text-danger msg" style="font-size: 13px;"></span>
+        <div style="padding-top: 14px;" id="div-cor-cabelo-outro" hidden>
+            <input name="cor_cabelo_outro" value="" type="text" id="cor_cabelo_outro" class="form-control input-modelo-promotor-influencer" placeholder="Informe com apenas uma palavra a cor do seu cabelo">
+            <span class="text-danger msg" style="font-size: 13px;"></span>
+        </div>
     </div>
 </div>
 <div class="form-group row">
@@ -115,15 +119,17 @@
     <div class="col-md-6">
         <select name="cor_olhos" id="cor_olhos" value="" class="form-control">
             <option selected value=""> Selecione uma opção </option>
-            <option value="ambar"> Âmbar </option>
             <option value="azul"> Azul </option>
-            <option value="avela"> Avelã  </option>
             <option value="castanho"> Castanho </option>
-            <option value="cinza"> Cinza </option>
             <option value="verde"> Verde </option>
-            <option value="heterocromia"> Heterocromia </option>
+            <option value="outro"> Outro </option>
         </select>
         <span class="text-danger msg" style="font-size: 13px;"></span>
+        <div style="padding-top: 14px;" id="div-cor-olhos-outro" hidden>
+            <input name="cor_olhos_outro" value="" type="text" id="cor_olhos_outro" class="form-control input-modelo-promotor-influencer" placeholder="Informe com apenas uma palavra a cor do seus olhos">
+            <span style="font-size: 12px;"> Em caso de heterocromia informe da seguinte maneira: azul e verde </span>
+            <span class="text-danger msg" style="font-size: 13px;"></span>
+        </div>
     </div>
 </div>
 <div class="form-group row">
@@ -132,19 +138,19 @@
     <div class="col-md-6">
         <div class="radio">
             <label>
-                <input type="radio" name="possui_drt" id="drt_sim" value="sim">
+                <input type="radio" name="possui_drt" class="possui_drt" id="drt_sim" value="sim">
                 Sim
             </label>
             &emsp;
             <label>
-                <input type="radio" name="possui_drt" id="drt_nao" value="nao">
+                <input type="radio" name="possui_drt" class="possui_drt" id="drt_nao" value="nao">
                 Não
             </label>
             <br>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
-        <div>
-            <input name="numero_drt" value="" type="text" id="numero_drt" class="form-control input-modelo-promotor-influencer" placeholder="Se sim qual o número?">
+        <div id="div-drt" hidden>
+            <input name="numero_drt" value="" type="text" id="numero_drt" class="form-control input-modelo-promotor-influencer" placeholder="Qual o número?">
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
     </div>
