@@ -5,7 +5,7 @@
                 perfil.mostrarCampos(),
                 perfil.multiSelect(),
                 perfil.previewImagemModelo(),
-                perfil.validacaoCamposModeloPromotorInfluencer()
+                perfil.validacaoPerfis()
         },
 
         camposModeloPromotorInfluencer: () => {
@@ -151,128 +151,145 @@
             });
         },
 
-        validacaoCamposModeloPromotorInfluencer: () => {
+        validacaoPerfis: () => {
             $('#salvar-novo-perfil').on('click', function() {
+                let erro = true;
 
-                if ($('#perfil_1').prop('checked') || $('#perfil_2').prop('checked') || $('#perfil_3').prop('checked')) {
-                    let erro = false;
+                $('.classe_perfil').each(function(index, value) {
+                    let id_nome = $(value).attr('id');
 
-                    $('*').removeClass('has-error');
-                    $('.msg').html('');
-
-                    if (!$('#altura').val()) {
-                        erro = true;
-
-                        $('#altura').parent().addClass('has-error')
-                        $('#altura').parent().parent().find('.msg').html('Campo obrigatório.');
+                    if ($('#' + id_nome).prop('checked')) {
+                        erro = false;
                     }
+                });
 
-                    if (!$('#peso').val()) {
-                        erro = true;
-
-                        $('#peso').parent().addClass('has-error')
-                        $('#peso').parent().parent().find('.msg').html('Campo obrigatório.');
-                    }
-
-                    if (!$('#busto_torax').val()) {
-                        erro = true;
-
-                        $('#busto_torax').parent().addClass('has-error')
-                        $('#busto_torax').parent().parent().find('.msg').html('Campo obrigatório.');
-                    }
-
-                    if (!$('#cintura').val()) {
-                        erro = true;
-
-                        $('#cintura').parent().addClass('has-error')
-                        $('#cintura').parent().parent().find('.msg').html('Campo obrigatório.');
-                    }
-
-                    if (!$('#quadril').val()) {
-                        erro = true;
-
-                        $('#quadril').parent().addClass('has-error')
-                        $('#quadril').parent().parent().find('.msg').html('Campo obrigatório.');
-                    }
-
-                    if (!$('#manequim').val()) {
-                        erro = true;
-
-                        $('#manequim').parent().addClass('has-error')
-                        $('#manequim').parent().find('.msg').html('Campo obrigatório.');
-                    }
-
-                    if (!$('#calcado').val()) {
-                        erro = true;
-
-                        $('#calcado').parent().addClass('has-error')
-                        $('#calcado').parent().find('.msg').html('Campo obrigatório.');
-                    }
-
-                    if (!$('#tatuagem_sim').prop('checked') && !$('#tatuagem_nao').prop('checked')) {
-                        erro = true;
-
-                        $('#tatuagem_sim').parent().parent().find('.msg').html('Campo obrigatório.');
-                    }
-
-                    if (!$('#cor_pele').val()) {
-                        erro = true;
-
-                        $('#cor_pele').parent().addClass('has-error')
-                        $('#cor_pele').parent().find('.msg').html('Campo obrigatório.');
-                    }
-
-                    if (!$('#cor_cabelo').val()) {
-                        erro = true;
-
-                        $('#cor_cabelo').parent().addClass('has-error')
-                        $('#cor_cabelo').parent().find('.msg').html('Campo obrigatório.');
-
-                    } else if ($('#cor_cabelo').val() == 'outro' && !$('#cor_cabelo_outro').val()) {
-                        erro = true;
-
-                        $('#cor_cabelo_outro').parent().addClass('has-error')
-                        $('#cor_cabelo_outro').parent().find('.msg').html('Campo obrigatório.');
-                    }
-
-                    if (!$('#cor_olhos').val()) {
-                        erro = true;
-
-                        $('#cor_olhos').parent().addClass('has-error')
-                        $('#cor_olhos').parent().find('.msg').html('Campo obrigatório.');
-
-                    } else if ($('#cor_olhos').val() == 'outro' && !$('#cor_olhos_outro').val()) {
-                        erro = true;
-
-                        $('#cor_olhos_outro').parent().addClass('has-error')
-                        $('#cor_olhos_outro').parent().find('.msg').html('Campo obrigatório.<br>');
-                    }
-
-                    if (!$('#drt_sim').prop('checked') && !$('#drt_nao').prop('checked')) {
-                        erro = true;
-
-                        $('#drt_sim').parent().parent().find('.msg').html('Campo obrigatório.');
-                    }
-
-                    if (!$('#categoria-fotos-modelo').val()) {
-                        erro = true;
-
-                        $('#categoria-fotos-modelo').parent().parent().find('.msg').html('Campo obrigatório.');
-                    }
-
-                    if ($("#upload-modelo")[0].files.length <= 0) {
-                        erro = true;
-
-                        $('#upload-modelo').parent().parent().find('.msg').html('Anexe ao menos uma foto.');
-                    }
-
-                    if (!erro) {
-                        $("#form-novo-perfil").submit();
-                    } else {
-                        templateFunctions.swalPadrao('warning', 'Atenção!', 'Preencha os campos corretamente.');
-                    }
+                if (erro) {
+                    $('.classe_perfil').first().parent().parent().find('.msg').html('Selecione ao menos uma opção.');
+                } else {
+                    perfil.validacaoCamposModeloPromotorInfluencer();
                 }
-            });
+            })
+        },
+
+        validacaoCamposModeloPromotorInfluencer: () => {
+            if ($('#perfil_1').prop('checked') || $('#perfil_2').prop('checked') || $('#perfil_3').prop('checked')) {
+                let erro = false;
+
+                $('*').removeClass('has-error');
+                $('.msg').html('');
+
+                if (!$('#altura').val()) {
+                    erro = true;
+
+                    $('#altura').parent().addClass('has-error')
+                    $('#altura').parent().parent().find('.msg').html('Campo obrigatório.');
+                }
+
+                if (!$('#peso').val()) {
+                    erro = true;
+
+                    $('#peso').parent().addClass('has-error')
+                    $('#peso').parent().parent().find('.msg').html('Campo obrigatório.');
+                }
+
+                if (!$('#busto_torax').val()) {
+                    erro = true;
+
+                    $('#busto_torax').parent().addClass('has-error')
+                    $('#busto_torax').parent().parent().find('.msg').html('Campo obrigatório.');
+                }
+
+                if (!$('#cintura').val()) {
+                    erro = true;
+
+                    $('#cintura').parent().addClass('has-error')
+                    $('#cintura').parent().parent().find('.msg').html('Campo obrigatório.');
+                }
+
+                if (!$('#quadril').val()) {
+                    erro = true;
+
+                    $('#quadril').parent().addClass('has-error')
+                    $('#quadril').parent().parent().find('.msg').html('Campo obrigatório.');
+                }
+
+                if (!$('#manequim').val()) {
+                    erro = true;
+
+                    $('#manequim').parent().addClass('has-error')
+                    $('#manequim').parent().find('.msg').html('Campo obrigatório.');
+                }
+
+                if (!$('#calcado').val()) {
+                    erro = true;
+
+                    $('#calcado').parent().addClass('has-error')
+                    $('#calcado').parent().find('.msg').html('Campo obrigatório.');
+                }
+
+                if (!$('#tatuagem_sim').prop('checked') && !$('#tatuagem_nao').prop('checked')) {
+                    erro = true;
+
+                    $('#tatuagem_sim').parent().parent().find('.msg').html('Campo obrigatório.');
+                }
+
+                if (!$('#cor_pele').val()) {
+                    erro = true;
+
+                    $('#cor_pele').parent().addClass('has-error')
+                    $('#cor_pele').parent().find('.msg').html('Campo obrigatório.');
+                }
+
+                if (!$('#cor_cabelo').val()) {
+                    erro = true;
+
+                    $('#cor_cabelo').parent().addClass('has-error')
+                    $('#cor_cabelo').parent().find('.msg').html('Campo obrigatório.');
+
+                } else if ($('#cor_cabelo').val() == 'outro' && !$('#cor_cabelo_outro').val()) {
+                    erro = true;
+
+                    $('#cor_cabelo_outro').parent().addClass('has-error')
+                    $('#cor_cabelo_outro').parent().find('.msg').html('Campo obrigatório.');
+                }
+
+                if (!$('#cor_olhos').val()) {
+                    erro = true;
+
+                    $('#cor_olhos').parent().addClass('has-error')
+                    $('#cor_olhos').parent().find('.msg').html('Campo obrigatório.');
+
+                } else if ($('#cor_olhos').val() == 'outro' && !$('#cor_olhos_outro').val()) {
+                    erro = true;
+
+                    $('#cor_olhos_outro').parent().addClass('has-error')
+                    $('#cor_olhos_outro').parent().find('.msg').html('Campo obrigatório.<br>');
+                }
+
+                if (!$('#drt_sim').prop('checked') && !$('#drt_nao').prop('checked')) {
+                    erro = true;
+
+                    $('#drt_sim').parent().parent().find('.msg').html('Campo obrigatório.');
+                }
+
+                if (!$('#categoria-fotos-modelo').val()) {
+                    erro = true;
+
+                    $('#categoria-fotos-modelo').parent().parent().find('.msg').html('Campo obrigatório.');
+                }
+
+                if ($("#upload-modelo")[0].files.length <= 0) {
+                    erro = true;
+
+                    $('#upload-modelo').parent().parent().find('.msg').html('Anexe ao menos uma foto.');
+                }
+
+                if (!erro) {
+                    $("#form-novo-perfil").submit();
+                } else {
+                    templateFunctions.swalPadrao('warning', 'Atenção!', 'Preencha os campos corretamente.');
+                }
+            }
         }
     }
 

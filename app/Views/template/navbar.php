@@ -38,7 +38,7 @@
                             <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="perfis">Perfis</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="adicionar-perfil">Adicionar Perfil</a>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="adicionar-perfil">Novo Perfil</a>
                         </li>
                         <li>
                             <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="meus-dados">Meus Dados</a>
