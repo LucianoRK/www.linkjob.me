@@ -204,7 +204,7 @@
         <div class="checkbox">
             <label>
                 <input type="checkbox" name="experiencia" id="perfil" value="1">
-                Degustação 
+                Degustação
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
@@ -287,6 +287,7 @@
         </div>
     </div>
 </div>
+<hr>
 <div class="form-group row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
@@ -296,3 +297,62 @@
         </div>
     </div>
 </div>
+<div class="form-group row">
+    <div class="col-md-2"></div>
+    <label for="calcado" class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label>
+    <div class="col-md-6">
+        <select class="multiple-select" name="states[]" multiple="multiple">
+            <option value="AL">Alabama</option>
+            <option value="AL">Alabama</option>
+            <option value="AL">Alabama</option>
+        </select>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-md-2"></div>
+    <label for="titulo" class="col-md-2 col-form-label"><span class="text-danger">*</span>Titulo:</label>
+    <div class="col-md-6">
+        <input name="busto" value="" type="text" id="titulo" class="form-control input-modelo-promotor-influencer">
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-md-2"></div>
+    <label for="calcado" class="col-md-2 col-form-label"><span class="text-danger">*</span>Foto:</label>
+    <div class="col-md-6">
+        <input type="file" name="upload" id="upload" class="btn btn-primary" accept="image/png, image/jpg, image/jpeg" />
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-md-2"></div>
+    <label for="titulo" class="col-md-2 col-form-label"></label>
+    <img class="col-md-6" id="img" />
+</div>
+<div class="form-group row">
+    <div class="col-md-2"></div>
+    <label for="descricao" class="col-md-2 col-form-label"><span class="text-danger">*</span>Descrição:</label>
+    <div class="col-md-6">
+        <textarea class="form-control text-left input-modelo-promotor-influencer" rows="4"></textarea>
+    </div>
+</div>
+
+<script>
+    function preview() {
+        $('#upload').on('change', function () {
+            const file = $(this)[0].files[0];
+            const fileReader = new  FileReader();
+
+            fileReader.onloadend = function() {
+                $('#img').attr('src', fileReader.result);
+            }
+            fileReader.readAsDataURL(file)
+
+        });
+    }
+
+    $(document).ready(function() {
+        preview();
+
+        
+    });
+</script>

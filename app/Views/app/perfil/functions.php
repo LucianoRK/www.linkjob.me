@@ -2,7 +2,8 @@
     const trabalheConoscoFunctions = {
         init: () => {
                 trabalheConoscoFunctions.camposModeloPromotorInfluencer(),
-                trabalheConoscoFunctions.mostrarCampos()
+                trabalheConoscoFunctions.mostrarCampos(),
+                trabalheConoscoFunctions.multiSelect()
         },
 
         camposModeloPromotorInfluencer: () => {
@@ -71,6 +72,10 @@
                 }
             });
         },
+
+        multiSelect: () => {
+            $('.multiple-select').select2();
+        }
     }
 
     trabalheConoscoFunctions.init()
