@@ -96,7 +96,7 @@
     <div class="col-md-2"></div>
     <label for="cor_pele" class="col-md-2 col-form-label"><span class="text-danger">*</span>Cor da Pele/Etnia:</label>
     <div class="col-md-6">
-        <select name="cor_pele" id="cor_pele" value="" class="form-control">
+        <select name="cor_pele" id="cor_pele" value="" class="form-control input-modelo-promotor-influencer">
             <option selected value=""> Selecione uma opção </option>
             <option value="branca"> Branca </option>
             <option value="negra"> Negra </option>
@@ -113,7 +113,7 @@
     <div class="col-md-2"></div>
     <label for="cor_cabelo" class="col-md-2 col-form-label"><span class="text-danger">*</span>Cor de Cabelo:</label>
     <div class="col-md-6">
-        <select name="cor_cabelo" id="cor_cabelo" value="" class="form-control">
+        <select name="cor_cabelo" id="cor_cabelo" value="" class="form-control input-modelo-promotor-influencer">
             <option selected value=""> Selecione uma opção </option>
             <option value="loiro"> Loiro </option>
             <option value="castanho"> Castanho </option>
@@ -132,7 +132,7 @@
     <div class="col-md-2"></div>
     <label for="cor_olhos" class="col-md-2 col-form-label"><span class="text-danger">*</span>Cor dos Olhos:</label>
     <div class="col-md-6">
-        <select name="cor_olhos" id="cor_olhos" value="" class="form-control">
+        <select name="cor_olhos" id="cor_olhos" value="" class="form-control input-modelo-promotor-influencer">
             <option selected value=""> Selecione uma opção </option>
             <option value="azul"> Azul </option>
             <option value="castanho"> Castanho </option>
@@ -176,130 +176,138 @@
     <div class="col-md-6">
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="apresentador" value="1">
+                <input type="checkbox" name="apresentador" class="input-modelo-promotor-influencer" value="1">
                 Apresentador(a)
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="ativacao" value="1">
+                <input type="checkbox" name="ativacao" class="input-modelo-promotor-influencer" value="1">
                 Ativação
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="atriz_ator" value="1">
+                <input type="checkbox" name="atriz_ator" class="input-modelo-promotor-influencer"  value="1">
                 Atriz/ator
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="coordenacao" value="1">
+                <input type="checkbox" name="coordenacao" class="input-modelo-promotor-influencer"  value="1">
                 Coordenação
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="credenciamento_feiras_congressos" value="1">
+                <input type="checkbox" name="credenciamento_feiras_congressos" class="input-modelo-promotor-influencer"  value="1">
                 Credenciamento feiras e congressos
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="dancarino" value="1">
+                <input type="checkbox" name="dancarino" class="input-modelo-promotor-influencer"  value="1">
                 Dançarino(a)
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="degustacao" value="1">
+                <input type="checkbox" name="degustacao" class="input-modelo-promotor-influencer"  value="1">
                 Degustação
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="desfile" value="1">
+                <input type="checkbox" name="desfile" class="input-modelo-promotor-influencer"  value="1">
                 Desfile
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="editorial" value="1">
+                <input type="checkbox" name="editorial" class="input-modelo-promotor-influencer"  value="1">
                 Editorial
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="figuracao" value="1">
+                <input type="checkbox" name="figuracao" class="input-modelo-promotor-influencer"  value="1">
                 Figuração
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="lookbook" value="1">
+                <input type="checkbox" name="lookbook" class="input-modelo-promotor-influencer"  value="1">
                 Lookbook
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="modelo_mao" value="1">
+                <input type="checkbox" name="modelo_mao" class="input-modelo-promotor-influencer"  value="1">
                 Modelo de mão
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="modelo_pé" value="1">
+                <input type="checkbox" name="modelo_pé" class="input-modelo-promotor-influencer"  value="1">
                 Modelo de pé
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="panfletagem" value="1">
+                <input type="checkbox" name="panfletagem" class="input-modelo-promotor-influencer"  value="1">
                 Panfletagem
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="pesquisa" value="1">
+                <input type="checkbox" name="pesquisa" class="input-modelo-promotor-influencer"  value="1">
                 Pesquisa
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="recepção" value="1">
+                <input type="checkbox" name="recepção" class="input-modelo-promotor-influencer"  value="1">
                 Recepção
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="showroom" value="1">
+                <input type="checkbox" name="showroom" class="input-modelo-promotor-influencer"  value="1">
                 Showroom
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="visita_tenica" value="1">
+                <input type="checkbox" name="visita_tenica" class="input-modelo-promotor-influencer"  value="1">
                 Visita ténica
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-md-2"></div>
+    <label for="video_apresentacao" class="col-md-2 col-form-label"><span class="text-danger">*</span>Video de Apresentação:</label>
+    <div class="col-md-6">
+        <input name="video_apresentacao" value="" type="text" id="video_apresentacao" class="form-control input-modelo-promotor-influencer" placeholder="Informe o link do seu video de apresentação">
+        <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
 <hr>
@@ -307,8 +315,8 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <div class="alert alert-warning" role="alert">
-            <strong>Recomendações:</strong><br>
-            Na categoria de fotos polaroides e diversos anexe fotos sem óculos de sol e esteja sozinho(a).
+            <strong>Recomendação:</strong><br>
+            Na categoria de fotos polaroides anexe fotos sem óculos de sol e esteja sozinho(a).
         </div>
     </div>
 </div>
@@ -318,7 +326,7 @@
     <div class="col-md-2"></div>
     <label for="categoria-fotos-modelo" class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label>
     <div class="col-md-6">
-        <select class="multiple-select" name="modeloInfluencerPromotor[]" multiple="multiple" id="categoria-fotos-modelo">
+        <select class="multiple-select input-modelo-promotor-influencer" name="modeloInfluencerPromotor[]" multiple="multiple" id="categoria-fotos-modelo">
             <?php if ($modelo_promotor_influencer) { ?>
                 <?php foreach ($modelo_promotor_influencer as $modelo) { ?>
                     <option value="<?php echo $modelo['grupo_foto_id']; ?>"> <?php echo $modelo['nome']; ?> </option>
@@ -341,13 +349,5 @@
         <input type="file" name="upload_modelo[]" id="upload-modelo" class="btn btn-primary" accept="image/png, image/jpg, image/jpeg" multiple/>
         <span class="text-danger msg" style="font-size: 13px;"></span>
         <p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg. <br> O limite por foto é de até 10mb. <br> É possível anexar até 10 fotos.</p>
-    </div>
-</div>
-<div class="form-group row">
-    <div class="col-md-2"></div>
-    <label for="video_apresentacao" class="col-md-2 col-form-label"><span class="text-danger">*</span>Video de Apresentação:</label>
-    <div class="col-md-6">
-        <input name="video_apresentacao" value="" type="text" id="video_apresentacao" class="form-control input-modelo-promotor-influencer" placeholder="Informe o link do seu video de apresentação">
-        <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>

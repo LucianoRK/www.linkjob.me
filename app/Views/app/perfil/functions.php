@@ -15,6 +15,18 @@
                 } else if (!$('#perfil_1').prop('checked') && !$('#perfil_2').prop('checked') && !$('#perfil_3').prop('checked')) {
                     $('#div-modelo-promotor-influencer').attr('hidden', true);
                     $('.input-modelo-promotor-influencer').val('');
+                    $('.possui_tatuagem').attr('checked', false);
+                    $('#div-possui-tatuagem').attr('hidden', true);
+                    $('.input-modelo-promotor-influencer').trigger('change');
+                    $('#div-cor-cabelo-outro').attr('hidden', true);
+                    $('#div-cor-olhos-outro').attr('hidden', true);
+                    $('.possui_drt').attr('checked', false);
+                    $('#div-drt').attr('hidden', true);
+                    $('.input-modelo-promotor-influencer').attr('checked', false);
+                    document.getElementById('upload-modelo').value = "";
+                    $('#images-modelo').html(false);
+                    $('*').removeClass('has-error');
+                    $('.msg').html('');
                 }
             });
 
@@ -24,6 +36,18 @@
                 } else if (!$('#perfil_1').prop('checked') && !$('#perfil_2').prop('checked') && !$('#perfil_3').prop('checked')) {
                     $('#div-modelo-promotor-influencer').attr('hidden', true);
                     $('.input-modelo-promotor-influencer').val('');
+                    $('.possui_tatuagem').attr('checked', false);
+                    $('#div-possui-tatuagem').attr('hidden', true);
+                    $('.input-modelo-promotor-influencer').trigger('change');
+                    $('#div-cor-cabelo-outro').attr('hidden', true);
+                    $('#div-cor-olhos-outro').attr('hidden', true);
+                    $('.possui_drt').attr('checked', false);
+                    $('#div-drt').attr('hidden', true);
+                    $('.input-modelo-promotor-influencer').attr('checked', false);
+                    document.getElementById('upload-modelo').value = "";
+                    $('#images-modelo').html(false);
+                    $('*').removeClass('has-error');
+                    $('.msg').html('');
                 }
             });
 
@@ -33,6 +57,18 @@
                 } else if (!$('#perfil_1').prop('checked') && !$('#perfil_2').prop('checked') && !$('#perfil_3').prop('checked')) {
                     $('#div-modelo-promotor-influencer').attr('hidden', true);
                     $('.input-modelo-promotor-influencer').val('');
+                    $('.possui_tatuagem').attr('checked', false);
+                    $('#div-possui-tatuagem').attr('hidden', true);
+                    $('.input-modelo-promotor-influencer').trigger('change');
+                    $('#div-cor-cabelo-outro').attr('hidden', true);
+                    $('#div-cor-olhos-outro').attr('hidden', true);
+                    $('.possui_drt').attr('checked', false);
+                    $('#div-drt').attr('hidden', true);
+                    $('.input-modelo-promotor-influencer').attr('checked', false);
+                    document.getElementById('upload-modelo').value = "";
+                    $('#images-modelo').html(false);
+                    $('*').removeClass('has-error');
+                    $('.msg').html('');
                 }
             });
 
