@@ -168,11 +168,7 @@
                 if (!erro) {
                     $("#form-cadastrese").submit();
                 } else {
-                    Swal.fire({
-                        icon: 'warning',
-                        title: 'Atenção!',
-                        text: 'Preencha os campos corretamente.',
-                    })
+                    templateFunctions.swalPadrao('warning', 'Atenção!', 'Preencha os campos corretamente.');
                 }
             })
         },

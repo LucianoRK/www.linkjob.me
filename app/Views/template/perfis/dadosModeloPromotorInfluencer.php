@@ -2,7 +2,10 @@
     <div class="col-md-2"></div>
     <label for="altura" class="col-md-2 col-form-label"><span class="text-danger">*</span>Altura:</label>
     <div class="col-md-6">
-        <input name="altura" value="" type="text" id="altura" class="form-control input-modelo-promotor-influencer alturaMask">
+        <div class="input-group">
+            <input name="altura" value="" type="text" id="altura" class="form-control input-modelo-promotor-influencer floatMask">
+            <span class="input-group-addon">m</span>
+        </div>
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
@@ -10,25 +13,32 @@
     <div class="col-md-2"></div>
     <label for="peso" class="col-md-2 col-form-label"><span class="text-danger">*</span>Peso:</label>
     <div class="col-md-6">
-        <input name="peso" value="" type="text" id="peso" class="form-control input-modelo-promotor-influencer pesoMask">
+        <div class="input-group">
+            <input name="peso" value="" type="text" id="peso" class="form-control input-modelo-promotor-influencer inputInteger">
+            <span class="input-group-addon">kg</span>
+        </div>
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
-<?php if ($registro['genero'] == 'femenino') { ?>
-    <div class="form-group row">
-        <div class="col-md-2"></div>
-        <label for="busto" class="col-md-2 col-form-label"><span class="text-danger">*</span>Busto:</label>
-        <div class="col-md-6">
-            <input name="busto" value="" type="text" id="busto" class="form-control input-modelo-promotor-influencer bustoMask">
-            <span class="text-danger msg" style="font-size: 13px;"></span>
+<div class="form-group row">
+    <div class="col-md-2"></div>
+    <label for="busto_torax" class="col-md-2 col-form-label"><span class="text-danger">*</span>Busto/Tórax:</label>
+    <div class="col-md-6">
+        <div class="input-group">
+            <input name="busto_torax" value="" type="text" id="busto_torax" class="form-control input-modelo-promotor-influencer inputInteger">
+            <span class="input-group-addon">cm</span>
         </div>
+        <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
-<?php } ?>
+</div>
 <div class="form-group row">
     <div class="col-md-2"></div>
     <label for="cintura" class="col-md-2 col-form-label"><span class="text-danger">*</span>Cintura:</label>
     <div class="col-md-6">
-        <input name="cintura" value="" type="text" id="cintura" class="form-control input-modelo-promotor-influencer bustoMask">
+        <div class="input-group">
+            <input name="cintura" value="" type="text" id="cintura" class="form-control input-modelo-promotor-influencer inputInteger">
+            <span class="input-group-addon">cm</span>
+        </div>
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
@@ -36,7 +46,10 @@
     <div class="col-md-2"></div>
     <label for="quadril" class="col-md-2 col-form-label"><span class="text-danger">*</span>Quadril:</label>
     <div class="col-md-6">
-        <input name="quadril" value="" type="text" id="quadril" class="form-control input-modelo-promotor-influencer bustoMask">
+        <div class="input-group">
+            <input name="quadril" value="" type="text" id="quadril" class="form-control input-modelo-promotor-influencer inputInteger">
+            <span class="input-group-addon">cm</span>
+        </div>
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
@@ -44,7 +57,7 @@
     <div class="col-md-2"></div>
     <label for="manequim" class="col-md-2 col-form-label"><span class="text-danger">*</span>Manequim:</label>
     <div class="col-md-6">
-        <input name="manequim" value="" type="text" id="manequim" class="form-control input-modelo-promotor-influencer bustoMask">
+        <input name="manequim" value="" type="text" id="manequim" class="form-control input-modelo-promotor-influencer inputInteger">
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
@@ -52,7 +65,7 @@
     <div class="col-md-2"></div>
     <label for="calcado" class="col-md-2 col-form-label"><span class="text-danger">*</span>Calçado:</label>
     <div class="col-md-6">
-        <input name="calcado" value="" type="text" id="calcado" class="form-control input-modelo-promotor-influencer calcadoMask">
+        <input name="calcado" value="" type="text" id="calcado" class="form-control input-modelo-promotor-influencer inputInteger">
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
@@ -81,15 +94,17 @@
 </div>
 <div class="form-group row">
     <div class="col-md-2"></div>
-    <label for="cor_pele" class="col-md-2 col-form-label"><span class="text-danger">*</span>Cor da Pele:</label>
+    <label for="cor_pele" class="col-md-2 col-form-label"><span class="text-danger">*</span>Cor da Pele/Etnia:</label>
     <div class="col-md-6">
         <select name="cor_pele" id="cor_pele" value="" class="form-control">
             <option selected value=""> Selecione uma opção </option>
-            <option value="amarela"> Amarela </option>
             <option value="branca"> Branca </option>
-            <option value="indigina"> Indígina </option>
+            <option value="negra"> Negra </option>
+            <option value="morena"> Morena </option>
+            <option value="amarela"> Amarela </option>
             <option value="parda"> Parda </option>
-            <option value="preata"> Preta </option>
+            <option value="oriental"> Oriental </option>
+            <option value="indigina"> Indígina </option>
         </select>
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
@@ -162,7 +177,7 @@
         <div class="checkbox">
             <label>
                 <input type="checkbox" name="experiencia" id="perfil" value="1">
-                Apresentador (a)
+                Apresentador(a)
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
@@ -197,7 +212,7 @@
         <div class="checkbox">
             <label>
                 <input type="checkbox" name="experiencia" id="perfil" value="1">
-                Dançarino (a)
+                Dançarino(a)
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
@@ -297,62 +312,31 @@
         </div>
     </div>
 </div>
+<h2 class="section-heading-all titulo-perfil-modelo-influencer-promotor" style="text-align: center!important;"></h2>
+<br><br>
 <div class="form-group row">
     <div class="col-md-2"></div>
     <label for="calcado" class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label>
     <div class="col-md-6">
-        <select class="multiple-select" name="states[]" multiple="multiple">
-            <option value="AL">Alabama</option>
-            <option value="AL">Alabama</option>
-            <option value="AL">Alabama</option>
+        <select class="multiple-select" name="fotos[]" multiple="multiple">
+            <?php if ($modelo_promotor_influencer) { ?>
+                <?php foreach ($modelo_promotor_influencer as $modelo) { ?>
+                    <option value="<?php echo $modelo['grupo_foto_id']; ?>"> <?php echo $modelo['nome']; ?> </option>
+                <?php } ?>
+            <?php } ?>
         </select>
     </div>
 </div>
 <div class="form-group row">
-    <div class="col-md-2"></div>
-    <label for="titulo" class="col-md-2 col-form-label"><span class="text-danger">*</span>Titulo:</label>
-    <div class="col-md-6">
-        <input name="busto" value="" type="text" id="titulo" class="form-control input-modelo-promotor-influencer">
+    <div class="col-md-12">
+        <div class='col-md-4'></div>
+        <div class='col-md-7' id="images-modelo"></div>
     </div>
 </div>
-
 <div class="form-group row">
     <div class="col-md-2"></div>
     <label for="calcado" class="col-md-2 col-form-label"><span class="text-danger">*</span>Foto:</label>
     <div class="col-md-6">
-        <input type="file" name="upload" id="upload" class="btn btn-primary" accept="image/png, image/jpg, image/jpeg" />
+        <input type="file" name="upload" id="upload" class="btn btn-primary" accept="image/png, image/jpg, image/jpeg" multiple/>
     </div>
 </div>
-<div class="form-group row">
-    <div class="col-md-2"></div>
-    <label for="titulo" class="col-md-2 col-form-label"></label>
-    <img class="col-md-6" id="img" />
-</div>
-<div class="form-group row">
-    <div class="col-md-2"></div>
-    <label for="descricao" class="col-md-2 col-form-label"><span class="text-danger">*</span>Descrição:</label>
-    <div class="col-md-6">
-        <textarea class="form-control text-left input-modelo-promotor-influencer" rows="4"></textarea>
-    </div>
-</div>
-
-<script>
-    function preview() {
-        $('#upload').on('change', function () {
-            const file = $(this)[0].files[0];
-            const fileReader = new  FileReader();
-
-            fileReader.onloadend = function() {
-                $('#img').attr('src', fileReader.result);
-            }
-            fileReader.readAsDataURL(file)
-
-        });
-    }
-
-    $(document).ready(function() {
-        preview();
-
-        
-    });
-</script>

@@ -10,7 +10,7 @@
                         <h2 class="section-heading-all">
                             <span></span>Novo Perfil
                         </h2>
-                        <div class="inner-divider"></div>
+                        <br><br>
                         <form action="" method="POST" id="form-novo-perfil">
                             <div class="form-group row">
                                 <div class="col-md-2"></div>
@@ -20,7 +20,7 @@
                                         <?php if ($perfis) { ?>
                                             <?php foreach ($perfis as $perfil) { ?>
                                                 <label>
-                                                    <input type="checkbox" name="perfil" id="perfil_<?php echo $perfil['perfil_id']; ?>" value="<?php echo $perfil['perfil_id']; ?>">
+                                                    <input type="checkbox" name="perfil" class="classe_perfil" id="perfil_<?php echo $perfil['perfil_id']; ?>" value="<?php echo $perfil['perfil_id']; ?>">
                                                     <?php echo $perfil['nome']; ?>
                                                 </label>
                                                 <br>

@@ -45,10 +45,7 @@
             $('.celularMask').mask('(00) 0 0000-0000');
             $('.telefoneMask').mask('(00) 0000-0000');
             $('.dataMask').mask('00/00/0000');
-            $('.alturaMask').mask('0,00');
-            $('.pesoMask').mask('000');
-            $('.bustoMask').mask('000-000');
-            $('.calcadoMask').mask('00-00');
+            $('.floatMask').mask('0,00');
             $('.inputMoneyBr').maskMoney({
                 decimal: ',',
                 thousands: '.'
@@ -63,6 +60,14 @@
                     theme: 'bootstrap4'
                 });
             });
+        },
+
+        swalPadrao: (icon = 'warning', title = 'Atenção', text = false) => {
+            Swal.fire({
+                icon: icon,
+                title: title,
+                text: text,
+            })
         }
     }
 

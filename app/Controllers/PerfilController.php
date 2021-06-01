@@ -34,8 +34,8 @@ class PerfilController extends BaseController
 		$perfil      	 = new PerfilModel();
 		$dados['perfis'] = $perfil->get([], [], false, ['perfil_id' => 'ASC']);
 
-		$grupo_modelo_promotor_influencer          = new GrupoFotoModel();
-		$dados['grupo_modelo_promotor_influencer'] = $grupo_modelo_promotor_influencer->get(['perfil_id' => 1], [], false, ['nome' => 'ASC']);
+		$grupo_modelo_promotor_influencer    = new GrupoFotoModel();
+		$dados['modelo_promotor_influencer'] = $grupo_modelo_promotor_influencer->get(['perfil_id' => 1], [], false, ['nome' => 'ASC']);
 
 		return $this->template('perfil', 'create', $dados, true);
 	}
