@@ -284,6 +284,13 @@
                     $('#upload-modelo').parent().parent().find('.msg').html('Anexe ao menos uma foto.');
                 }
 
+                if (!$('#video_apresentacao').val()) {
+                    erro = true;
+
+                    $('#video_apresentacao').parent().addClass('has-error')
+                    $('#video_apresentacao').parent().parent().find('.msg').html('Campo obrigatório.');
+                }
+
                 if (!erro) {
                     $("#form-novo-perfil").submit();
                 } else {
