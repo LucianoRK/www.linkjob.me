@@ -142,8 +142,8 @@
         <span class="text-danger msg" style="font-size: 13px;"></span>
         <div style="padding-top: 14px;" id="div-cor-olhos-outro" hidden>
             <input name="cor_olhos_outro" value="" type="text" id="cor_olhos_outro" class="form-control input-modelo-promotor-influencer" placeholder="Informe com apenas uma palavra a cor do seus olhos">
-            <span style="font-size: 12px;"> Em caso de heterocromia informe da seguinte maneira: azul e verde </span>
             <span class="text-danger msg" style="font-size: 13px;"></span>
+            <span style="font-size: 12px;"> Em caso de heterocromia informe como o exemplo a seguir: castanho e azul </span>
         </div>
     </div>
 </div>
@@ -172,130 +172,130 @@
 </div>
 <div class="form-group row">
     <div class="col-md-2"></div>
-    <label class="col-md-2 col-form-label"><span class="text-danger">*</span>Experiência:</label>
+    <label class="col-md-2 col-form-label">Experiência:</label>
     <div class="col-md-6">
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="apresentador" value="1">
                 Apresentador(a)
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="ativacao" value="1">
                 Ativação
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="atriz_ator" value="1">
                 Atriz/ator
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="coordenacao" value="1">
                 Coordenação
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="credenciamento_feiras_congressos" value="1">
                 Credenciamento feiras e congressos
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="dancarino" value="1">
                 Dançarino(a)
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="degustacao" value="1">
                 Degustação
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="desfile" value="1">
                 Desfile
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="editorial" value="1">
                 Editorial
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="figuracao" value="1">
                 Figuração
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="lookbook" value="1">
                 Lookbook
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="modelo_mao" value="1">
                 Modelo de mão
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="modelo_pé" value="1">
                 Modelo de pé
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="panfletagem" value="1">
                 Panfletagem
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="pesquisa" value="1">
                 Pesquisa
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="recepção" value="1">
                 Recepção
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="showroom" value="1">
                 Showroom
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="experiencia" id="perfil" value="1">
+                <input type="checkbox" name="visita_tenica" value="1">
                 Visita ténica
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
@@ -316,15 +316,16 @@
 <br><br>
 <div class="form-group row">
     <div class="col-md-2"></div>
-    <label for="calcado" class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label>
+    <label for="categoria-fotos-modelo" class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label>
     <div class="col-md-6">
-        <select class="multiple-select" name="fotos[]" multiple="multiple">
+        <select class="multiple-select" name="modeloInfluencerPromotor[]" multiple="multiple" id="categoria-fotos-modelo">
             <?php if ($modelo_promotor_influencer) { ?>
                 <?php foreach ($modelo_promotor_influencer as $modelo) { ?>
                     <option value="<?php echo $modelo['grupo_foto_id']; ?>"> <?php echo $modelo['nome']; ?> </option>
                 <?php } ?>
             <?php } ?>
         </select>
+        <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
 <div class="form-group row">
@@ -337,6 +338,8 @@
     <div class="col-md-2"></div>
     <label for="calcado" class="col-md-2 col-form-label"><span class="text-danger">*</span>Foto:</label>
     <div class="col-md-6">
-        <input type="file" name="upload" id="upload" class="btn btn-primary" accept="image/png, image/jpg, image/jpeg" multiple/>
+        <input type="file" name="upload_modelo[]" id="upload-modelo" class="btn btn-primary" accept="image/png, image/jpg, image/jpeg" multiple/>
+        <span class="text-danger msg" style="font-size: 13px;"></span>
+        <p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg. <br> O limite por foto é de até 10mb. <br> É possível anexar até 10 fotos.</p>
     </div>
 </div>

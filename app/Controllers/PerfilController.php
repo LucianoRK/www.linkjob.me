@@ -39,4 +39,15 @@ class PerfilController extends BaseController
 
 		return $this->template('perfil', 'create', $dados, true);
 	}
+
+	/**
+     * Cadastro de usuário
+     * @return \CodeIgniter\HTTP\Response
+     */
+    public function store()
+    {
+		$request = $this->request->getVar();
+		
+		dd($request);
+	}
 }

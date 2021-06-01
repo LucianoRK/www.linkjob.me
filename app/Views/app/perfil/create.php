@@ -11,7 +11,7 @@
                             <span></span>Novo Perfil
                         </h2>
                         <br><br>
-                        <form action="" method="POST" id="form-novo-perfil">
+                        <form action="adicionar-perfil" method="POST" id="form-novo-perfil">
                             <div class="form-group row">
                                 <div class="col-md-2"></div>
                                 <label class="col-md-2 col-form-label"><span class="text-danger">*</span>Perfil:</label>
@@ -33,7 +33,7 @@
                             <div id="div-modelo-promotor-influencer" hidden>
                                 <?php echo view('template/perfis/dadosModeloPromotorInfluencer'); ?>
                             </div>
-
+                            <hr>
                             <div class="form-group row text-right">
                                 <div class="col-sm-10">
                                     <button type="button" id="salvar-novo-perfil" class="btn btn-primary">Salvar</button>
