@@ -30,11 +30,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <hr>
                             <div id="div-modelo-promotor-influencer" hidden>
                                 <?php echo view('template/perfis/dadosModeloPromotorInfluencer'); ?>
                                 <hr>
                             </div>
-                           
+                            <div id="div-modelo-promotor-influencer" hidden>
+                                <?php echo view('template/perfis/dadosMaquiadorCabeleireiro'); ?>
+                                <hr>
+                            </div>
                             <div class="form-group row text-right">
                                 <div class="col-sm-10">
                                     <button type="button" id="salvar-novo-perfil" class="btn btn-primary">Salvar</button>

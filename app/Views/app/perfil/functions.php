@@ -16,19 +16,22 @@
                     $('#div-modelo-promotor-influencer').attr('hidden', false);
                 } else if (!$('#perfil_1').prop('checked') && !$('#perfil_2').prop('checked') && !$('#perfil_3').prop('checked')) {
                     $('#div-modelo-promotor-influencer').attr('hidden', true);
-                    $('.input-modelo-promotor-influencer').val('');
+                    $('.input-modelo-influencer-promotor').val('');
                     $('.possui_tatuagem').attr('checked', false);
                     $('#div-possui-tatuagem').attr('hidden', true);
-                    $('.input-modelo-promotor-influencer').trigger('change');
+                    $('.input-modelo-influencer-promotor').trigger('change');
                     $('#div-cor-cabelo-outro').attr('hidden', true);
                     $('#div-cor-olhos-outro').attr('hidden', true);
                     $('.possui_drt').attr('checked', false);
                     $('#div-drt').attr('hidden', true);
-                    $('.input-modelo-promotor-influencer').attr('checked', false);
-                    document.getElementById('upload-modelo').value = "";
-                    $('#images-modelo').html(false);
+                    $('.input-modelo-influencer-promotor').attr('checked', false);
+                    document.getElementById('upload-modelo-influencer-promotor').value = "";
+                    $('#images-modelo-influencer-promotor').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
+                    $(".excluir-input-video-modelo-influencer-promotor").each(function( index ) {
+                        $(this).parent().parent().remove();
+                    });
                 }
             });
 
@@ -37,19 +40,22 @@
                     $('#div-modelo-promotor-influencer').attr('hidden', false);
                 } else if (!$('#perfil_1').prop('checked') && !$('#perfil_2').prop('checked') && !$('#perfil_3').prop('checked')) {
                     $('#div-modelo-promotor-influencer').attr('hidden', true);
-                    $('.input-modelo-promotor-influencer').val('');
+                    $('.input-modelo-influencer-promotor').val('');
                     $('.possui_tatuagem').attr('checked', false);
                     $('#div-possui-tatuagem').attr('hidden', true);
-                    $('.input-modelo-promotor-influencer').trigger('change');
+                    $('.input-modelo-influencer-promotor').trigger('change');
                     $('#div-cor-cabelo-outro').attr('hidden', true);
                     $('#div-cor-olhos-outro').attr('hidden', true);
                     $('.possui_drt').attr('checked', false);
                     $('#div-drt').attr('hidden', true);
-                    $('.input-modelo-promotor-influencer').attr('checked', false);
-                    document.getElementById('upload-modelo').value = "";
-                    $('#images-modelo').html(false);
+                    $('.input-modelo-influencer-promotor').attr('checked', false);
+                    document.getElementById('upload-modelo-influencer-promotor').value = "";
+                    $('#images-modelo-influencer-promotor').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
+                    $(".excluir-input-video-modelo-influencer-promotor").each(function( index ) {
+                        $(this).parent().parent().remove();
+                    });
                 }
             });
 
@@ -58,19 +64,22 @@
                     $('#div-modelo-promotor-influencer').attr('hidden', false);
                 } else if (!$('#perfil_1').prop('checked') && !$('#perfil_2').prop('checked') && !$('#perfil_3').prop('checked')) {
                     $('#div-modelo-promotor-influencer').attr('hidden', true);
-                    $('.input-modelo-promotor-influencer').val('');
+                    $('.input-modelo-influencer-promotor').val('');
                     $('.possui_tatuagem').attr('checked', false);
                     $('#div-possui-tatuagem').attr('hidden', true);
-                    $('.input-modelo-promotor-influencer').trigger('change');
+                    $('.input-modelo-influencer-promotor').trigger('change');
                     $('#div-cor-cabelo-outro').attr('hidden', true);
                     $('#div-cor-olhos-outro').attr('hidden', true);
                     $('.possui_drt').attr('checked', false);
                     $('#div-drt').attr('hidden', true);
-                    $('.input-modelo-promotor-influencer').attr('checked', false);
-                    document.getElementById('upload-modelo').value = "";
-                    $('#images-modelo').html(false);
+                    $('.input-modelo-influencer-promotor').attr('checked', false);
+                    document.getElementById('upload-modelo-influencer-promotor').value = "";
+                    $('#images-modelo-influencer-promotor').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
+                    $(".excluir-input-video-modelo-influencer-promotor").each(function( index ) {
+                        $(this).parent().parent().remove();
+                    });
                 }
             });
 
@@ -148,16 +157,16 @@
         },
 
         previewImagemModelo: () => {
-            $('#upload-modelo').on('change', function() {
+            $('#upload-modelo-influencer-promotor').on('change', function() {
                 // Não pode anexar mais que 10 fotos
                 if ($(this)[0].files.length > 10) {
                     templateFunctions.swalPadrao('warning', 'Atenção', 'A quantidade máxima de fotos é de até 10');
-                    document.getElementById('upload-modelo').value = null;
+                    document.getElementById('upload-modelo-influencer-promotor').value = null;
                     return;
                 }
 
                 if ($(this)[0].files.length >= 1) {
-                    $('#images-modelo').html(false);
+                    $('#images-modelo-influencer-promotor').html(false);
 
                     for (i = 0; i < $(this)[0].files.length; i++) {
                         let fileReader = new FileReader();
@@ -168,19 +177,19 @@
                         // Limite de 10mb por foto
                         if (file.size > 10000000) {
                             templateFunctions.swalPadrao('warning', 'Atenção', 'O limite por foto é de até 10mb');
-                            document.getElementById('upload-modelo').value = null;
+                            document.getElementById('upload-modelo-influencer-promotor').value = null;
                             return;
                         }
 
                         // Aceita apenas os formatos image/png, image/jpg, image/jpeg
                         if (file.type != 'image/png' && file.type != 'image/jpg' && file.type != 'image/jpeg') {
                             templateFunctions.swalPadrao('warning', 'Atenção', 'É aceito apenas os formatos png, jpg e jpeg');
-                            document.getElementById('upload-modelo').value = null;
+                            document.getElementById('upload-modelo-influencer-promotor').value = null;
                             return;
                         }
 
                         fileReader.onloadend = function() {
-                            $('#images-modelo').append('<img src="' + fileReader.result + '" width="100" height="100" id="' + img + '" />&emsp;');
+                            $('#images-modelo-influencer-promotor').append('<img src="' + fileReader.result + '" width="100" height="100" id="' + img + '" />&emsp;');
                         }
 
                         fileReader.readAsDataURL(file);
@@ -310,16 +319,16 @@
                     $('#drt_sim').parent().parent().find('.msg').html('Campo obrigatório.');
                 }
 
-                if (!$('.categoria-fotos-modelo').val()) {
+                if (!$('.categoria-fotos-modelo-influencer-promotor').val()) {
                     erro = true;
 
-                    $('.categoria-fotos-modelo').parent().parent().find('.msg').html('Campo obrigatório.');
+                    $('.categoria-fotos-modelo-influencer-promotor').parent().parent().find('.msg').html('Campo obrigatório.');
                 }
 
-                if ($("#upload-modelo")[0].files.length <= 0) {
+                if ($("#upload-modelo-influencer-promotor")[0].files.length <= 0) {
                     erro = true;
 
-                    $('#upload-modelo').parent().parent().find('.msg').html('Anexe ao menos uma foto.');
+                    $('#upload-modelo-influencer-promotor').parent().parent().find('.msg').html('Anexe ao menos uma foto.');
                 }
 
                 if (!$('#video_apresentacao').val()) {
@@ -338,13 +347,13 @@
         },
 
         adicionarInputVideoModelo: () => {
-            $('#adicionar-input-video-modelo').on('click', function () {
-                $('#div-videos-modelo').append('<div class="input-group"><input name="video-modelo[]" value="" type="text" class="form-control input-modelo-promotor-influencer" placeholder="Caso possua video basta informar o link"><span class="input-group-btn"><button class="btn btn-default excluir-input-video-modelo" type="button"><i class="text-danger fas fa-trash"></i></button></span><span class="text-danger msg" style="font-size: 13px;"></span></div>');
+            $('#adicionar-input-video-modelo-influencer-promotor').on('click', function () {
+                $('#div-videos-modelo-influencer-promotor').append('<div class="input-group"><input name="video_modelo_influencer_promotor[]" value="" type="text" class="form-control input-modelo-influencer-promotor" placeholder="Caso possua video basta informar o link"><span class="input-group-btn"><button class="btn btn-default excluir-input-video-modelo-influencer-promotor" type="button"><i class="text-danger fas fa-trash"></i></button></span><span class="text-danger msg" style="font-size: 13px;"></span></div>');
             });
         },
 
         excluirInputVideoModelo: () => {
-            $(document).on('click', '.excluir-input-video-modelo', function() {
+            $(document).on('click', '.excluir-input-video-modelo-influencer-promotor', function() {
                 $(this).parent().parent().remove();
             });
         }
