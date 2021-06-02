@@ -1,5 +1,32 @@
-<form action="<?= base_url() ?>/login/redefinirSenhaUpdate/<?= $token ?>" method="POST">
-    <input type="password" name="senha" placeholder="Digite a nova senha" autocomplete="false" minlength="6" required>
-    <input type="password" name="senha2" placeholder="Repita a senha" autocomplete="false" minlength="6" required>
-    <button type="submit">Alterar</button>
-</form>
+<div class="lower-page element-color-switch" id="page-about">
+    <div class="center-container">
+        <div class="center-block">
+            <div class="container sections">
+                <div class="inner-divider"></div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="container" style="padding-top: 14%;">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <form action="<?= base_url() ?>/login/redefinirSenhaUpdate/<?= $token ?>" method="POST">
+                                    <p class="text-center">
+                                        <i style="font-size: 100px;" class="text-danger fas fa-user"></i>
+                                    </p>
+                                    <div class="form-group">
+                                        <input name="senha" type="password" class="form-control" required minlength="6" autocomplete="false" placeholder="Senha">
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="senha2" type="password" class="form-control" required minlength="6" autocomplete="false" placeholder="Repita a senha">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-block btn-danger" style="background-color: #A94442">Alterar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -16,7 +16,7 @@
                                         <input name="email" type="email" class="form-control" required autocomplete="false" placeholder="Digite seu e-mail">
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-block btn-danger" style="background-color: #A94442">Logar</button>
+                                        <button type="submit" class="btn btn-block btn-danger" style="background-color: #A94442">Recuperar</button>
                                     </div>
                                 </form>
                             </div>
