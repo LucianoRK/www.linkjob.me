@@ -33,7 +33,6 @@ class UsuarioModel extends BaseModel
         'nome',
         'email',
         'senha',
-        'avatar',
         'token_recuperar_senha',
         'nome_artistico',
         'genero',
@@ -91,10 +90,38 @@ class UsuarioModel extends BaseModel
     }
     */
 
-    public function usuarioCidadeEstado($usuario_id)
+    public function getUsuarioEndereco($usuario_id)
     {
-        $this->select('estado_id');
-        $this->join('cidade', 'use_usuario.cidade_id = cidade.cidade_id');
+        $this->select('
+            use_usuario.tipo_id,
+            use_usuario.nome,
+            use_usuario.email,
+            use_usuario.senha,
+            use_usuario.nome_artistico,
+            use_usuario.genero,
+            use_usuario.data_nascimento,
+            use_usuario.cpf,
+            use_usuario.rg,
+            use_usuario.cnpj,
+            use_usuario.escolaridade,
+            use_usuario.area,
+            use_usuario.instituicao,
+            use_usuario.idiomas,
+            use_usuario.endereco,
+            use_usuario.complemento,
+            use_usuario.cep,
+            use_usuario.celular,
+            use_usuario.instagram,
+            use_usuario.banco,
+            use_usuario.agencia,
+            use_usuario.conta,
+            use_usuario.tipo_conta,
+            use_usuario.pix,
+            use_usuario.pic_pay,
+            cidade.cidade_id,
+            cidade.estado_id
+        ');
+        $this->join('cidade', 'use_usuario.cidade_id = cidade.cidade_id', 'LEFT');
         $this->where('use_usuario.usuario_id', $usuario_id);
 
         return $this->first();

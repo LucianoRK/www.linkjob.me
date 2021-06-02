@@ -86,7 +86,11 @@ $routes->group('', ['filter' => 'sessao'], function ($routes) {
 	 * Editar dados cadastrais
 	 * --------------------------------------------------------------------
 	 */
-	$routes->get('/meus-dados', 'RegistroController::edit');
+	$routes->group('meus-dados', function ($routes) {
+		$routes->get('', 'RegistroController::edit');
+		$routes->post('update', 'RegistroController::update');
+		$routes->post('senha', 'RegistroController::updateSenha');
+	});
 
 	/**
 	 * --------------------------------------------------------------------

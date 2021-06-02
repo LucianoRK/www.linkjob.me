@@ -34,6 +34,21 @@ class RegistroController extends BaseController
     }
 
     /**
+     * Editar cadastro
+     * @return \CodeIgniter\HTTP\Response
+     */
+    public function edit()
+    {
+        $estadoModel = new EstadoModel();
+        $registro = new UsuarioModel();
+
+        $dados['estados'] = $estadoModel->get();
+        $dados['registro'] = $registro->getUsuarioEndereco($this->session->get('usuario')['usuario_id']);
+
+        return $this->template('registro', 'edit', $dados, true);
+    }
+
+    /**
      * Cadastro de usuário
      * @return \CodeIgniter\HTTP\Response
      */
@@ -96,7 +111,7 @@ class RegistroController extends BaseController
             'conta' => $request['conta'],
             'tipo_conta' => $request['tipo_conta'],
             'pix' => $request['pix'],
-            'pic_pay' => $request['picpay']
+            'pic_pay' => $request['pic_pay']
         ];
 
         if ($usuarioModel->save($dadosUsuario)) {
@@ -110,15 +125,120 @@ class RegistroController extends BaseController
         return redirect()->to(base_url('registro'));
     }
 
-    public function edit() 
+
+    /**
+     * Salva a edição
+     * @return \CodeIgniter\HTTP\Response
+     */
+    public function update()
     {
-        $estadoModel      = new EstadoModel();
-		$dados['estados'] = $estadoModel->get();
+        $usuarioModel = new UsuarioModel;
+        $request = $this->request->getVar();
+        $usuarioId = $this->session->get('usuario')['usuario_id'];
 
-        $registro                    = new UsuarioModel();
-		$dados['registro']           = $registro->get(['usuario_id' => $this->session->get('usuario')['usuario_id']], [], true);
-		$dados['registro']['estado'] = $registro->usuarioCidadeEstado($this->session->get('usuario')['usuario_id']);
+        $rules = [
+            'nome' => 'required',
+            'genero' => 'required',
+            'data_nascimento' => 'required',
+            'cpf' => 'required',
+            'rg' => 'required',
+            'escolaridade' => 'required',
+            'endereco' => 'required',
+            'cidade' => 'required',
+            'cep' => 'required',
+            'celular' => 'required',
+            'instagram' => 'required',
+            'banco' => 'required',
+            'agencia' => 'required',
+            'conta' => 'required'
+        ];
 
-        return $this->template('registro', 'edit', $dados, true);
+        $erros = $this->validar($this->request, $rules);
+
+        if ($erros) {
+            $this->setFlashdata('error', json_encode($erros));
+
+            return redirect()->to(base_url('registro'));
+        }
+
+        $dadosUsuario = [
+            'nome' => $request['nome'],
+            'tipo_id' => 2,
+            'cidade_id' => $request['cidade'],
+            'nome_artistico' => $request['nome_artistico'],
+            'genero' => $request['genero'],
+            'data_nascimento' => $request['data_nascimento'],
+            'cpf' => $request['cpf'],
+            'rg' => $request['rg'],
+            'cnpj' => $request['cnpj_mei'],
+            'escolaridade' => $request['escolaridade'],
+            'area' => $request['area'],
+            'instituicao' => $request['instituicao'],
+            'idiomas' => $request['idiomas'],
+            'endereco' => $request['endereco'],
+            'complemento' => $request['complemento'],
+            'cep' => $request['cep'],
+            'celular' => $request['celular'],
+            'instagram' => $request['instagram'],
+            'banco' => $request['banco'],
+            'agencia' => $request['agencia'],
+            'conta' => $request['conta'],
+            'tipo_conta' => $request['tipo_conta'],
+            'pix' => $request['pix'],
+            'pic_pay' => $request['pic_pay']
+        ];
+
+        if ($usuarioModel->update($usuarioId, $dadosUsuario)) {
+            $this->setFlashdata('success', 'Cadastro atualizado com sucesso');
+        } else {
+            $this->setFlashdata('error', 'Falha ao atualizar');
+        }
+
+        return redirect()->to(base_url('meus-dados'));
+    }
+
+    public function updateSenha()
+    {
+        $usuarioModel = new UsuarioModel;
+        $request = $this->request->getVar();
+        $usuarioId = $this->session->get('usuario')['usuario_id'];
+
+        $rules = [
+            'email' => 'required|valid_email',
+            'senha' => 'required|string|min_length[6]|regex_match[/[a-zA-Z]/]|regex_match[/[0-9]/]',
+            'repita_senha' => 'required|string|matches[senha]',
+        ];
+
+        $erros = $this->validar($this->request, $rules);
+
+        if ($erros) {
+            $this->setFlashdata('error', json_encode($erros));
+
+            return redirect()->to(base_url('meus-dados'));
+        }
+
+        $usuario = $usuarioModel->get(['usuario_id' =>  $usuarioId], ['email'], true);
+
+        //Verifica se o e-mail ja existe
+        if ($usuario['email'] != $request['email']) {
+            if($usuarioModel->get(['email' =>  $request['email']], ['email'], true)){
+                $this->setFlashdata('error', 'E-mail já cadastrado');
+
+                return redirect()->to(base_url('meus-dados'));
+            }
+        }
+
+        $dados = [
+            'email' => $request['email'],
+            'senha' => password_hash($request['senha'], PASSWORD_BCRYPT)
+        ];
+
+        if($usuarioModel->update($usuarioId, $dados)){
+            $this->setFlashdata('success', 'Dados atualizados com sucesso');
+        }else{
+            $this->setFlashdata('error', 'Erro ao atualizar os dados');
+        }
+
+        return redirect()->to(base_url('meus-dados'));
     }
 }

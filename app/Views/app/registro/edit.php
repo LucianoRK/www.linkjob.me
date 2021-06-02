@@ -8,10 +8,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="section-heading-all">
-                            <span></span>Meus Dados
+                            <span>Meus Dados</span>
                         </h2>
                         <br>
-                        <form action="" method="POST" id="form-cadastrese">
+                        <form action="<?= base_url('meus-dados/update') ?>" method="POST" id="form-cadastrese">
                             <?php echo view('template/usuario/dadosCadastrais'); ?>
 
                             <div class="form-group row text-right">
@@ -29,12 +29,11 @@
                             <span></span>Minha Conta
                         </h2>
                         <br>
-                        <form action="" method="POST">
+                        <form action="<?= base_url('meus-dados/senha') ?>" method="POST">
                             <?php echo view('template/usuario/dadosAcesso'); ?>
-
                             <div class="form-group row text-right">
                                 <div class="col-sm-10">
-                                    <button type="button" class="btn btn-primary">Salvar</button>
+                                    <button type="submit" class="btn btn-primary">Salvar</button>
                                 </div>
                             </div>
                         </form>

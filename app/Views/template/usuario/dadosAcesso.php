@@ -2,7 +2,7 @@
     <div class="col-md-2"></div>
     <label for="email" class="col-md-2 col-form-label"><span class="text-danger">*</span>Email:</label>
     <div class="col-md-6">
-        <input name="email" value="<?php echo $registro['email'] ?? ''; ?>" type="email" id="email" class="form-control">
+        <input name="email" value="<?= $registro['email'] ?? ''; ?>" type="email" id="email" class="form-control">
         <span class="text-danger msg" style="font-size: 13px;"></span>
     </div>
 </div>
