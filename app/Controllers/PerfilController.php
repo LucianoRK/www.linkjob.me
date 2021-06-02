@@ -34,11 +34,13 @@ class PerfilController extends BaseController
 		$perfil      	 = new PerfilModel();
 		$dados['perfis'] = $perfil->get([], [], false, ['perfil_id' => 'ASC']);
 
-		$grupo_modelo_promotor_influencer    = new GrupoFotoModel();
-		$dados['modelo_promotor_influencer'] = $grupo_modelo_promotor_influencer->get(['perfil_id' => 1], [], false, ['nome' => 'ASC']);
-
-
-		$dados['cabeleireiro_maquiador'] = $grupo_modelo_promotor_influencer->get(['perfil_id' => 4], [], false, ['nome' => 'ASC']);
+		$grupo                               = new GrupoFotoModel();
+		$dados['modelo_promotor_influencer'] = $grupo->get(['perfil_id' => 1], [], false, ['nome' => 'ASC']);
+		$dados['cabeleireiro_maquiador']     = $grupo->get(['perfil_id' => 4], [], false, ['nome' => 'ASC']);
+		$dados['fotografo_filmaker']         = $grupo->get(['perfil_id' => 6], [], false, ['nome' => 'ASC']);
+		$dados['categoria_diretor']          = $grupo->get(['perfil_id' => 8], [], false, ['nome' => 'ASC']);
+		$dados['categoria_produtor']         = $grupo->get(['perfil_id' => 9], [], false, ['nome' => 'ASC']);
+		$dados['categoria_locacao']          = $grupo->get(['perfil_id' => 10], [], false, ['nome' => 'ASC']);
 
 		return $this->template('perfil', 'create', $dados, true);
 	}

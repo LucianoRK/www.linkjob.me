@@ -326,10 +326,10 @@
     <div class="col-md-2"></div>
     <label for="categoria-fotos-modelo-influencer-promotor" class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label>
     <div class="col-md-6">
-        <select class="multiple-select input-modelo-influencer-promotor categoria-fotos-modelo-influencer-promotor" name="modeloInfluencerPromotor[]" multiple="multiple" id="categoria-fotos-modelo-influencer-promotor">
+        <select class="multiple-select input-modelo-influencer-promotor" name="modeloInfluencerPromotor[]" multiple="multiple" id="categoria-fotos-modelo-influencer-promotor">
             <?php if ($modelo_promotor_influencer) { ?>
                 <?php foreach ($modelo_promotor_influencer as $modelo) { ?>
-                    <?php if ($modelo['grupo_foto_id'] != 5) { ?>
+                    <?php if ($modelo['nome'] != 'Video') { ?>
                         <option value="<?php echo $modelo['grupo_foto_id']; ?>"> <?php echo $modelo['nome']; ?> </option>
                     <?php } ?>
                 <?php } ?>

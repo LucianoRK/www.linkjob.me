@@ -4,10 +4,10 @@
     <div class="col-md-2"></div>
     <label for="categoria-maquiador-cabeleireiro" class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label>
     <div class="col-md-6">
-        <select class="multiple-select input-maquiador-cabeleireiro categoria-maquiador-cabeleireiro" name="maquiadorCabeleireiro[]" multiple="multiple" id="categoria-fotos-maquiador">
+        <select class="multiple-select input-maquiador-cabeleireiro" name="maquiadorCabeleireiro[]" multiple="multiple" id="categoria-fotos-maquiador-cabeleireiro">
             <?php if ($cabeleireiro_maquiador) { ?>
                 <?php foreach ($cabeleireiro_maquiador as $maquiador) { ?>
-                    <?php if ($maquiador['grupo_foto_id'] != 5) { ?>
+                    <?php if ($maquiador['nome'] != 'Video') { ?>
                         <option value="<?php echo $maquiador['grupo_foto_id']; ?>"> <?php echo $maquiador['nome']; ?> </option>
                     <?php } ?>
                 <?php } ?>
@@ -19,7 +19,7 @@
 <div class="form-group row">
     <div class="col-md-12">
         <div class='col-md-4'></div>
-        <div class='col-md-7' id="images-maquiador"></div>
+        <div class='col-md-7' id="images-maquiador-cabeleireiro"></div>
     </div>
 </div>
 <div class="form-group row">

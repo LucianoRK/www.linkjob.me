@@ -35,8 +35,24 @@
                                 <?php echo view('template/perfis/dadosModeloPromotorInfluencer'); ?>
                                 <hr>
                             </div>
-                            <div id="div-modelo-promotor-influencer" hidden>
+                            <div id="div-maquiador-cabeleireiro" hidden>
                                 <?php echo view('template/perfis/dadosMaquiadorCabeleireiro'); ?>
+                                <hr>
+                            </div>
+                            <div id="div-fotografo-filmaker" hidden>
+                                <?php echo view('template/perfis/dadosFotografoFilmaker'); ?>
+                                <hr>
+                            </div>
+                            <div id="div-diretor" hidden>
+                                <?php echo view('template/perfis/dadosDiretor'); ?>
+                                <hr>
+                            </div>
+                            <div id="div-produtor" hidden>
+                                <?php echo view('template/perfis/dadosProdutor'); ?>
+                                <hr>
+                            </div>
+                            <div id="div-locacao" hidden>
+                                <?php echo view('template/perfis/dadosLocacao'); ?>
                                 <hr>
                             </div>
                             <div class="form-group row text-right">
