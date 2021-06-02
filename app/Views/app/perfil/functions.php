@@ -2,10 +2,12 @@
     const perfil = {
         init: () => {
             perfil.camposModeloPromotorInfluencer(),
-                perfil.mostrarCampos(),
-                perfil.multiSelect(),
-                perfil.previewImagemModelo(),
-                perfil.validacaoPerfis()
+            perfil.mostrarCampos(),
+            perfil.multiSelect(),
+            perfil.previewImagemModelo(),
+            perfil.validacaoPerfis(),
+            perfil.adicionarInputVideoModelo(),
+            perfil.excluirInputVideoModelo()
         },
 
         camposModeloPromotorInfluencer: () => {
@@ -308,10 +310,10 @@
                     $('#drt_sim').parent().parent().find('.msg').html('Campo obrigatório.');
                 }
 
-                if (!$('#categoria-fotos-modelo').val()) {
+                if (!$('.categoria-fotos-modelo').val()) {
                     erro = true;
 
-                    $('#categoria-fotos-modelo').parent().parent().find('.msg').html('Campo obrigatório.');
+                    $('.categoria-fotos-modelo').parent().parent().find('.msg').html('Campo obrigatório.');
                 }
 
                 if ($("#upload-modelo")[0].files.length <= 0) {
@@ -333,6 +335,18 @@
                     templateFunctions.swalPadrao('warning', 'Atenção!', 'Preencha os campos corretamente.');
                 }
             }
+        },
+
+        adicionarInputVideoModelo: () => {
+            $('#adicionar-input-video-modelo').on('click', function () {
+                $('#div-videos-modelo').append('<div class="input-group"><input name="video-modelo[]" value="" type="text" class="form-control input-modelo-promotor-influencer" placeholder="Caso possua video basta informar o link"><span class="input-group-btn"><button class="btn btn-default excluir-input-video-modelo" type="button"><i class="text-danger fas fa-trash"></i></button></span><span class="text-danger msg" style="font-size: 13px;"></span></div>');
+            });
+        },
+
+        excluirInputVideoModelo: () => {
+            $(document).on('click', '.excluir-input-video-modelo', function() {
+                $(this).parent().parent().remove();
+            });
         }
     }
 
