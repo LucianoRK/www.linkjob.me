@@ -62,7 +62,7 @@ class LoginController extends BaseController
 			return redirect()->to(base_url());
 		}
 
-		return $this->template('login', 'redefinirSenha', ['token' => $token], false);
+		return $this->template('login', 'redefinirSenha', ['token' => $token]);
 	}
 
 	/////////////////////////////
@@ -228,7 +228,7 @@ class LoginController extends BaseController
 			$erro['mensagem'] = 'As senhas devem conter no mínimo 6 com letras e números';
             $this->setFlashdata('error', json_encode($erros));
             
-            return $this->template('login', 'redefinirSenha', ['token' => $token], false);
+            return $this->template('login', 'redefinirSenha', ['token' => $token]);
         }
 
 		$colunas = [
