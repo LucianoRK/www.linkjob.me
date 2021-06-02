@@ -311,15 +311,6 @@
     </div>
 </div>
 <hr>
-<div class="form-group row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <div class="alert alert-warning" role="alert">
-            <strong>Recomendação:</strong><br>
-            Na categoria de fotos polaroides anexe fotos sem óculos de sol e esteja sozinho(a).
-        </div>
-    </div>
-</div>
 <h2 class="section-heading-all titulo-perfil-modelo-influencer-promotor" style="text-align: center!important;"></h2>
 <br><br>
 <div class="form-group row">
