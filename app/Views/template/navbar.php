@@ -12,8 +12,8 @@
     <div class="panel-overlay-from-left">
         <div class="navigation-menu-img-wrapper">
             <div class="navigation-menu-img overlay overlay-dark-40">
-                <div class="menu-img active" data-bg="<?= base_url(); ?>/public/js/template/img/menu/menu-1.jpg" data-ref="menu-1"></div>
-                <div class="menu-img" data-bg="<?= base_url(); ?>/public/js/template/img/menu/menu-2.jpg" data-ref="menu-2"></div>
+                <div class="menu-img active" data-bg="<?= base_url('/public/js/template/img/menu/menu-1.jpg'); ?>" data-ref="menu-1"></div>
+                <div class="menu-img" data-bg="<?= base_url('/public/js/template/img/menu/menu-2.jpg'); ?>" data-ref="menu-2"></div>
             </div>
         </div>
     </div>
@@ -23,31 +23,31 @@
                 <div class="center-block-menu">
                     <ul class="menu brackets">
                         <li>
-                            <a class="menu-state navscroll active" data-id="page-home" data-ref="menu-1" href="<?= base_url(); ?>/home">Home</a>
+                            <a class="menu-state navscroll active" data-id="page-home" data-ref="menu-1" href="<?= base_url('/home'); ?>">Home</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-news" data-ref="menu-2" href="<?= base_url(); ?>/logar">Logar</a>
+                            <a class="menu-state navscroll" data-id="page-news" data-ref="menu-2" href="<?= base_url('/logar'); ?>">Logar</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-services" data-ref="menu-2" href="<?= base_url(); ?>/contratar">Contratar</a>
+                            <a class="menu-state navscroll" data-id="page-services" data-ref="menu-2" href="<?= base_url('/contratar'); ?>">Contratar</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url(); ?>/registro">Cadastre-se</a>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/registro'); ?>">Cadastre-se</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url(); ?>/perfis">Perfis</a>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/perfis'); ?>">Perfis</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url(); ?>/adicionar-perfil">Novo Perfil</a>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/adicionar-perfil'); ?>">Novo Perfil</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url(); ?>/aprovar-perfil">Aprovar Perfil</a>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/aprovar-perfil'); ?>">Aprovar Perfil</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url(); ?>/meus-dados">Meus Dados</a>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/meus-dados'); ?>">Meus Dados</a>
                         </li>
                         <li class="last">
-                            <a class="menu-state navscroll" data-id="page-about" data-ref="menu-2" href="<?= base_url(); ?>/logout">Sair</a>
+                            <a class="menu-state navscroll" data-id="page-about" data-ref="menu-2" href="<?= base_url('/logout'); ?>">Sair</a>
                         </li>
                     </ul>
                 </div>
