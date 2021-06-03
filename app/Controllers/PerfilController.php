@@ -55,4 +55,9 @@ class PerfilController extends BaseController
 		
 		dd($request);
 	}
+
+	public function aprovar()
+	{
+		return $this->template('perfil', 'aprovarPerfis', [], true);
+	}
 }

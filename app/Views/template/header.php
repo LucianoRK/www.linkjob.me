@@ -25,6 +25,9 @@ date_default_timezone_set('America/Sao_Paulo');
     <link rel="stylesheet" href="<?= base_url('/public/js/select2/css/select2.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('/public/js/select2-bootstrap4-theme/select2-bootstrap4.min.css'); ?>">
 
+    <!-- Datatables -->
+    <link rel="stylesheet" href="<?= base_url('/public/js/datatables.min.css'); ?>">
+ 
     <script src="<?= base_url('/public/js/jquery-1.12.4.min.js'); ?>"></script>
     <script src="<?= base_url('/public/js/jquery-mask/jquery.mask.min.js'); ?>"></script>
     <script src="<?= base_url('/public/js/jquery.maskMoney.min.js'); ?>"></script>

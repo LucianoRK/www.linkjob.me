@@ -2,24 +2,25 @@
     const perfil = {
         init: () => {
             perfil.camposModeloPromotorInfluencer(),
-                perfil.mostrarCamposOutrosModeloInfluencerPromotor(),
-                perfil.multiSelect(),
-                perfil.previewImagemModeloInfluencerPromotor(),
-                perfil.validacaoPerfis(),
-                perfil.adicionarInputVideoModeloInfluencerPromotor(),
-                perfil.excluirInputVideoModeloInfluencerPromotor(),
-                perfil.camposMaquiadorCabeleireiro(),
-                perfil.previewImagemMaquiadorCabeleireiro(),
-                perfil.camposFotografoFilmaker(),
-                perfil.previewImagemFotografoFilmaker(),
-                perfil.adicionarInputVideoFilmaker(),
-                perfil.excluirInputVideoFilmaker(),
-                perfil.camposDiretor(),
-                perfil.previewImagemDiretor(),
-                perfil.camposProdutor(),
-                perfil.previewImagemProdutor(),
-                perfil.camposLocacao(),
-                perfil.previewImagemLocacao()
+            perfil.mostrarCamposOutrosModeloInfluencerPromotor(),
+            perfil.multiSelect(),
+            perfil.previewImagemModeloInfluencerPromotor(),
+            perfil.validacaoPerfis(),
+            perfil.adicionarInputVideoModeloInfluencerPromotor(),
+            perfil.excluirInputVideoModeloInfluencerPromotor(),
+            perfil.camposMaquiadorCabeleireiro(),
+            perfil.previewImagemMaquiadorCabeleireiro(),
+            perfil.camposFotografoFilmaker(),
+            perfil.previewImagemFotografoFilmaker(),
+            perfil.adicionarInputVideoFilmaker(),
+            perfil.excluirInputVideoFilmaker(),
+            perfil.camposDiretor(),
+            perfil.previewImagemDiretor(),
+            perfil.camposProdutor(),
+            perfil.previewImagemProdutor(),
+            perfil.camposLocacao(),
+            perfil.previewImagemLocacao(),
+            perfil.dataTable()
         },
 
         camposModeloPromotorInfluencer: () => {
@@ -794,6 +795,57 @@
                     }
                 }
             });
+        },
+
+        dataTable: () => {
+            let $table      = '#table-aprovacao';
+            let $order_col  = 0;
+            let $order      = 'asc';
+            let $search     = true;
+            let $paging     = false;
+
+            $DataTableLangCustom = {
+                paging: false,
+                language: {
+                    'sEmptyTable': 'Nenhum registro encontrado',
+                    'sInfo': 'Mostrando de _START_ até _END_ de _TOTAL_ registros',
+                    'sInfoEmpty': 'Mostrando 0 até 0 de 0 registros',
+                    'sInfoFiltered': '(Filtrados de _MAX_ registros)',
+                    'sInfoPostFix': '',
+                    'sInfoThousands': '.',
+                    'sLengthMenu': '_MENU_ resultados por página',
+                    'sLoadingRecords': 'Carregando...',
+                    'sProcessing': 'Processando...',
+                    'sZeroRecords': 'Nenhum registro encontrado',
+                    'sSearch': 'Pesquisar',
+                    'oPaginate': {
+                        'sNext': 'Próximo',
+                        'sPrevious': 'Anterior',
+                        'sFirst': 'Primeiro',
+                        'sLast': 'Último',
+                    },
+                    'oAria': {
+                        'sSortAscending': ': Ordenar colunas de forma ascendente',
+                        'sSortDescending': ': Ordenar colunas de forma descendente',
+                    },
+                },
+            };
+
+            $DataTableLangCustom = $.extend({
+                searching: false,
+                paging: false
+            }, $DataTableLangCustom);
+
+            $DataTableLangCustom['searching'] = $search;
+            $DataTableLangCustom['paging'] = $paging;
+
+            if (!$.fn.DataTable.isDataTable($table)) {
+                let $dt = $($table).DataTable($DataTableLangCustom);
+            
+                $dt.order([$order_col, $order]).draw();
+
+                return $dt;
+            }
         }
     }
 

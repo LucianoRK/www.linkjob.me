@@ -41,7 +41,7 @@
                             <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/adicionar-perfil'); ?>">Novo Perfil</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/aprovar-perfil'); ?>">Aprovar Perfil</a>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/aprovar-perfis'); ?>">Aprovar Perfis</a>
                         </li>
                         <li>
                             <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/meus-dados'); ?>">Meus Dados</a>

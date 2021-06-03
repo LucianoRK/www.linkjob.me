@@ -178,7 +178,7 @@
                 let genero = '<?php echo $registro['genero'] ?? false; ?>';
                 let cnpj_mei = '<?php echo $registro['cnpj'] ?? false; ?>';
                 let escolaridade = '<?php echo $registro['escolaridade'] ?? false; ?>';
-                let estado = '<?php echo $registro['estado']['estado_id'] ?? false; ?>';
+                let estado = '<?php echo $registro['estado_id'] ?? false; ?>';
                 let cidade = '<?php echo $registro['cidade_id'] ?? false; ?>';
                 let tipo_conta = '<?php echo $registro['tipo_conta'] ?? false; ?>';
 

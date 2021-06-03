@@ -79,6 +79,8 @@ $routes->group('', ['filter' => 'sessao'], function ($routes) {
 	$routes->get('/perfis', 'PerfilController::index');
 	$routes->get('/adicionar-perfil', 'PerfilController::create');
 	$routes->post('/adicionar-perfil', 'PerfilController::store');
+	$routes->get('/aprovar-perfis', 'PerfilController::aprovar');
+	
 	
 
 	/**
