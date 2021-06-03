@@ -55,7 +55,7 @@
                                             <div class="team-box">
                                                 <div class="team-photo image-works">
                                                     <div class="hover-effect hover-effect-light"></div>
-                                                    <img alt="Team" class="img-correction" src="dist/js/template/img/team/team-01.jpg">
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-01.jpg">
                                                 </div>
                                             </div>
                                             <div class="team-info">
@@ -70,7 +70,7 @@
                                             <div class="team-box">
                                                 <div class="team-photo image-works">
                                                     <div class="hover-effect hover-effect-light"></div>
-                                                    <img alt="Team" class="img-correction" src="dist/js/template/img/team/team-01.jpg">
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-02.jpg">
                                                 </div>
                                             </div>
                                             <div class="team-info">
@@ -85,7 +85,7 @@
                                             <div class="team-box">
                                                 <div class="team-photo image-works">
                                                     <div class="hover-effect hover-effect-light"></div>
-                                                    <img alt="Team" class="img-correction" src="dist/js/template/img/team/team-01.jpg">
+                                                    <img alt="Team" class="img-correction" src="public/js/template/img/team/team-03.jpg">
                                                 </div>
                                             </div>
                                             <div class="team-info">

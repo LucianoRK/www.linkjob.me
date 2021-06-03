@@ -12,8 +12,8 @@
     <div class="panel-overlay-from-left">
         <div class="navigation-menu-img-wrapper">
             <div class="navigation-menu-img overlay overlay-dark-40">
-                <div class="menu-img active" data-bg="<?= base_url('/dist/js/template/img/menu/menu-1.jpg'); ?>" data-ref="menu-1"></div>
-                <div class="menu-img" data-bg="<?= base_url('/dist/js/template/img/menu/menu-2.jpg'); ?>" data-ref="menu-2"></div>
+                <div class="menu-img active" data-bg="<?= base_url('/public/js/template/img/menu/menu-1.jpg'); ?>" data-ref="menu-1"></div>
+                <div class="menu-img" data-bg="<?= base_url('/public/js/template/img/menu/menu-2.jpg'); ?>" data-ref="menu-2"></div>
             </div>
         </div>
     </div>
