@@ -6,6 +6,7 @@ use App\Models\EstadoModel;
 use App\Models\GrupoFotoModel;
 use App\Models\PerfilModel;
 use App\Models\UsuarioModel;
+use App\Models\UsuarioPerfilModel;
 
 class PerfilController extends BaseController
 {
@@ -56,8 +57,32 @@ class PerfilController extends BaseController
 		dd($request);
 	}
 
+	public function pendentesAprovacao()
+	{
+		$perfis          = new UsuarioPerfilModel();
+		$dados['perfis'] = $perfis->get(['perfil_aprovado IS NULL'], [], false);
+
+		return $this->template('perfil', 'pendentesAprovacao', $dados, true);
+	}
+
 	public function aprovar()
 	{
-		return $this->template('perfil', 'aprovarPerfis', [], true);
+		$request = $this->request->getVar();
+		
+		dd($request);
+	}
+
+	public function recusar()
+	{
+		$request = $this->request->getVar();
+		
+		dd($request);
+	}
+
+	public function verPerfil($id)
+	{
+		dd($id);
+
+		return $this->template('perfil', 'verPerfil', [], true);
 	}
 }

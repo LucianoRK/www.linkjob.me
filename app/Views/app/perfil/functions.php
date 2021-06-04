@@ -2,25 +2,27 @@
     const perfil = {
         init: () => {
             perfil.camposModeloPromotorInfluencer(),
-            perfil.mostrarCamposOutrosModeloInfluencerPromotor(),
-            perfil.multiSelect(),
-            perfil.previewImagemModeloInfluencerPromotor(),
-            perfil.validacaoPerfis(),
-            perfil.adicionarInputVideoModeloInfluencerPromotor(),
-            perfil.excluirInputVideoModeloInfluencerPromotor(),
-            perfil.camposMaquiadorCabeleireiro(),
-            perfil.previewImagemMaquiadorCabeleireiro(),
-            perfil.camposFotografoFilmaker(),
-            perfil.previewImagemFotografoFilmaker(),
-            perfil.adicionarInputVideoFilmaker(),
-            perfil.excluirInputVideoFilmaker(),
-            perfil.camposDiretor(),
-            perfil.previewImagemDiretor(),
-            perfil.camposProdutor(),
-            perfil.previewImagemProdutor(),
-            perfil.camposLocacao(),
-            perfil.previewImagemLocacao(),
-            perfil.dataTable()
+                perfil.mostrarCamposOutrosModeloInfluencerPromotor(),
+                perfil.multiSelect(),
+                perfil.previewImagemModeloInfluencerPromotor(),
+                perfil.validacaoPerfis(),
+                perfil.adicionarInputVideoModeloInfluencerPromotor(),
+                perfil.excluirInputVideoModeloInfluencerPromotor(),
+                perfil.camposMaquiadorCabeleireiro(),
+                perfil.previewImagemMaquiadorCabeleireiro(),
+                perfil.camposFotografoFilmaker(),
+                perfil.previewImagemFotografoFilmaker(),
+                perfil.adicionarInputVideoFilmaker(),
+                perfil.excluirInputVideoFilmaker(),
+                perfil.camposDiretor(),
+                perfil.previewImagemDiretor(),
+                perfil.camposProdutor(),
+                perfil.previewImagemProdutor(),
+                perfil.camposLocacao(),
+                perfil.previewImagemLocacao(),
+                perfil.dataTable(),
+                perfil.aprovar(),
+                perfil.recusar()
         },
 
         camposModeloPromotorInfluencer: () => {
@@ -798,11 +800,11 @@
         },
 
         dataTable: () => {
-            let $table      = '#table-aprovacao';
-            let $order_col  = 0;
-            let $order      = 'asc';
-            let $search     = true;
-            let $paging     = false;
+            let $table = '#table-aprovacao';
+            let $order_col = 0;
+            let $order = 'asc';
+            let $search = true;
+            let $paging = false;
 
             $DataTableLangCustom = {
                 paging: false,
@@ -841,11 +843,55 @@
 
             if (!$.fn.DataTable.isDataTable($table)) {
                 let $dt = $($table).DataTable($DataTableLangCustom);
-            
+
                 $dt.order([$order_col, $order]).draw();
 
                 return $dt;
             }
+        },
+
+        aprovar: () => {
+            $('.btn-aprovar-perfil').on('click', function() {
+                Swal.fire({
+                    title: 'Atenção',
+                    text: "Deseja realmente aprovar o perfil selecionado?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sim!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Sucesso!',
+                            '',
+                            'success'
+                        )
+                    }
+                })
+            });
+        },
+
+        recusar: () => {
+            $('.btn-recusar-perfil').on('click', function() {
+                Swal.fire({
+                    title: 'Atenção',
+                    text: "Deseja realmente recusar o perfil selecionado?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sim!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Sucesso!',
+                            '',
+                            'success'
+                        )
+                    }
+                })
+            });
         }
     }
 
