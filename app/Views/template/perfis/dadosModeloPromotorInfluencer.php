@@ -176,126 +176,126 @@
     <div class="col-md-6">
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="apresentador" class="input-modelo-influencer-promotor" value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor" value="apresentador">
                 Apresentador(a)
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="ativacao" class="input-modelo-influencer-promotor" value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor" value="ativacao">
                 Ativação
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="atriz_ator" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="atriz_ator">
                 Atriz/ator
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="coordenacao" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="coordenacao">
                 Coordenação
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="credenciamento_feiras_congressos" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="credenciamento_feiras_congressos">
                 Credenciamento feiras e congressos
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="dancarino" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="dancarino">
                 Dançarino(a)
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="degustacao" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="degustacao">
                 Degustação
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="desfile" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="desfile">
                 Desfile
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="editorial" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="editorial">
                 Editorial
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="figuracao" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="figuracao">
                 Figuração
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="lookbook" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="lookbook">
                 Lookbook
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="modelo_mao" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="modelo_mao">
                 Modelo de mão
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="modelo_pé" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="modelo_pé">
                 Modelo de pé
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="panfletagem" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="panfletagem">
                 Panfletagem
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="pesquisa" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="pesquisa">
                 Pesquisa
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="recepção" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="recepcao">
                 Recepção
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="showroom" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="showroom">
                 Showroom
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
         <div class="checkbox">
             <label>
-                <input type="checkbox" name="visita_tenica" class="input-modelo-influencer-promotor"  value="1">
+                <input type="checkbox" name="experiencia[]" class="input-modelo-influencer-promotor"  value="visita_tenica">
                 Visita ténica
             </label>
             <span class="text-danger msg" style="font-size: 13px;"></span>
