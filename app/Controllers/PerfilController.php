@@ -6,6 +6,7 @@ use App\Models\EstadoModel;
 use App\Models\GrupoFotoModel;
 use App\Models\PerfilModel;
 use App\Models\UsuarioModel;
+use App\Models\UsuarioPerfil;
 use App\Models\UsuarioPerfilModel;
 
 class PerfilController extends BaseController
@@ -47,14 +48,35 @@ class PerfilController extends BaseController
 	}
 
 	/**
-     * Cadastro de usuário
-     * @return \CodeIgniter\HTTP\Response
-     */
-    public function store()
-    {
+	 * Cadastro de usuário
+	 * @return \CodeIgniter\HTTP\Response
+	 */
+	public function store()
+	{
 		$request = $this->request->getVar();
-		
-		dd($request);
+		$usuarioPerfil = new UsuarioPerfil;
+		$usuarioId = $this->session->get('usuario')['usuario_id'];
+
+		if (empty($request['perfil'])) {
+			$this->setFlashdata('error', 'Nenhum perfil selecionado');
+
+			return redirect()->to('adicionar-perfil');
+		}
+
+		foreach ($request['perfil'] as $key => $perfil) {
+			$dados = [
+				'usuario_id' => $usuarioId,
+				'perfil_id' => $perfil,
+				'dados' => json_encode($request),
+				'perfil_aprovado' => null
+			];
+
+			$usuarioPerfil->save($dados);
+		}
+
+		$this->setFlashdata('success', 'Perfil adicionado com sucesso');
+
+		return redirect()->to('adicionar-perfil');
 	}
 
 	public function pendentesAprovacao()
@@ -68,14 +90,14 @@ class PerfilController extends BaseController
 	public function aprovar()
 	{
 		$request = $this->request->getVar();
-		
+
 		dd($request);
 	}
 
 	public function recusar()
 	{
 		$request = $this->request->getVar();
-		
+
 		dd($request);
 	}
 

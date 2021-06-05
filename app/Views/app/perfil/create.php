@@ -20,7 +20,7 @@
                                         <?php if ($perfis) { ?>
                                             <?php foreach ($perfis as $perfil) { ?>
                                                 <label>
-                                                    <input type="checkbox" name="perfil" class="classe_perfil" id="perfil_<?php echo $perfil['perfil_id']; ?>" value="<?php echo $perfil['perfil_id']; ?>">
+                                                    <input type="checkbox" name="perfil[]" class="classe_perfil" id="perfil_<?php echo $perfil['perfil_id']; ?>" value="<?php echo $perfil['perfil_id']; ?>">
                                                     <?php echo $perfil['nome']; ?>
                                                 </label>
                                                 <br>
