@@ -4,7 +4,7 @@
     <div class="col-md-2"></div>
     <label for="categoria-produtor" class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label>
     <div class="col-md-6">
-        <select class="multiple-select input-produtor" name="produtor[]" multiple="multiple" id="categoria-fotos-produtor">
+        <select class="multiple-select input-produtor categoria-fotos" name="produtor[]" multiple="multiple">
             <?php if ($categoria_produtor) { ?>
                 <?php foreach ($categoria_produtor as $produtor) { ?>
                     <?php if ($produtor['nome'] != 'Video') { ?>
@@ -26,7 +26,7 @@
     <div class="col-md-2"></div>
     <label class="col-md-2 col-form-label"></label>
     <div class="col-md-6">
-        <input type="file" name="upload_produtor[]" id="upload-produtor" class="btn btn-primary" accept="image/png, image/jpg, image/jpeg" multiple />
+        <input type="file" name="upload_produtor[]" class="btn btn-primary upload-produtor" accept="image/png, image/jpg, image/jpeg" multiple />
         <span class="text-danger msg" style="font-size: 13px;"></span>
         <p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg. <br> O limite por foto é de até 10mb. <br> É possível anexar até 10 fotos.</p>
     </div>

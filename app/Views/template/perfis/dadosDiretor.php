@@ -26,7 +26,7 @@
     <div class="col-md-2"></div>
     <label class="col-md-2 col-form-label"></label>
     <div class="col-md-6">
-        <input type="file" name="upload_diretor[]" id="upload-diretor" class="btn btn-primary" accept="image/png, image/jpg, image/jpeg" multiple />
+        <input type="file" name="upload_diretor[]" class="btn btn-primary upload-diretor" accept="image/png, image/jpg, image/jpeg" multiple />
         <span class="text-danger msg" style="font-size: 13px;"></span>
         <p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg. <br> O limite por foto é de até 10mb. <br> É possível anexar até 10 fotos.</p>
     </div>

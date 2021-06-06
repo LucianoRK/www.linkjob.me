@@ -54,6 +54,11 @@ class PerfilController extends BaseController
 	public function store()
 	{
 		$request = $this->request->getVar();
+
+		echo "<pre>";
+		print_r($request);
+		die();
+
 		$usuarioPerfil = new UsuarioPerfil;
 		$usuarioId = $this->session->get('usuario')['usuario_id'];
 

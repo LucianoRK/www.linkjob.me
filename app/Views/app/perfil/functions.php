@@ -1,31 +1,31 @@
 <script>
     const perfil = {
         init: () => {
-            perfil.camposModeloPromotorInfluencer(),
-                perfil.mostrarCamposOutrosModeloInfluencerPromotor(),
-                perfil.multiSelect(),
-                perfil.previewImagemModeloInfluencerPromotor(),
-                perfil.validacaoPerfis(),
-                perfil.adicionarInputVideoModeloInfluencerPromotor(),
-                perfil.excluirInputVideoModeloInfluencerPromotor(),
-                perfil.camposMaquiadorCabeleireiro(),
-                perfil.previewImagemMaquiadorCabeleireiro(),
-                perfil.camposFotografoFilmaker(),
-                perfil.previewImagemFotografoFilmaker(),
-                perfil.adicionarInputVideoFilmaker(),
-                perfil.excluirInputVideoFilmaker(),
-                perfil.camposDiretor(),
-                perfil.previewImagemDiretor(),
-                perfil.camposProdutor(),
-                perfil.previewImagemProdutor(),
-                perfil.camposLocacao(),
-                perfil.previewImagemLocacao(),
-                perfil.dataTable(),
-                perfil.aprovar(),
-                perfil.recusar()
+            perfil.validacaoPerfis(),
+            perfil.camposModeloInfluencerPromotor(),
+            perfil.mostrarCamposOutrosModeloInfluencerPromotor(),
+            perfil.adicionarInputVideoModeloInfluencerPromotor(),
+            perfil.excluirInputVideoModeloInfluencerPromotor(),
+            perfil.adicionarInputFotoModeloInfluencerPromotor(),
+            perfil.excluirInputFotoModeloInfluencerPromotor(),
+            perfil.camposMaquiadorCabeleireiro(),
+            perfil.adicionarInputFotoMaquiadorCabeleireiro(),
+            perfil.excluirInputFotoMaquiadorCabeleireiro(),
+            perfil.camposFotografoFilmaker(),
+            perfil.adicionarInputFotoFotografoFilmaker(),
+            perfil.excluirInputFotoFotografoFilmaker(),
+            perfil.adicionarInputVideoFilmaker(),
+            perfil.excluirInputVideoFilmaker(),
+            perfil.camposDiretor(),
+            perfil.camposProdutor(),
+            perfil.camposLocacao(),
+            perfil.dataTable(),
+            perfil.aprovar(),
+            perfil.recusar(),
+            perfil.multiSelect()
         },
 
-        camposModeloPromotorInfluencer: () => {
+        camposModeloInfluencerPromotor: () => {
             $('#perfil_1').on('click', function() {
                 if ($('#perfil_1').prop('checked')) {
                     $('#div-modelo-promotor-influencer').attr('hidden', false);
@@ -40,12 +40,16 @@
                     $('.possui_drt').attr('checked', false);
                     $('#div-drt').attr('hidden', true);
                     $('.input-modelo-influencer-promotor').attr('checked', false);
-                    document.getElementById('upload-modelo-influencer-promotor').value = "";
-                    $('#images-modelo-influencer-promotor').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
                     $(".excluir-input-video-modelo-influencer-promotor").each(function(index) {
                         $(this).parent().parent().remove();
+                    });
+                    $('.upload-modelo-influencer-promotor').val("");
+                    $(".upload-modelo-influencer-promotor").each(function(index, value) {
+                        if (index != 0) {
+                            $(this).parent().parent().parent().remove();
+                        }
                     });
                 }
             });
@@ -64,12 +68,16 @@
                     $('.possui_drt').attr('checked', false);
                     $('#div-drt').attr('hidden', true);
                     $('.input-modelo-influencer-promotor').attr('checked', false);
-                    document.getElementById('upload-modelo-influencer-promotor').value = "";
-                    $('#images-modelo-influencer-promotor').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
                     $(".excluir-input-video-modelo-influencer-promotor").each(function(index) {
                         $(this).parent().parent().remove();
+                    });
+                    $('.upload-modelo-influencer-promotor').val("");
+                    $(".upload-modelo-influencer-promotor").each(function(index, value) {
+                        if (index != 0) {
+                            $(this).parent().parent().parent().remove();
+                        }
                     });
                 }
             });
@@ -88,12 +96,16 @@
                     $('.possui_drt').attr('checked', false);
                     $('#div-drt').attr('hidden', true);
                     $('.input-modelo-influencer-promotor').attr('checked', false);
-                    document.getElementById('upload-modelo-influencer-promotor').value = "";
-                    $('#images-modelo-influencer-promotor').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
                     $(".excluir-input-video-modelo-influencer-promotor").each(function(index) {
                         $(this).parent().parent().remove();
+                    });
+                    $('.upload-modelo-influencer-promotor').val("");
+                    $(".upload-modelo-influencer-promotor").each(function(index, value) {
+                        if (index != 0) {
+                            $(this).parent().parent().parent().remove();
+                        }
                     });
                 }
             });
@@ -200,48 +212,10 @@
 
         multiSelect: () => {
             $('.multiple-select').select2();
-        },
 
-        previewImagemModeloInfluencerPromotor: () => {
-            $('#upload-modelo-influencer-promotor').on('change', function() {
-                // Não pode anexar mais que 10 fotos
-                if ($(this)[0].files.length > 10) {
-                    templateFunctions.swalPadrao('warning', 'Atenção', 'A quantidade máxima de fotos é de até 10');
-                    document.getElementById('upload-modelo-influencer-promotor').value = null;
-                    return;
-                }
-
-                if ($(this)[0].files.length >= 1) {
-                    $('#images-modelo-influencer-promotor').html(false);
-
-                    for (i = 0; i < $(this)[0].files.length; i++) {
-                        let fileReader = new FileReader();
-                        let file = $(this)[0].files[i];
-                        let img = 'img-modelo-' + i;
-                        let indice = i;
-
-                        // Limite de 10mb por foto
-                        if (file.size > 10000000) {
-                            templateFunctions.swalPadrao('warning', 'Atenção', 'O limite por foto é de até 10mb');
-                            document.getElementById('upload-modelo-influencer-promotor').value = null;
-                            return;
-                        }
-
-                        // Aceita apenas os formatos image/png, image/jpg, image/jpeg
-                        if (file.type != 'image/png' && file.type != 'image/jpg' && file.type != 'image/jpeg') {
-                            templateFunctions.swalPadrao('warning', 'Atenção', 'É aceito apenas os formatos png, jpg e jpeg');
-                            document.getElementById('upload-modelo-influencer-promotor').value = null;
-                            return;
-                        }
-
-                        fileReader.onloadend = function() {
-                            $('#images-modelo-influencer-promotor').append('<img src="' + fileReader.result + '" width="100" height="100" id="' + img + '" />&emsp;');
-                        }
-
-                        fileReader.readAsDataURL(file);
-                    }
-                }
-            });
+            if (!$('.multiple-select').hasClass('col-sm-12')) {
+                $('.multiple-select').addClass('col-sm-12');
+            }
         },
 
         validacaoPerfis: () => {
@@ -265,6 +239,14 @@
                 } else {
                     // Primeiro valida Modelo, Promotor e Maquiador
                     if ($('#perfil_1').prop('checked') || $('#perfil_2').prop('checked') || $('#perfil_3').prop('checked')) {
+                        $(".upload-modelo-influencer-promotor").each(function(index, value) {
+                            if ($(value)[0].files.length <= 0) {
+                                erro = true;
+
+                                $(value).parent().parent().find('.msg').html('Anexe ao menos uma foto.');
+                            }
+                        });
+
                         if (!$('#altura').val()) {
                             erro = true;
 
@@ -359,16 +341,10 @@
                             $('#drt_sim').parent().parent().find('.msg').html('Campo obrigatório.');
                         }
 
-                        if (!$('#categoria-fotos-modelo-influencer-promotor').val()) {
+                        if (!$('.categoria-fotos-modelo-influencer-promotor').val()) {
                             erro = true;
 
-                            $('#categoria-fotos-modelo-influencer-promotor').parent().parent().find('.msg').html('Campo obrigatório.');
-                        }
-
-                        if ($("#upload-modelo-influencer-promotor")[0].files.length <= 0) {
-                            erro = true;
-
-                            $('#upload-modelo-influencer-promotor').parent().parent().find('.msg').html('Anexe ao menos uma foto.');
+                            $('.categoria-fotos-modelo-influencer-promotor').parent().parent().find('.msg').html('Campo obrigatório.');
                         }
 
                         if (!$('#video_apresentacao').val()) {
@@ -380,72 +356,83 @@
                     }
 
                     if ($('#perfil_4').prop('checked') || $('#perfil_5').prop('checked')) {
-                        if (!$('#categoria-fotos-maquiador-cabeleireiro').val()) {
+                        if (!$('.categoria-fotos-maquiador-cabeleireiro').val()) {
                             erro = true;
 
-                            $('#categoria-fotos-maquiador-cabeleireiro').parent().parent().find('.msg').html('Campo obrigatório.');
+                            $('.categoria-fotos-maquiador-cabeleireiro').parent().parent().find('.msg').html('Campo obrigatório.');
                         }
 
-                        if ($("#upload-maquiador-cabeleireiro")[0].files.length <= 0) {
-                            erro = true;
+                        $(".upload-maquiador-cabeleireiro").each(function(index, value) {
+                            if ($(value)[0].files.length <= 0) {
+                                erro = true;
 
-                            $('#upload-maquiador-cabeleireiro').parent().parent().find('.msg').html('Anexe ao menos uma foto.');
-                        }
+                                $(value).parent().parent().find('.msg').html('Anexe ao menos uma foto.');
+                            }
+                        });
                     }
 
                     if ($('#perfil_6').prop('checked') || $('#perfil_7').prop('checked')) {
-                        if (!$('#categoria-fotos-fotografo-filmaker').val()) {
+                        if (!$('.categoria-fotos-fotografo-filmaker').val()) {
                             erro = true;
 
-                            $('#categoria-fotos-fotografo-filmaker').parent().parent().find('.msg').html('Campo obrigatório.');
+                            $('.categoria-fotos-fotografo-filmaker').parent().parent().find('.msg').html('Campo obrigatório.');
                         }
 
-                        if ($("#upload-fotografo-filmaker")[0].files.length <= 0) {
-                            erro = true;
+                        $(".upload-fotografo-filmaker").each(function(index, value) {
+                            if ($(value)[0].files.length <= 0) {
+                                erro = true;
 
-                            $('#upload-fotografo-filmaker').parent().parent().find('.msg').html('Anexe ao menos uma foto.');
-                        }
+                                $(value).parent().parent().find('.msg').html('Anexe ao menos uma foto.');
+                            }
+                        });
                     }
 
                     if ($('#perfil_8').prop('checked')) {
-                        if (!$('#categoria-fotos-diretor').val()) {
+                        if (!$('.categoria-fotos-diretor').val()) {
                             erro = true;
 
-                            $('#categoria-fotos-diretor').parent().parent().find('.msg').html('Campo obrigatório.');
+                            $('.categoria-fotos-diretor').parent().parent().find('.msg').html('Campo obrigatório.');
                         }
 
-                        if ($("#upload-diretor")[0].files.length <= 0) {
-                            erro = true;
+                        $(".upload-diretor").each(function(index, value) {
+                            if ($(value)[0].files.length <= 0) {
+                                erro = true;
 
-                            $('#upload-diretor').parent().parent().find('.msg').html('Anexe ao menos uma foto.');
-                        }
+                                $(value).parent().parent().find('.msg').html('Anexe ao menos uma foto.');
+                            }
+                        });
                     }
 
                     if ($('#perfil_9').prop('checked')) {
-                        if (!$('#categoria-fotos-produtor').val()) {
+                        if (!$('.categoria-fotos-produtor').val()) {
                             erro = true;
 
-                            $('#categoria-fotos-produtor').parent().parent().find('.msg').html('Campo obrigatório.');
+                            $('.categoria-fotos-produtor').parent().parent().find('.msg').html('Campo obrigatório.');
                         }
 
-                        if ($("#upload-produtor")[0].files.length <= 0) {
-                            erro = true;
+                        $(".upload-produtor").each(function(index, value) {
+                            if ($(value)[0].files.length <= 0) {
+                                erro = true;
 
-                            $('#upload-produtor').parent().parent().find('.msg').html('Anexe ao menos uma foto.');
-                        }
+                                $(value).parent().parent().find('.msg').html('Anexe ao menos uma foto.');
+                            }
+                        });
                     }
 
                     if ($('#perfil_10').prop('checked')) {
-                        if (!$('#categoria-fotos-locacao').val()) {
+                        if (!$('.categoria-fotos-locacao').val()) {
                             erro = true;
 
-                            $('#categoria-fotos-locacao').parent().parent().find('.msg').html('Campo obrigatório.');
+                            $('.categoria-fotos-locacao').parent().parent().find('.msg').html('Campo obrigatório.');
                         }
-                        if ($("#upload-locacao")[0].files.length <= 0) {
-                            erro = true;
 
-                            $('#upload-locacao').parent().parent().find('.msg').html('Anexe ao menos uma foto.');
-                        }
+                        $(".upload-locacao").each(function(index, value) {
+                            if ($(value)[0].files.length <= 0) {
+                                erro = true;
+
+                                $(value).parent().parent().find('.msg').html('Anexe ao menos uma foto.');
+                            }
+                        });
                     }
 
                     if (!erro) {
@@ -469,7 +456,7 @@
             });
         },
 
-        camposFotografoFilmaker: () => {
+        camposMaquiadorCabeleireiro: () => {
             $('#perfil_4').on('click', function() {
                 if ($('#perfil_4').prop('checked')) {
                     $('#div-maquiador-cabeleireiro').attr('hidden', false);
@@ -477,10 +464,14 @@
                     $('#div-maquiador-cabeleireiro').attr('hidden', true);
                     $('.input-maquiador-cabeleireiro').val('');
                     $('.input-maquiador-cabeleireiro').trigger('change');
-                    document.getElementById('upload-maquiador-cabeleireiro').value = "";
-                    $('#images-maquiador-cabeleireiro').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
+                    $('.upload-maquiador-cabeleireiro').val("");
+                    $(".upload-maquiador-cabeleireiro").each(function(index, value) {
+                        if (index != 0) {
+                            $(this).parent().parent().parent().remove();
+                        }
+                    });
                 }
             });
 
@@ -491,57 +482,19 @@
                     $('#div-maquiador-cabeleireiro').attr('hidden', true);
                     $('.input-maquiador-cabeleireiro').val('');
                     $('.input-maquiador-cabeleireiro').trigger('change');
-                    document.getElementById('upload-maquiador-cabeleireiro').value = "";
-                    $('#images-maquiador-cabeleireiro').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
+                    $('.upload-maquiador-cabeleireiro').val("");
+                    $(".upload-maquiador-cabeleireiro").each(function(index, value) {
+                        if (index != 0) {
+                            $(this).parent().parent().parent().remove();
+                        }
+                    });
                 }
             });
         },
-
-        previewImagemMaquiadorCabeleireiro: () => {
-            $('#upload-maquiador-cabeleireiro').on('change', function() {
-                // Não pode anexar mais que 10 fotos
-                if ($(this)[0].files.length > 10) {
-                    templateFunctions.swalPadrao('warning', 'Atenção', 'A quantidade máxima de fotos é de até 10');
-                    document.getElementById('upload-maquiador-cabeleireiro').value = null;
-                    return;
-                }
-
-                if ($(this)[0].files.length >= 1) {
-                    $('#images-modelo-influencer-promotor').html(false);
-
-                    for (i = 0; i < $(this)[0].files.length; i++) {
-                        let fileReader = new FileReader();
-                        let file = $(this)[0].files[i];
-                        let img = 'img-modelo-' + i;
-                        let indice = i;
-
-                        // Limite de 10mb por foto
-                        if (file.size > 10000000) {
-                            templateFunctions.swalPadrao('warning', 'Atenção', 'O limite por foto é de até 10mb');
-                            document.getElementById('upload-maquiador-cabeleireiro').value = null;
-                            return;
-                        }
-
-                        // Aceita apenas os formatos image/png, image/jpg, image/jpeg
-                        if (file.type != 'image/png' && file.type != 'image/jpg' && file.type != 'image/jpeg') {
-                            templateFunctions.swalPadrao('warning', 'Atenção', 'É aceito apenas os formatos png, jpg e jpeg');
-                            document.getElementById('upload-maquiador-cabeleireiro').value = null;
-                            return;
-                        }
-
-                        fileReader.onloadend = function() {
-                            $('#images-maquiador-cabeleireiro').append('<img src="' + fileReader.result + '" width="100" height="100" id="' + img + '" />&emsp;');
-                        }
-
-                        fileReader.readAsDataURL(file);
-                    }
-                }
-            });
-        },
-
-        camposMaquiadorCabeleireiro: () => {
+        
+        camposFotografoFilmaker: () => {
             $('#perfil_6').on('click', function() {
                 if ($('#perfil_6').prop('checked')) {
                     $('#div-fotografo-filmaker').attr('hidden', false);
@@ -549,10 +502,14 @@
                     $('#div-fotografo-filmaker').attr('hidden', true);
                     $('.input-fotografo-filmaker').val('');
                     $('.input-fotografo-filmaker').trigger('change');
-                    document.getElementById('upload-fotografo-filmaker').value = "";
-                    $('#images-fotografo-filmaker').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
+                    $('.upload-fotografo-filmaker').val("");
+                    $(".upload-fotografo-filmaker").each(function(index, value) {
+                        if (index != 0) {
+                            $(this).parent().parent().parent().remove();
+                        }
+                    });
                 }
             });
 
@@ -563,52 +520,14 @@
                     $('#div-fotografo-filmaker').attr('hidden', true);
                     $('.input-fotografo-filmaker').val('');
                     $('.input-fotografo-filmaker').trigger('change');
-                    document.getElementById('upload-fotografo-filmaker').value = "";
-                    $('#images-fotografo-filmaker').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
-                }
-            });
-        },
-
-        previewImagemFotografoFilmaker: () => {
-            $('#upload-fotografo-filmaker').on('change', function() {
-                // Não pode anexar mais que 10 fotos
-                if ($(this)[0].files.length > 10) {
-                    templateFunctions.swalPadrao('warning', 'Atenção', 'A quantidade máxima de fotos é de até 10');
-                    document.getElementById('upload-fotografo-filmaker').value = null;
-                    return;
-                }
-
-                if ($(this)[0].files.length >= 1) {
-                    $('#images-fotografo-filmaker').html(false);
-
-                    for (i = 0; i < $(this)[0].files.length; i++) {
-                        let fileReader = new FileReader();
-                        let file = $(this)[0].files[i];
-                        let img = 'img-modelo-' + i;
-                        let indice = i;
-
-                        // Limite de 10mb por foto
-                        if (file.size > 10000000) {
-                            templateFunctions.swalPadrao('warning', 'Atenção', 'O limite por foto é de até 10mb');
-                            document.getElementById('upload-fotografo-filmaker').value = null;
-                            return;
+                    $('.upload-fotografo-filmaker').val("");
+                    $(".upload-fotografo-filmaker").each(function(index, value) {
+                        if (index != 0) {
+                            $(this).parent().parent().parent().remove();
                         }
-
-                        // Aceita apenas os formatos image/png, image/jpg, image/jpeg
-                        if (file.type != 'image/png' && file.type != 'image/jpg' && file.type != 'image/jpeg') {
-                            templateFunctions.swalPadrao('warning', 'Atenção', 'É aceito apenas os formatos png, jpg e jpeg');
-                            document.getElementById('upload-fotografo-filmaker').value = null;
-                            return;
-                        }
-
-                        fileReader.onloadend = function() {
-                            $('#images-fotografo-filmaker').append('<img src="' + fileReader.result + '" width="100" height="100" id="' + img + '" />&emsp;');
-                        }
-
-                        fileReader.readAsDataURL(file);
-                    }
+                    });
                 }
             });
         },
@@ -633,52 +552,14 @@
                     $('#div-diretor').attr('hidden', true);
                     $('.input-diretor').val('');
                     $('.input-diretor').trigger('change');
-                    document.getElementById('upload-diretor').value = "";
-                    $('#images-diretor').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
-                }
-            });
-        },
-
-        previewImagemDiretor: () => {
-            $('#upload-diretor').on('change', function() {
-                // Não pode anexar mais que 10 fotos
-                if ($(this)[0].files.length > 10) {
-                    templateFunctions.swalPadrao('warning', 'Atenção', 'A quantidade máxima de fotos é de até 10');
-                    document.getElementById('upload-diretor').value = null;
-                    return;
-                }
-
-                if ($(this)[0].files.length >= 1) {
-                    $('#images-diretor').html(false);
-
-                    for (i = 0; i < $(this)[0].files.length; i++) {
-                        let fileReader = new FileReader();
-                        let file = $(this)[0].files[i];
-                        let img = 'img-modelo-' + i;
-                        let indice = i;
-
-                        // Limite de 10mb por foto
-                        if (file.size > 10000000) {
-                            templateFunctions.swalPadrao('warning', 'Atenção', 'O limite por foto é de até 10mb');
-                            document.getElementById('upload-diretor').value = null;
-                            return;
+                    $('.upload-diretor').val("");
+                    $(".upload-diretor").each(function(index, value) {
+                        if (index != 0) {
+                            $(this).parent().parent().parent().remove();
                         }
-
-                        // Aceita apenas os formatos image/png, image/jpg, image/jpeg
-                        if (file.type != 'image/png' && file.type != 'image/jpg' && file.type != 'image/jpeg') {
-                            templateFunctions.swalPadrao('warning', 'Atenção', 'É aceito apenas os formatos png, jpg e jpeg');
-                            document.getElementById('upload-diretor').value = null;
-                            return;
-                        }
-
-                        fileReader.onloadend = function() {
-                            $('#images-diretor').append('<img src="' + fileReader.result + '" width="100" height="100" id="' + img + '" />&emsp;');
-                        }
-
-                        fileReader.readAsDataURL(file);
-                    }
+                    });
                 }
             });
         },
@@ -691,52 +572,14 @@
                     $('#div-produtor').attr('hidden', true);
                     $('.input-produtor').val('');
                     $('.input-produtor').trigger('change');
-                    document.getElementById('upload-produtor').value = "";
-                    $('#images-produtor').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
-                }
-            });
-        },
-
-        previewImagemProdutor: () => {
-            $('#upload-produtor').on('change', function() {
-                // Não pode anexar mais que 10 fotos
-                if ($(this)[0].files.length > 10) {
-                    templateFunctions.swalPadrao('warning', 'Atenção', 'A quantidade máxima de fotos é de até 10');
-                    document.getElementById('upload-produtor').value = null;
-                    return;
-                }
-
-                if ($(this)[0].files.length >= 1) {
-                    $('#images-produtor').html(false);
-
-                    for (i = 0; i < $(this)[0].files.length; i++) {
-                        let fileReader = new FileReader();
-                        let file = $(this)[0].files[i];
-                        let img = 'img-modelo-' + i;
-                        let indice = i;
-
-                        // Limite de 10mb por foto
-                        if (file.size > 10000000) {
-                            templateFunctions.swalPadrao('warning', 'Atenção', 'O limite por foto é de até 10mb');
-                            document.getElementById('upload-produtor').value = null;
-                            return;
+                    $('.upload-produtor').val("");
+                    $(".upload-produtor").each(function(index, value) {
+                        if (index != 0) {
+                            $(this).parent().parent().parent().remove();
                         }
-
-                        // Aceita apenas os formatos image/png, image/jpg, image/jpeg
-                        if (file.type != 'image/png' && file.type != 'image/jpg' && file.type != 'image/jpeg') {
-                            templateFunctions.swalPadrao('warning', 'Atenção', 'É aceito apenas os formatos png, jpg e jpeg');
-                            document.getElementById('upload-produtor').value = null;
-                            return;
-                        }
-
-                        fileReader.onloadend = function() {
-                            $('#images-produtor').append('<img src="' + fileReader.result + '" width="100" height="100" id="' + img + '" />&emsp;');
-                        }
-
-                        fileReader.readAsDataURL(file);
-                    }
+                    });
                 }
             });
         },
@@ -749,52 +592,14 @@
                     $('#div-locacao').attr('hidden', true);
                     $('.input-locacao').val('');
                     $('.input-locacao').trigger('change');
-                    document.getElementById('upload-locacao').value = "";
-                    $('#images-locacao').html(false);
                     $('*').removeClass('has-error');
                     $('.msg').html('');
-                }
-            });
-        },
-
-        previewImagemLocacao: () => {
-            $('#upload-locacao').on('change', function() {
-                // Não pode anexar mais que 25 fotos
-                if ($(this)[0].files.length > 25) {
-                    templateFunctions.swalPadrao('warning', 'Atenção', 'A quantidade máxima de fotos é de até 25');
-                    document.getElementById('upload-locacao').value = null;
-                    return;
-                }
-
-                if ($(this)[0].files.length >= 1) {
-                    $('#images-locacao').html(false);
-
-                    for (i = 0; i < $(this)[0].files.length; i++) {
-                        let fileReader = new FileReader();
-                        let file = $(this)[0].files[i];
-                        let img = 'img-modelo-' + i;
-                        let indice = i;
-
-                        // Limite de 10mb por foto
-                        if (file.size > 10000000) {
-                            templateFunctions.swalPadrao('warning', 'Atenção', 'O limite por foto é de até 10mb');
-                            document.getElementById('upload-locacao').value = null;
-                            return;
+                    $('.upload-locacao').val("");
+                    $(".upload-locacao").each(function(index, value) {
+                        if (index != 0) {
+                            $(this).parent().parent().parent().remove();
                         }
-
-                        // Aceita apenas os formatos image/png, image/jpg, image/jpeg
-                        if (file.type != 'image/png' && file.type != 'image/jpg' && file.type != 'image/jpeg') {
-                            templateFunctions.swalPadrao('warning', 'Atenção', 'É aceito apenas os formatos png, jpg e jpeg');
-                            document.getElementById('upload-locacao').value = null;
-                            return;
-                        }
-
-                        fileReader.onloadend = function() {
-                            $('#images-locacao').append('<img src="' + fileReader.result + '" width="100" height="100" id="' + img + '" />&emsp;');
-                        }
-
-                        fileReader.readAsDataURL(file);
-                    }
+                    });
                 }
             });
         },
@@ -891,6 +696,60 @@
                         )
                     }
                 })
+            });
+        },
+
+        adicionarInputFotoModeloInfluencerPromotor: () => {
+            var contador = 1;
+
+            $('#adicionar-input-foto-modelo-influencer-promotor').on('click', function () {
+                if ( $('.pai-modelo-influencer-promotor').length < 9) {
+                    $('#div-mais-foto-modelo-influencer-promotor').append('<div class="pai-modelo-influencer-promotor"><div class="form-group row"><div class="col-md-2"></div><label class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label><div class="col-md-6"><div class="input-group"><select class="col-sm-12 multiple-select categoria-fotos-modelo-influencer-promotor input-modelo-influencer-promotor" name="modelo['+contador+'][categoria][]" multiple="multiple"><?php if ($modelo_promotor_influencer) { ?><?php foreach ($modelo_promotor_influencer as $modelo) { ?><?php if ($modelo['nome'] != 'Video') { ?><option value="<?php echo $modelo['grupo_foto_id']; ?>"> <?php echo $modelo['nome']; ?> </option><?php } ?><?php } ?><?php } ?></select><span class="input-group-btn"><button style="height: 38px;" class="btn btn-default excluir-input-foto-modelo-influencer-promotor" type="button"><i class="text-danger fas fa-trash"></i></button></span></div><span class="text-danger msg" style="font-size: 13px;"></span></div></div><div class="form-group row"><div class="col-md-2"></div><label class="col-md-2 col-form-label"></label><div class="col-md-6"><input type="file" name="modelo['+contador+'][upload][]" class="btn btn-primary upload-modelo-influencer-promotor" accept="image/png, image/jpg, image/jpeg"/><span class="text-danger msg" style="font-size: 13px;"></span><p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg.</p></div></div></div>');
+                    perfil.multiSelect();
+                    contador++;
+                }
+            });
+        },
+
+        excluirInputFotoModeloInfluencerPromotor: () => {
+            $(document).on('click', '.excluir-input-foto-modelo-influencer-promotor', function() {
+               $(this).parent().parent().parent().parent().parent().remove();
+            });
+        },
+
+        adicionarInputFotoMaquiadorCabeleireiro: () => {
+            var contador2 = 1;
+
+            $('#adicionar-input-foto-maquiador-cabeleireiro').on('click', function () {
+                if ( $('.pai-maquiador-cabeleireiro').length < 9) {
+                    $('#div-mais-foto-maquiador-cabeleireiro').append('<div class="pai-maquiador-cabeleireiro"><div class="form-group row"><div class="col-md-2"></div><label class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label><div class="col-md-6"><div class="input-group"><select class="col-sm-12 multiple-select categoria-fotos-maquiador-cabeleireiro input-maquiador-cabeleireiro" name="maquiador_cabeleireiro['+contador2+'][categoria][]" multiple="multiple"><?php if ($cabeleireiro_maquiador) { ?><?php foreach ($cabeleireiro_maquiador as $maquiador) { ?><?php if ($maquiador['nome'] != 'Video') { ?><option value="<?php echo $maquiador['grupo_foto_id']; ?>"> <?php echo $maquiador['nome']; ?> </option><?php } ?><?php } ?><?php } ?></select><span class="input-group-btn"><button style="height: 39px;" class="btn btn-default excluir-input-foto-maquiador-cabeleireiro" type="button"><i class="text-danger fas fa-trash"></i></button></span></div><span class="text-danger msg" style="font-size: 13px;"></span></div></div><div class="form-group row"><div class="col-md-2"></div><label class="col-md-2 col-form-label"></label><div class="col-md-6"><input type="file" name="maquiador_cabeleireiro['+contador2+'][upload][]" class="btn btn-primary upload-maquiador-cabeleireiro" accept="image/png, image/jpg, image/jpeg"/><span class="text-danger msg" style="font-size: 13px;"></span><p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg.</p></div></div></div>');
+                    perfil.multiSelect();
+                    contador2++;
+                }
+            });
+        },
+
+        excluirInputFotoMaquiadorCabeleireiro: () => {
+            $(document).on('click', '.excluir-input-foto-maquiador-cabeleireiro', function() {
+               $(this).parent().parent().parent().parent().parent().remove();
+            });
+        },
+
+        adicionarInputFotoFotografoFilmaker: () => {
+            var contador3 = 1;
+
+            $('#adicionar-input-foto-fotografo-filmaker').on('click', function () {
+                if ( $('.pai-fotografo-filmaker').length < 9) {
+                    $('#div-mais-foto-fotografo-filmaker').append('<div class="pai-fotografo-filmaker"><div class="form-group row"><div class="col-md-2"></div><label class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label><div class="col-md-6"><div class="input-group"><select class="col-sm-12 multiple-select input-fotografo-filmaker categoria-fotos-fotografo-filmaker" name="fotografo_filmaker['+contador3+'][categoria][]" multiple="multiple"><?php if ($fotografo_filmaker) { ?><?php foreach ($fotografo_filmaker as $fotografo) { ?><?php if ($fotografo['nome'] != 'Video') { ?><option value="<?php echo $fotografo['grupo_foto_id']; ?>"> <?php echo $fotografo['nome']; ?> </option><?php } ?><?php } ?><?php } ?></select><span class="input-group-btn"><button style="height: 39px;" class="btn btn-default excluir-input-foto-fotografo-filmaker" type="button"><i class="text-danger fas fa-trash"></i></button></span></div><span class="text-danger msg" style="font-size: 13px;"></span></div></div><div class="form-group row"><div class="col-md-2"></div><label class="col-md-2 col-form-label"></label><div class="col-md-6"><input type="file" name="fotografo_filmaker['+contador3+'][upload][]" class="btn btn-primary upload-fotografo-filmaker" accept="image/png, image/jpg, image/jpeg"/><span class="text-danger msg" style="font-size: 13px;"></span><p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg.</p></div></div></div>');
+                    perfil.multiSelect();
+                    contador3++;
+                }
+            });
+        },
+
+        excluirInputFotoFotografoFilmaker: () => {
+            $(document).on('click', '.excluir-input-foto-fotografo-filmaker', function() {
+               $(this).parent().parent().parent().parent().parent().remove();
             });
         }
     }

@@ -315,35 +315,35 @@
 <br><br>
 <div class="form-group row">
     <div class="col-md-2"></div>
-    <label for="categoria-fotos-modelo-influencer-promotor" class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label>
+    <label class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label>
     <div class="col-md-6">
-        <select class="multiple-select input-modelo-influencer-promotor" name="modeloInfluencerPromotor[]" multiple="multiple" id="categoria-fotos-modelo-influencer-promotor">
-            <?php if ($modelo_promotor_influencer) { ?>
-                <?php foreach ($modelo_promotor_influencer as $modelo) { ?>
-                    <?php if ($modelo['nome'] != 'Video') { ?>
-                        <option value="<?php echo $modelo['grupo_foto_id']; ?>"> <?php echo $modelo['nome']; ?> </option>
+        <div class="input-group">
+            <select class="multiple-select input-modelo-influencer-promotor categoria-fotos-modelo-influencer-promotor" name="modelo_promotor_influencer[0][categoria][]" multiple="multiple">
+                <?php if ($modelo_promotor_influencer) { ?>
+                    <?php foreach ($modelo_promotor_influencer as $modelo) { ?>
+                        <?php if ($modelo['nome'] != 'Video') { ?>
+                            <option value="<?php echo $modelo['grupo_foto_id']; ?>"> <?php echo $modelo['nome']; ?> </option>
+                        <?php } ?>
                     <?php } ?>
                 <?php } ?>
-            <?php } ?>
-        </select>
+            </select>
+            <span class="input-group-btn">
+                <button style="height: 39px;" class="btn btn-default" type="button" id="adicionar-input-foto-modelo-influencer-promotor"><i class="text-success fas fa-plus"></i></button>
+            </span>
+        </div>
         <span class="text-danger msg" style="font-size: 13px;"></span>
-    </div>
-</div>
-<div class="form-group row">
-    <div class="col-md-12">
-        <div class='col-md-4'></div>
-        <div class='col-md-7' id="images-modelo-influencer-promotor"></div>
     </div>
 </div>
 <div class="form-group row">
     <div class="col-md-2"></div>
     <label class="col-md-2 col-form-label"></label>
     <div class="col-md-6">
-        <input type="file" name="upload_modelo_influencer_promotor[]" id="upload-modelo-influencer-promotor" class="btn btn-primary" accept="image/png, image/jpg, image/jpeg" multiple/>
+        <input type="file" name="modelo_promotor_influencer[0][upload][]" class="btn btn-primary upload-modelo-influencer-promotor" accept="image/png, image/jpg, image/jpeg"/>
         <span class="text-danger msg" style="font-size: 13px;"></span>
-        <p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg. <br> O limite por foto é de até 10mb. <br> É possível anexar até 10 fotos.</p>
+        <p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg.</p>
     </div>
 </div>
+<div id="div-mais-foto-modelo-influencer-promotor"></div>
 <div class="form-group row">
     <div class="col-md-2"></div>
     <label class="col-md-2 col-form-label">Video:</label>
@@ -355,8 +355,6 @@
             </span>
             <span class="text-danger msg" style="font-size: 13px;"></span>
         </div>
-        <div id="div-videos-modelo-influencer-promotor">
-            
-        </div>
+        <div id="div-videos-modelo-influencer-promotor"></div>
     </div>
 </div>
