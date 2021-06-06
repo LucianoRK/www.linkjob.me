@@ -16,9 +16,19 @@
             perfil.excluirInputFotoFotografoFilmaker(),
             perfil.adicionarInputVideoFilmaker(),
             perfil.excluirInputVideoFilmaker(),
+
             perfil.camposDiretor(),
+            perfil.adicionarInputFotoDiretor(),
+            perfil.excluirInputFotoDiretor(),
+
             perfil.camposProdutor(),
+            perfil.adicionarInputFotoProdutor(),
+            perfil.excluirInputFotoProdutor(),
+
             perfil.camposLocacao(),
+            perfil.adicionarInputFotoLocacao(),
+            perfil.excluirInputFotoLocacao(),
+
             perfil.dataTable(),
             perfil.aprovar(),
             perfil.recusar(),
@@ -749,6 +759,60 @@
 
         excluirInputFotoFotografoFilmaker: () => {
             $(document).on('click', '.excluir-input-foto-fotografo-filmaker', function() {
+               $(this).parent().parent().parent().parent().parent().remove();
+            });
+        },
+
+        adicionarInputFotoDiretor: () => {
+            var contador4 = 1;
+
+            $('#adicionar-input-foto-diretor').on('click', function () {
+                if ( $('.pai-diretor').length < 9) {
+                    $('#div-mais-foto-diretor').append('<div class="pai-diretor"><div class="form-group row"><div class="col-md-2"></div><label for="categoria-diretor" class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label><div class="col-md-6"><div class="input-group"><select class="col-sm-12 multiple-select input-diretor categoria-fotos-diretor" name="diretor['+contador4+'][categoria][]" multiple="multiple"><?php if ($categoria_diretor) { ?><?php foreach ($categoria_diretor as $diretor) { ?><?php if ($diretor['nome'] != 'Video') { ?><option value="<?php echo $diretor['grupo_foto_id']; ?>"> <?php echo $diretor['nome']; ?> </option><?php } ?><?php } ?><?php } ?></select><span class="input-group-btn"><button style="height: 38px;" class="btn btn-default excluir-input-foto-diretor" type="button"><i class="text-danger fas fa-trash"></i></button></span></div><span class="text-danger msg" style="font-size: 13px;"></span></div></div><div class="form-group row"><div class="col-md-2"></div><label class="col-md-2 col-form-label"></label><div class="col-md-6"><input type="file" name="diretor['+contador4+'][upload][]" class="btn btn-primary upload-diretor" accept="image/png, image/jpg, image/jpeg" multiple /><span class="text-danger msg" style="font-size: 13px;"></span><p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg.</p></div></div></div>');
+                    perfil.multiSelect();
+                    contador4++;
+                }
+            });
+        },
+
+        excluirInputFotoDiretor: () => {
+            $(document).on('click', '.excluir-input-foto-diretor', function() {
+               $(this).parent().parent().parent().parent().parent().remove();
+            });
+        },
+
+        adicionarInputFotoProdutor: () => {
+            var contador5 = 1;
+
+            $('#adicionar-input-foto-produtor').on('click', function () {
+                if ( $('.pai-produtor').length < 9) {
+                    $('#div-mais-foto-produtor').append('<div class="pai-produtor"><div class="form-group row"><div class="col-md-2"></div><label class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label><div class="col-md-6"><div class="input-group"><select class="col-sm-12 multiple-select input-produtor categoria-fotos-produtor" name="produtor['+contador5+'][categoria][]" multiple="multiple"><?php if ($categoria_produtor) { ?><?php foreach ($categoria_produtor as $produtor) { ?><?php if ($produtor['nome'] != 'Video') { ?><option value="<?php echo $produtor['grupo_foto_id']; ?>"> <?php echo $produtor['nome']; ?></option><?php } ?><?php } ?><?php } ?></select><span class="input-group-btn"><button style="height: 38px;" class="btn btn-default excluir-input-foto-produtor" type="button"><i class="text-danger fas fa-trash"></i></button></span></div><span class="text-danger msg" style="font-size: 13px;"></span></div></div><div class="form-group row"><div class="col-md-2"></div><label class="col-md-2 col-form-label"></label><div class="col-md-6"><input type="file" name="produtor['+contador5+'][upload][]" class="btn btn-primary upload-produtor" accept="image/png, image/jpg, image/jpeg" multiple /><span class="text-danger msg" style="font-size: 13px;"></span><p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg.</p></div></div></div>');
+                    perfil.multiSelect();
+                    contador5++;
+                }
+            });
+        },
+        
+        excluirInputFotoProdutor: () => {
+            $(document).on('click', '.excluir-input-foto-produtor', function() {
+               $(this).parent().parent().parent().parent().parent().remove();
+            });
+        },
+
+        adicionarInputFotoLocacao: () => {
+            var contador6 = 1;
+
+            $('#adicionar-input-foto-locacao').on('click', function () {
+                if ( $('.pai-locacao').length < 19) {
+                    $('#div-mais-foto-locacao').append('<div class="pai-locacao"><div class="form-group row"><div class="col-md-2"></div><label class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label><div class="col-md-6"><div class="input-group"><select class="col-sm-12 multiple-select categoria-fotos-locacao input-locacao" name="locacao['+contador6+'][categoria][]" multiple="multiple"><?php if ($categoria_locacao) { ?><?php foreach ($categoria_locacao as $locacao) { ?><?php if ($locacao['nome'] != 'Video') { ?><option value="<?php echo $locacao['grupo_foto_id']; ?>"> <?php echo $locacao['nome']; ?> </option><?php } ?><?php } ?><?php } ?></select><span class="input-group-btn"><button style="height: 38px;" class="btn btn-default excluir-input-foto-locacao" type="button"><i class="text-danger fas fa-trash"></i></button></span></div><span class="text-danger msg" style="font-size: 13px;"></span></div></div><div class="form-group row"><div class="col-md-2"></div><label class="col-md-2 col-form-label"></label><div class="col-md-6"><input type="file" name="locacao['+contador6+'][upload][]" class="btn btn-primary upload-locacao" accept="image/png, image/jpg, image/jpeg" multiple /><span class="text-danger msg" style="font-size: 13px;"></span><p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg. <br> O limite por foto é de até 10mb.</p></div></div></div>');
+                    perfil.multiSelect();
+                    contador6++;
+                }
+            });
+        },
+        
+        excluirInputFotoLocacao: () => {
+            $(document).on('click', '.excluir-input-foto-locacao', function() {
                $(this).parent().parent().parent().parent().parent().remove();
             });
         }

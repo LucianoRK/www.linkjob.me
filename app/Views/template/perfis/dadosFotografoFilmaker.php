@@ -15,7 +15,7 @@
                 <?php } ?>
             </select>
             <span class="input-group-btn">
-                <button style="height: 39px;" class="btn btn-default" type="button" id="adicionar-input-foto-fotografo-filmaker"><i class="text-success fas fa-plus"></i></button>
+                <button style="height: 38px;" class="btn btn-default" type="button" id="adicionar-input-foto-fotografo-filmaker"><i class="text-success fas fa-plus"></i></button>
             </span>
         </div>
         <span class="text-danger msg" style="font-size: 13px;"></span>
@@ -27,7 +27,7 @@
     <div class="col-md-6">
         <input type="file" name="fotografo_filmaker[0][upload][]" class="btn btn-primary upload-fotografo-filmaker" accept="image/png, image/jpg, image/jpeg"/>
         <span class="text-danger msg" style="font-size: 13px;"></span>
-        <p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg.</p>
+        <p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg.<br> O limite por foto é de até 10mb.</p>
     </div>
 </div>
 <div id="div-mais-foto-fotografo-filmaker"></div>
