@@ -1,3 +1,5 @@
+<?php use App\Helpers\HelperM; ?>
+
 <div id="page-home"></div>
 <div class="lower-page element-color-switch" id="page-about">
     <div class="center-container">
@@ -10,6 +12,7 @@
                         <h2 class="section-heading-all">
                             <span></span>Perfis Pendentes de Aprovação
                         </h2>
+                        <div class="inner-divider"></div>
                         <div class="row">
                             <div class="table-responsive">
                                 <table id="table-aprovacao" class="table table-bordered dataTable dtr-inline">
@@ -26,13 +29,13 @@
                                             <?php foreach ($perfis as $perfil) { ?>
                                                 <tr class="tr-perfil">
                                                     <td>
-                                                        <?php echo $perfil['usuario_id']; ?>
+                                                        <?php echo $perfil['nome']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $perfil['perfil_id']; ?>
+                                                        <?php echo $perfil['nome_perfil']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $perfil['created_at']; ?>
+                                                        <?php echo HelperM::dataMysqlParaBr($perfil['created_at']); ?>
                                                     </td>
                                                     <td width="130">
                                                         <button type="button" class="btn btn-sm btn-default btn-aprovar-perfil" title="Aprovar Perfil"><i class="text-success fas fa-check"></i></button>

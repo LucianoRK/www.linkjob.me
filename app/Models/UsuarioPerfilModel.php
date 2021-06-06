@@ -34,4 +34,21 @@ class UsuarioPerfilModel extends BaseModel
         'updated_at',
         'deleted_at'
     ];
+
+    public function getDadosUsuarioDadosPerfil()
+    {
+        $this->select('
+            usuario_perfil.usuario_perfil_id,
+            usuario_perfil.usuario_id,
+            usuario_perfil.perfil_id,
+            usuario_perfil.created_at,
+            use_usuario.nome,
+            perfil.nome as nome_perfil,
+        ');
+        $this->join('use_usuario', 'use_usuario.usuario_id = usuario_perfil.usuario_id', 'LEFT');
+        $this->join('perfil', 'perfil.perfil_id = usuario_perfil.perfil_id', 'LEFT');
+        $this->where('usuario_perfil.perfil_aprovado IS NULL');
+
+        return $this->find();
+    }
 }

@@ -83,7 +83,7 @@ class PerfilController extends BaseController
 	public function pendentesAprovacao()
 	{
 		$perfis          = new UsuarioPerfilModel();
-		$dados['perfis'] = $perfis->get(['perfil_aprovado IS NULL'], [], false);
+		$dados['perfis'] = $perfis->getDadosUsuarioDadosPerfil();
 
 		return $this->template('perfil', 'pendentesAprovacao', $dados, true);
 	}

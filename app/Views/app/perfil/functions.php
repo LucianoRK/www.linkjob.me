@@ -615,7 +615,7 @@
             let $order_col = 0;
             let $order = 'asc';
             let $search = true;
-            let $paging = false;
+            let $paging = true;
 
             $DataTableLangCustom = {
                 paging: false,
