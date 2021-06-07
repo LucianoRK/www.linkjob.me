@@ -5,7 +5,7 @@
     <label class="col-md-2 col-form-label"><span class="text-danger">*</span>Categoria:</label>
     <div class="col-md-6">
         <div class="input-group">
-            <select class="multiple-select input-fotografo-filmaker categoria-fotos-fotografo-filmaker" name="fotografo_filmaker[0][categoria][]" multiple="multiple">
+            <select class="multiple-select input-fotografo-filmaker categoria-fotos-fotografo-filmaker" name="fotografo_filmaker[0][categorias][]" multiple="multiple">
                 <?php if ($fotografo_filmaker) { ?>
                     <?php foreach ($fotografo_filmaker as $fotografo) { ?>
                         <?php if ($fotografo['nome'] != 'Video') { ?>
@@ -25,7 +25,7 @@
     <div class="col-md-2"></div>
     <label class="col-md-2 col-form-label"></label>
     <div class="col-md-6">
-        <input type="file" name="fotografo_filmaker[0][upload][]" class="btn btn-primary upload-fotografo-filmaker" accept="image/png, image/jpg, image/jpeg"/>
+        <input type="file" name="fotografo_filmaker[0]" class="btn btn-primary upload-fotografo-filmaker" accept="image/png, image/jpg, image/jpeg"/>
         <span class="text-danger msg" style="font-size: 13px;"></span>
         <p style="font-size: 11px;">Os formatos aceitos são: png, jpg e jpeg.<br> O limite por foto é de até 10mb.</p>
     </div>
