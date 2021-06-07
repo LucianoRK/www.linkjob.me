@@ -95,18 +95,24 @@ class PerfilController extends BaseController
 		if (empty($request['usuario_perfil_id'])) {
 			$this->setFlashdata('error', 'Nenhum perfil encontrado');
 
-			return redirect()->to('aprovar');
+			return redirect()->to('perfis-pendentes-aprovacao');
 		}
 
+		
 		$usuarioPerfilModel = new UsuarioPerfilModel();
-		$perfil 			= $usuarioPerfilModel->first(['usuario_id' => $request['usuario_perfil_id']], [], true);
+		$perfil 			= $usuarioPerfilModel->get(['usuario_perfil_id' => $request['usuario_perfil_id']], [], true);
+		
+		if (empty($perfil['perfil_aprovado'])) {
+			$perfil['perfil_aprovado'] = true;
+			$usuarioPerfilModel->update($request['usuario_perfil_id'], $perfil);
 
-		if (isset($perfil['perfil_aprovado']) && empty($perfil['perfil_aprovado'])) {
-			//
+			$this->setFlashdata('success', 'Perfil aprovado com sucesso');
+
+			return redirect()->to('perfis-pendentes-aprovacao');
 		} else {
 			$this->setFlashdata('error', 'Nenhum perfil encontrado');
 
-			return redirect()->to('aprovar');
+			return redirect()->to('perfis-pendentes-aprovacao');
 		}
 	}
 
@@ -117,18 +123,24 @@ class PerfilController extends BaseController
 		if (empty($request['usuario_perfil_id'])) {
 			$this->setFlashdata('error', 'Nenhum perfil encontrado');
 
-			return redirect()->to('aprovar');
+			return redirect()->to('perfis-pendentes-aprovacao');
 		}
 
 		$usuarioPerfilModel = new UsuarioPerfilModel();
-		$perfil 			= $usuarioPerfilModel->first(['usuario_id' => $request['usuario_perfil_id']], [], true);
+		$perfil 			= $usuarioPerfilModel->get(['usuario_perfil_id' => $request['usuario_perfil_id']], [], true);
+		
+		if (empty($perfil['perfil_aprovado'])) {
+			$perfil['perfil_aprovado'] = false;
+			
+			$usuarioPerfilModel->update($request['usuario_perfil_id'], $perfil);
 
-		if (isset($perfil['perfil_aprovado']) && empty($perfil['perfil_aprovado'])) {
-			//
+			$this->setFlashdata('success', 'Perfil recusado com sucesso');
+			
+			return redirect()->to('perfis-pendentes-aprovacao');
 		} else {
 			$this->setFlashdata('error', 'Nenhum perfil encontrado');
 
-			return redirect()->to('aprovar');
+			return redirect()->to('perfis-pendentes-aprovacao');
 		}
 	}
 
