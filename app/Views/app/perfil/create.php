@@ -11,7 +11,7 @@
                             <span></span>Novo Perfil
                         </h2>
                         <br><br>
-                        <form action="adicionar-perfil" method="POST" id="form-novo-perfil">
+                        <form action="adicionar-perfil" method="POST" id="form-novo-perfil" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <div class="col-md-2"></div>
                                 <label class="col-md-2 col-form-label"><span class="text-danger">*</span>Perfil:</label>
