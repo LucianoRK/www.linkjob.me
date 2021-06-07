@@ -92,14 +92,44 @@ class PerfilController extends BaseController
 	{
 		$request = $this->request->getVar();
 
-		dd($request);
+		if (empty($request['usuario_perfil_id'])) {
+			$this->setFlashdata('error', 'Nenhum perfil encontrado');
+
+			return redirect()->to('aprovar');
+		}
+
+		$usuarioPerfilModel = new UsuarioPerfilModel();
+		$perfil 			= $usuarioPerfilModel->first(['usuario_id' => $request['usuario_perfil_id']], [], true);
+
+		if (isset($perfil['perfil_aprovado']) && empty($perfil['perfil_aprovado'])) {
+			//
+		} else {
+			$this->setFlashdata('error', 'Nenhum perfil encontrado');
+
+			return redirect()->to('aprovar');
+		}
 	}
 
 	public function recusar()
 	{
 		$request = $this->request->getVar();
 
-		dd($request);
+		if (empty($request['usuario_perfil_id'])) {
+			$this->setFlashdata('error', 'Nenhum perfil encontrado');
+
+			return redirect()->to('aprovar');
+		}
+
+		$usuarioPerfilModel = new UsuarioPerfilModel();
+		$perfil 			= $usuarioPerfilModel->first(['usuario_id' => $request['usuario_perfil_id']], [], true);
+
+		if (isset($perfil['perfil_aprovado']) && empty($perfil['perfil_aprovado'])) {
+			//
+		} else {
+			$this->setFlashdata('error', 'Nenhum perfil encontrado');
+
+			return redirect()->to('aprovar');
+		}
 	}
 
 	public function verPerfil($id)
