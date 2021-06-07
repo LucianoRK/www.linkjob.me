@@ -25,10 +25,11 @@
             perfil.camposLocacao(),
             perfil.adicionarInputFotoLocacao(),
             perfil.excluirInputFotoLocacao(),
-            perfil.dataTable(),
             perfil.aprovar(),
             perfil.recusar(),
-            perfil.multiSelect()
+            perfil.recusar(),
+            perfil.multiSelect(),
+            perfil.dataTable()
         },
 
         camposModeloInfluencerPromotor: () => {
@@ -673,11 +674,7 @@
                     confirmButtonText: 'Sim!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        Swal.fire(
-                            'Sucesso!',
-                            '',
-                            'success'
-                        )
+                        $('#aprovar_'+$(this).parent().attr('usuario_perfil_id')).submit();
                     }
                 })
             });
@@ -695,11 +692,9 @@
                     confirmButtonText: 'Sim!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        Swal.fire(
-                            'Sucesso!',
-                            '',
-                            'success'
-                        )
+                        if (result.isConfirmed) {
+                        $('#recusar_'+$(this).parent().attr('usuario_perfil_id')).submit();
+                    }
                     }
                 })
             });
@@ -811,7 +806,7 @@
             $(document).on('click', '.excluir-input-foto-locacao', function() {
                $(this).parent().parent().parent().parent().parent().remove();
             });
-        }
+        },
     }
 
     perfil.init()

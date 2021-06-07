@@ -37,10 +37,17 @@
                                                     <td>
                                                         <?php echo HelperM::dataMysqlParaBr($perfil['created_at']); ?>
                                                     </td>
-                                                    <td width="130">
+                                                    <td width="130" usuario_perfil_id="<?php echo $perfil['usuario_perfil_id']; ?>">
                                                         <button type="button" class="btn btn-sm btn-default btn-aprovar-perfil" title="Aprovar Perfil"><i class="text-success fas fa-check"></i></button>
                                                         <button type="button" class="btn btn-sm btn-default btn-recusar-perfil" title="Recusar Perfil"><i class="text-danger fas fa-trash"></i></button>
                                                         <button type="button" class="btn btn-sm btn-default btn-ver-perfil" title="Ver perfil"><i class="fas fa-eye"></i></a>
+
+                                                        <form id="aprovar_<?php echo $perfil['usuario_perfil_id']; ?>" action="aprovar" method="POST">
+                                                            <input type="hidden" name="usuario_perfil_id" value="<?php echo $perfil['usuario_perfil_id']; ?>">
+                                                        </form>
+                                                        <form id="recusar_<?php echo $perfil['usuario_perfil_id']; ?>" action="recusar" method="POST">
+                                                            <input type="hidden" name="usuario_perfil_id" value="<?php echo $perfil['usuario_perfil_id']; ?>">
+                                                        </form>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
