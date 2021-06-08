@@ -7,6 +7,7 @@ use App\Models\GrupoFotoModel;
 use App\Models\PerfilModel;
 use App\Models\UsuarioModel;
 use App\Models\UsuarioPerfil;
+use App\Models\UsuarioPerfilFotoModel;
 use App\Models\UsuarioPerfilModel;
 
 class PerfilController extends BaseController
@@ -146,8 +147,30 @@ class PerfilController extends BaseController
 
 	public function verPerfil($id)
 	{
-		dd($id);
+		if (empty($id)) {
+			$this->setFlashdata('error', 'Nenhum perfil encontrado');
 
-		return $this->template('perfil', 'verPerfil', [], true);
+			return redirect()->to('/');
+		}
+
+		$estadoModel      = new EstadoModel();
+        $dados['estados'] = $estadoModel->get();
+
+		$usuarioPerfilModel = new UsuarioPerfilModel();
+		$dados['perfil']    = $usuarioPerfilModel->get(['usuario_perfil_id' => $id], [], true);
+
+		$usuarioPerfilFotoModel = new UsuarioPerfilFotoModel();
+		$dados['fotos']  		= $usuarioPerfilFotoModel->get(['usuario_perfil_id' => $id], [], false);
+
+		$usuarioModel       = new UsuarioModel();
+		$dados['registro']  = $usuarioModel->get(['usuario_id' => $dados['perfil']['usuario_id']], [], true);
+
+		if (empty($dados['perfil']) || empty($dados['fotos']) || empty($dados['registro'])) {
+			$this->setFlashdata('error', 'Nenhum perfil encontrado');
+
+			return redirect()->to('/');
+		}
+
+		return $this->template('perfil', 'verPerfil', $dados, true);
 	}
 }

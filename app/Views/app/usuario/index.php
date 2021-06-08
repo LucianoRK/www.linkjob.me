@@ -1,89 +1,61 @@
-<div class="row">
-    <div class="col-md text-left d-none d-md-block">
-        <span class="h4 align-center">Usuários</span>
-    </div>
-    <?php if ($base->permissao('UsuarioController/create')) : ?>
-        <div class="col-md text-md-center text-lg-right">
-            <a href="<?= base_url('usuario/create') ?>">
-                <button class="btn btn-danger btn-md">Novo Usuário</button>
-            </a>
-        </div>
-    <?php endif; ?>
-</div>
-<hr>
-<div class="card">
-    <div class="card-body">
-        <ul class="nav nav-tabs" id="ativosTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="ativos-tab" data-toggle="tab" href="#ativos" role="tab" aria-controls="ativos" aria-selected="true">Ativos <span class="badge badge-count"><?= count($usuariosAtivo) ?></span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="inativos-tab" data-toggle="tab" href="#inativos" role="tab" aria-controls="inativos" aria-selected="false">Inativos <span class="badge badge-count"><?= count($usuariosInativos) ?></span></a>
-            </li>
-        </ul>
-        <div class="tab-content mt-3">
-            <div class="tab-pane fade show active" id="ativos" role="tabpanel" aria-labelledby="ativos-tab">
-                <table class="table table-striped dataTable">
-                    <thead>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Telefone</th>
-                        <th class="text-center"></th>
-                    </thead>
-                    <tbody>
-                        <?php if ($usuariosAtivo) : ?>
-                            <?php foreach ($usuariosAtivo as $usuario) : ?>
-                                <tr class="linhaTabela">
-                                    <td><?= $usuario['usuario_id'] ?></td>
-                                    <td><?= $usuario['nome'] ?></td>
-                                    <td><?= $usuario['telefone'] ?></td>
-                                    <td class="text-right">
-                                        <?php if ($base->permissao('UsuarioController/edit')) : ?>
-                                            <a href="<?= base_url('/usuario/edit/' . $usuario['usuario_id']) ?>">
-                                                <button class="btn btn-primary text-white" title="Editar">
-                                                    <i class="la la-edit la-2x"></i>
-                                                </button>
-                                            </a>
-                                        <?php endif; ?>
-                                        <?php if ($base->permissao('UsuarioController/desativarUsuario')) : ?>
-                                            <button class="btn btn-danger text-white desativarUsuario" value="<?= $usuario['usuario_id'] ?>" title="Excluir">
-                                                <i class="la la-trash la-2x"></i>
-                                            </button>
-                                        <?php endif; ?>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </tbody>
-                </table>
-            </div>
-            <div class="tab-pane fade" id="inativos" role="tabpanel" aria-labelledby="inativos-tab">
-                <table class="table table-striped dataTable">
-                    <thead>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Telefone</th>
-                        <th class="text-center"></th>
-                    </thead>
-                    <tbody>
-                        <?php if ($usuariosInativos) : ?>
-                            <?php foreach ($usuariosInativos as $usuario) : ?>
-                                <tr class="linhaTabela">
-                                    <td><?= $usuario['usuario_id'] ?></td>
-                                    <td><?= $usuario['nome'] ?></td>
-                                    <td><?= $usuario['telefone'] ?></td>
-                                    <td class="text-right">
-                                        <?php if ($base->permissao('UsuarioController/ativarUsuario')) : ?>
-                                            <button class="btn btn-success text-white ativarUsuario" value="<?= $usuario['usuario_id'] ?>" title="Ativar">
-                                                <i class="la la-arrow-circle-o-up la-2x"></i>
-                                            </button>
-                                        <?php endif; ?>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </tbody>
-                </table>
+<?php use App\Helpers\HelperM; ?>
+
+<div id="page-home"></div>
+<div class="lower-page element-color-switch" id="page-about">
+    <div class="center-container">
+        <div class="center-block">
+            <div class="container sections">
+                <div class="inner-divider"></div>
+                <div class="inner-divider"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="section-heading-all">
+                            <span></span>Usuários
+                        </h2>
+                        <div class="inner-divider"></div>
+                        <div class="table-responsive">
+                            <table id="table-usuarios" class="table table-bordered dataTable dtr-inline">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Tipo</th>
+                                        <th>Data cadastro</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php if (!empty($usuarios)) { ?>
+                                        <?php foreach ($usuarios as $usuario) { ?>
+                                            <tr>
+                                                <td>
+                                                    <?php echo $usuario['nome']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php if ($usuario['tipo_id'] == 1) { ?>
+                                                        Administrador
+                                                    <?php } else if ($usuario['tipo_id'] == 2) { ?>
+                                                        Profissional
+                                                    <?php } else { ?>
+                                                        Empresa
+                                                    <?php } ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo HelperM::dataMysqlParaBr($usuario['created_at']); ?>
+                                                </td>
+                                                <td width="73" usuario_id="<?php echo $usuario['usuario_id']; ?>">
+                                                    <button type="button" class="btn btn-sm btn-default btn-excluir-usuario" title="Excluir usuário"><i class="text-danger fas fa-trash"></i></button>
+                                                    <a href="editar-dados-usuario" target="blank" class="btn btn-sm btn-default editar" type="button" title="Editar informações do usuário"> 
+                                                        <span class="text-primary fas fa-edit"></span> 
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

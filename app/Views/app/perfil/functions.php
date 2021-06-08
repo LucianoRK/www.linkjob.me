@@ -27,7 +27,6 @@
             perfil.excluirInputFotoLocacao(),
             perfil.aprovar(),
             perfil.recusar(),
-            perfil.recusar(),
             perfil.multiSelect(),
             perfil.dataTable()
         },

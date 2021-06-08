@@ -84,7 +84,13 @@ $routes->group('', ['filter' => 'sessao'], function ($routes) {
 	$routes->post('/recusar', 'PerfilController::recusar');
 	$routes->get('/ver-perfil/(:num)', 'PerfilController::verPerfil/$1');
 	
-	
+	/**
+	 * --------------------------------------------------------------------
+	 * Usuários
+	 * --------------------------------------------------------------------
+	 */
+	$routes->get('/usuarios', 'UsuarioController::index');
+	$routes->get('/ver-dados-usuario/(:num)', 'RegistroController::show');
 
 	/**
 	 * --------------------------------------------------------------------

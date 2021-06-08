@@ -12,7 +12,7 @@
     <div class="panel-overlay-from-left">
         <div class="navigation-menu-img-wrapper">
             <div class="navigation-menu-img overlay overlay-dark-40">
-                <div class="menu-img active" data-bg="<?= base_url('/public/js/template/img/menu/menu-1.jpg'); ?>" data-ref="menu-1"></div>
+                <div class="menu-img" data-bg="<?= base_url('/public/js/template/img/menu/menu-1.jpg'); ?>" data-ref="menu-1"></div>
                 <div class="menu-img" data-bg="<?= base_url('/public/js/template/img/menu/menu-2.jpg'); ?>" data-ref="menu-2"></div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                 <div class="center-block-menu">
                     <ul class="menu brackets">
                         <li>
-                            <a class="menu-state navscroll active" data-id="page-home" data-ref="menu-1" href="<?= base_url('/home'); ?>">Home</a>
+                            <a class="menu-state navscroll" data-id="page-home" data-ref="menu-1" href="<?= base_url('/home'); ?>">Home</a>
                         </li>
                         <li>
                             <a class="menu-state navscroll" data-id="page-news" data-ref="menu-2" href="<?= base_url('/logar'); ?>">Logar</a>
@@ -44,7 +44,10 @@
                             <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/perfis-pendentes-aprovacao'); ?>">Aprovar Perfis</a>
                         </li>
                         <li>
-                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/meus-dados'); ?>">Meus Dados</a>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/minha-conta'); ?>">Minha Conta</a>
+                        </li>
+                        <li>
+                            <a class="menu-state navscroll" data-id="page-works" data-ref="menu-2" href="<?= base_url('/usuarios'); ?>">Usuários</a>
                         </li>
                         <li class="last">
                             <a class="menu-state navscroll" data-id="page-about" data-ref="menu-2" href="<?= base_url('/logout'); ?>">Sair</a>
