@@ -90,14 +90,15 @@ $routes->group('', ['filter' => 'sessao'], function ($routes) {
 	 * --------------------------------------------------------------------
 	 */
 	$routes->get('/usuarios', 'UsuarioController::index');
-	$routes->get('/ver-dados-usuario/(:num)', 'RegistroController::show');
+	$routes->get('/editar-dados-usuario/(:num)', 'UsuarioController::edit/$1');
+	$routes->post('/salvar-edicao-usuario', 'UsuarioController::update');
 
 	/**
 	 * --------------------------------------------------------------------
 	 * Editar dados cadastrais
 	 * --------------------------------------------------------------------
 	 */
-	$routes->group('meus-dados', function ($routes) {
+	$routes->group('minha-conta', function ($routes) {
 		$routes->get('', 'RegistroController::edit');
 		$routes->post('update', 'RegistroController::update');
 		$routes->post('senha', 'RegistroController::updateSenha');

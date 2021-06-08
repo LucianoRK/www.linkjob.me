@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="section-heading-all">
-                            <span>Meus Dados</span>
+                            <span></span>Meus Dados
                         </h2>
                         <br>
                         <form action="<?= base_url('meus-dados/update') ?>" method="POST" id="form-cadastrese">

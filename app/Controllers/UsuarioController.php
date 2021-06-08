@@ -41,8 +41,27 @@ class UsuarioController extends BaseController
      * Editar cadastro
      * @return \CodeIgniter\HTTP\Response
      */
-    public function edit()
+    public function edit($id)
     {
+        if (empty($id)) {
+			$this->setFlashdata('error', 'Nenhum usuário encontrado');
+
+			return redirect()->to('/usuarios');
+		}
+
+        $estadoModel      = new EstadoModel();
+        $dados['estados'] = $estadoModel->get();
+
+        $usuarioModel       = new UsuarioModel();
+		$dados['registro']  = $usuarioModel->get(['usuario_id' => $id], [], true);
+
+        if (empty($dados['estados']) || empty($dados['registro'])) {
+			$this->setFlashdata('error', 'Nenhum usuário encontrado');
+
+			return redirect()->to('/usuarios');
+		}
+
+        return $this->template('usuario', 'edit', $dados, true);
     }
 
     /**
@@ -51,6 +70,9 @@ class UsuarioController extends BaseController
      */
     public function update()
     {
+        $request = $this->request->getVar();
+        
+        dd($request);
     }
 
     public function destroy()

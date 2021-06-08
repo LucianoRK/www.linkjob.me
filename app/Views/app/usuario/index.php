@@ -44,7 +44,7 @@
                                                 </td>
                                                 <td width="73" usuario_id="<?php echo $usuario['usuario_id']; ?>">
                                                     <button type="button" class="btn btn-sm btn-default btn-excluir-usuario" title="Excluir usuário"><i class="text-danger fas fa-trash"></i></button>
-                                                    <a href="editar-dados-usuario" target="blank" class="btn btn-sm btn-default editar" type="button" title="Editar informações do usuário"> 
+                                                    <a href="editar-dados-usuario/<?php echo $usuario['usuario_id']; ?>" target="blank" class="btn btn-sm btn-default editar" type="button" title="Editar informações do usuário"> 
                                                         <span class="text-primary fas fa-edit"></span> 
                                                     </a>
                                                 </td>
