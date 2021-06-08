@@ -92,8 +92,6 @@ class BaseController extends Controller
 		}
 		echo view('template/footer', $dados);
 		echo view('app/' . $pasta . '/functions', $dados);
-
-		echo  $dados['responseFlash']['mensagem']; // Fase de teste
 	}
 
 	/**
